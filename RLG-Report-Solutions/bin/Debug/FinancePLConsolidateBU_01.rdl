@@ -1,0 +1,3128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Tablix Name="Tablix1">
+        <TablixCorner>
+          <TablixCornerRows>
+            <TablixCornerRow>
+              <TablixCornerCell>
+                <CellContents>
+                  <Textbox Name="Textbox4">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>Parent Account Key</Value>
+                            <Style />
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>Textbox4</rd:DefaultName>
+                    <Style>
+                      <Border>
+                        <Color>LightGrey</Color>
+                        <Style>Solid</Style>
+                      </Border>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixCornerCell>
+            </TablixCornerRow>
+          </TablixCornerRows>
+        </TablixCorner>
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>2.41667in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1in</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.25in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Actual_Amount">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!Actual_Amount.Value)</Value>
+                              <Style>
+                                <Format>#,0.00</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Actual_Amount</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox8">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!Actual_Amount.Value)/ReportItems!Textbox10.Value</Value>
+                              <Style>
+                                <Format>0.00%</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox8</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.25in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox10">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!Actual_Amount.Value)</Value>
+                              <Style>
+                                <Format>#,0.00</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox10</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox11">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!Actual_Amount.Value)/ReportItems!Textbox10.Value</Value>
+                              <Style>
+                                <Format>0.00%</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox11</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="Parent_Business_Unit_Segment_Key">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Parent_Business_Unit_Segment_Key.UniqueName</GroupExpression>
+                </GroupExpressions>
+                <Parent>=Fields!Parent_Business_Unit_Segment_Key.ParentUniqueName</Parent>
+              </Group>
+              <SortExpressions>
+                <SortExpression>
+                  <Value>=Fields!Parent_Business_Unit_Segment_Key.Value</Value>
+                </SortExpression>
+              </SortExpressions>
+              <TablixHeader>
+                <Size>0.25in</Size>
+                <CellContents>
+                  <Textbox Name="Parent_Business_Unit_Segment_Key">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>=Fields!Parent_Business_Unit_Segment_Key.Value</Value>
+                            <Style />
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>Parent_Business_Unit_Segment_Key</rd:DefaultName>
+                    <Style>
+                      <Border>
+                        <Color>LightGrey</Color>
+                        <Style>Solid</Style>
+                      </Border>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixHeader>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
+              <Visibility>
+                <Hidden>true</Hidden>
+                <ToggleItem>Parent_Business_Unit_Segment_Key</ToggleItem>
+              </Visibility>
+            </TablixMember>
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="Parent_Account_Key">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Parent_Account_Key.UniqueName</GroupExpression>
+                </GroupExpressions>
+                <Parent>=Fields!Parent_Account_Key.ParentUniqueName</Parent>
+              </Group>
+              <SortExpressions>
+                <SortExpression>
+                  <Value>=Fields!Parent_Account_Key.Value</Value>
+                </SortExpression>
+              </SortExpressions>
+              <TablixHeader>
+                <Size>2.91667in</Size>
+                <CellContents>
+                  <Textbox Name="Parent_Account_Key">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>=Fields!Parent_Account_Key.Value</Value>
+                            <Style />
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>Parent_Account_Key</rd:DefaultName>
+                    <Style>
+                      <Border>
+                        <Color>LightGrey</Color>
+                        <Style>Solid</Style>
+                      </Border>
+                      <PaddingLeft>=Cstr(Fields!Parent_Account_Key.LevelNumber * 15) &amp; "pt"</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixHeader>
+              <Visibility>
+                <Hidden>true</Hidden>
+                <ToggleItem>Parent_Account_Key</ToggleItem>
+              </Visibility>
+            </TablixMember>
+            <TablixMember>
+              <TablixHeader>
+                <Size>2.91667in</Size>
+                <CellContents>
+                  <Textbox Name="Textbox9">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>Total</Value>
+                            <Style />
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>Textbox9</rd:DefaultName>
+                    <Style>
+                      <Border>
+                        <Color>LightGrey</Color>
+                        <Style>Solid</Style>
+                      </Border>
+                      <PaddingLeft>=Cstr(Fields!Parent_Account_Key.LevelNumber * 15) &amp; "pt"</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixHeader>
+              <KeepWithGroup>Before</KeepWithGroup>
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>DataSet1</DataSetName>
+        <Top>2.125in</Top>
+        <Left>0.00001in</Left>
+        <Height>0.75in</Height>
+        <Width>6.33334in</Width>
+        <Visibility>
+          <Hidden>=IIF(Globals!RenderFormat.Name="EXCEL",True,False)</Hidden>
+        </Visibility>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Tablix>
+      <Tablix Name="Tablix2">
+        <TablixCorner>
+          <TablixCornerRows>
+            <TablixCornerRow>
+              <TablixCornerCell>
+                <CellContents>
+                  <Textbox Name="Textbox5">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>Parent Account Key</Value>
+                            <Style />
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>Textbox4</rd:DefaultName>
+                    <Style>
+                      <Border>
+                        <Color>LightGrey</Color>
+                        <Style>Solid</Style>
+                      </Border>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixCornerCell>
+            </TablixCornerRow>
+          </TablixCornerRows>
+        </TablixCorner>
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>2.41667in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1in</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.25in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Actual_Amount2">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!Actual_Amount.Value)</Value>
+                              <Style>
+                                <Format>#,0.00</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Actual_Amount</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox13">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!Actual_Amount.Value) / ReportItems!Textbox14.Value</Value>
+                              <Style>
+                                <Format>0.00%</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox8</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.25in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox14">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!Actual_Amount.Value)</Value>
+                              <Style>
+                                <Format>#,0.00</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox10</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox15">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!Actual_Amount.Value) / ReportItems!Textbox14.Value</Value>
+                              <Style>
+                                <Format>0.00%</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox11</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="Parent_Business_Unit_Segment_Key2">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Parent_Business_Unit_Segment_Key.UniqueName</GroupExpression>
+                </GroupExpressions>
+                <Parent>=Fields!Parent_Business_Unit_Segment_Key.ParentUniqueName</Parent>
+              </Group>
+              <SortExpressions>
+                <SortExpression>
+                  <Value>=Fields!Parent_Business_Unit_Segment_Key.Value</Value>
+                </SortExpression>
+              </SortExpressions>
+              <TablixHeader>
+                <Size>0.25in</Size>
+                <CellContents>
+                  <Textbox Name="Parent_Business_Unit_Segment_Key2">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>=Fields!Parent_Business_Unit_Segment_Key.Value</Value>
+                            <Style />
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>Parent_Business_Unit_Segment_Key</rd:DefaultName>
+                    <Style>
+                      <Border>
+                        <Color>LightGrey</Color>
+                        <Style>Solid</Style>
+                      </Border>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixHeader>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
+              <Visibility>
+                <Hidden>true</Hidden>
+                <ToggleItem>Parent_Business_Unit_Segment_Key2</ToggleItem>
+              </Visibility>
+            </TablixMember>
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="Parent_Account_Key2">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Parent_Account_Key.UniqueName</GroupExpression>
+                </GroupExpressions>
+                <Parent>=Fields!Parent_Account_Key.ParentUniqueName</Parent>
+              </Group>
+              <SortExpressions>
+                <SortExpression>
+                  <Value>=Fields!Parent_Account_Key.Value</Value>
+                </SortExpression>
+              </SortExpressions>
+              <TablixHeader>
+                <Size>2.91667in</Size>
+                <CellContents>
+                  <Textbox Name="Parent_Account_Key2">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>=Fields!Parent_Account_Key.Value</Value>
+                            <Style />
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>Parent_Account_Key</rd:DefaultName>
+                    <Style>
+                      <Border>
+                        <Color>LightGrey</Color>
+                        <Style>Solid</Style>
+                      </Border>
+                      <PaddingLeft>=Cstr(Fields!Parent_Account_Key.LevelNumber * 15) &amp; "pt"</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixHeader>
+              <Visibility>
+                <Hidden>true</Hidden>
+                <ToggleItem>Parent_Account_Key2</ToggleItem>
+              </Visibility>
+            </TablixMember>
+            <TablixMember>
+              <TablixHeader>
+                <Size>2.91667in</Size>
+                <CellContents>
+                  <Textbox Name="Textbox12">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>Total</Value>
+                            <Style />
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>Textbox9</rd:DefaultName>
+                    <Style>
+                      <Border>
+                        <Color>LightGrey</Color>
+                        <Style>Solid</Style>
+                      </Border>
+                      <PaddingLeft>=Cstr(Fields!Parent_Account_Key.LevelNumber * 15) &amp; "pt"</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixHeader>
+              <KeepWithGroup>Before</KeepWithGroup>
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>DataSet2</DataSetName>
+        <Top>2.98958in</Top>
+        <Height>0.75in</Height>
+        <Width>6.33334in</Width>
+        <ZIndex>1</ZIndex>
+        <Visibility>
+          <Hidden>=IIF(Globals!RenderFormat.Name="EXCEL",True,False)</Hidden>
+        </Visibility>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Tablix>
+      <Chart Name="Chart1">
+        <ChartCategoryHierarchy>
+          <ChartMembers>
+            <ChartMember>
+              <Group Name="Chart1_CategoryGroup">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Parent_Business_Unit_Segment_Key.Value</GroupExpression>
+                </GroupExpressions>
+              </Group>
+              <SortExpressions>
+                <SortExpression>
+                  <Value>=Fields!Parent_Business_Unit_Segment_Key.Value</Value>
+                </SortExpression>
+              </SortExpressions>
+              <Label>=Fields!Parent_Business_Unit_Segment_Key.Value</Label>
+            </ChartMember>
+          </ChartMembers>
+        </ChartCategoryHierarchy>
+        <ChartSeriesHierarchy>
+          <ChartMembers>
+            <ChartMember>
+              <Label>Actual Amount</Label>
+            </ChartMember>
+          </ChartMembers>
+        </ChartSeriesHierarchy>
+        <ChartData>
+          <ChartSeriesCollection>
+            <ChartSeries Name="Actual_Amount">
+              <ChartDataPoints>
+                <ChartDataPoint>
+                  <ChartDataPointValues>
+                    <Y>=Sum(Fields!Actual_Amount.Value)</Y>
+                  </ChartDataPointValues>
+                  <ChartDataLabel>
+                    <Style />
+                  </ChartDataLabel>
+                  <Style />
+                  <ChartMarker>
+                    <Style />
+                  </ChartMarker>
+                  <DataElementOutput>Output</DataElementOutput>
+                </ChartDataPoint>
+              </ChartDataPoints>
+              <Style />
+              <ChartEmptyPoints>
+                <Style />
+                <ChartMarker>
+                  <Style />
+                </ChartMarker>
+                <ChartDataLabel>
+                  <Style />
+                </ChartDataLabel>
+              </ChartEmptyPoints>
+              <ValueAxisName>Primary</ValueAxisName>
+              <CategoryAxisName>Primary</CategoryAxisName>
+              <ChartSmartLabel>
+                <CalloutLineColor>Black</CalloutLineColor>
+                <MinMovingDistance>0pt</MinMovingDistance>
+              </ChartSmartLabel>
+            </ChartSeries>
+          </ChartSeriesCollection>
+        </ChartData>
+        <ChartAreas>
+          <ChartArea Name="Default">
+            <ChartCategoryAxes>
+              <ChartAxis Name="Primary">
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <ChartAxisTitle>
+                  <Caption>Axis Title</Caption>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </ChartAxisTitle>
+                <ChartMajorGridLines>
+                  <Enabled>False</Enabled>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                    </Border>
+                  </Style>
+                </ChartMajorGridLines>
+                <ChartMinorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                      <Style>Dotted</Style>
+                    </Border>
+                  </Style>
+                </ChartMinorGridLines>
+                <ChartMinorTickMarks>
+                  <Length>0.5</Length>
+                </ChartMinorTickMarks>
+                <CrossAt>NaN</CrossAt>
+                <Minimum>NaN</Minimum>
+                <Maximum>NaN</Maximum>
+                <ChartAxisScaleBreak>
+                  <Style />
+                </ChartAxisScaleBreak>
+              </ChartAxis>
+              <ChartAxis Name="Secondary">
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <ChartAxisTitle>
+                  <Caption>Axis Title</Caption>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </ChartAxisTitle>
+                <ChartMajorGridLines>
+                  <Enabled>False</Enabled>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                    </Border>
+                  </Style>
+                </ChartMajorGridLines>
+                <ChartMinorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                      <Style>Dotted</Style>
+                    </Border>
+                  </Style>
+                </ChartMinorGridLines>
+                <ChartMinorTickMarks>
+                  <Length>0.5</Length>
+                </ChartMinorTickMarks>
+                <CrossAt>NaN</CrossAt>
+                <Location>Opposite</Location>
+                <Minimum>NaN</Minimum>
+                <Maximum>NaN</Maximum>
+                <ChartAxisScaleBreak>
+                  <Style />
+                </ChartAxisScaleBreak>
+              </ChartAxis>
+            </ChartCategoryAxes>
+            <ChartValueAxes>
+              <ChartAxis Name="Primary">
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <ChartAxisTitle>
+                  <Caption>Axis Title</Caption>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </ChartAxisTitle>
+                <ChartMajorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                    </Border>
+                  </Style>
+                </ChartMajorGridLines>
+                <ChartMinorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                      <Style>Dotted</Style>
+                    </Border>
+                  </Style>
+                </ChartMinorGridLines>
+                <ChartMinorTickMarks>
+                  <Length>0.5</Length>
+                </ChartMinorTickMarks>
+                <CrossAt>NaN</CrossAt>
+                <Minimum>NaN</Minimum>
+                <Maximum>NaN</Maximum>
+                <ChartAxisScaleBreak>
+                  <Style />
+                </ChartAxisScaleBreak>
+              </ChartAxis>
+              <ChartAxis Name="Secondary">
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <ChartAxisTitle>
+                  <Caption>Axis Title</Caption>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </ChartAxisTitle>
+                <ChartMajorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                    </Border>
+                  </Style>
+                </ChartMajorGridLines>
+                <ChartMinorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                      <Style>Dotted</Style>
+                    </Border>
+                  </Style>
+                </ChartMinorGridLines>
+                <ChartMinorTickMarks>
+                  <Length>0.5</Length>
+                </ChartMinorTickMarks>
+                <CrossAt>NaN</CrossAt>
+                <Location>Opposite</Location>
+                <Minimum>NaN</Minimum>
+                <Maximum>NaN</Maximum>
+                <ChartAxisScaleBreak>
+                  <Style />
+                </ChartAxisScaleBreak>
+              </ChartAxis>
+            </ChartValueAxes>
+            <Style>
+              <BackgroundGradientType>None</BackgroundGradientType>
+            </Style>
+          </ChartArea>
+        </ChartAreas>
+        <ChartLegends>
+          <ChartLegend Name="Default">
+            <Style>
+              <BackgroundGradientType>None</BackgroundGradientType>
+              <FontSize>8pt</FontSize>
+            </Style>
+            <ChartLegendTitle>
+              <Caption />
+              <Style>
+                <FontSize>8pt</FontSize>
+                <FontWeight>Bold</FontWeight>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </ChartLegendTitle>
+            <HeaderSeparatorColor>Black</HeaderSeparatorColor>
+            <ColumnSeparatorColor>Black</ColumnSeparatorColor>
+          </ChartLegend>
+        </ChartLegends>
+        <ChartTitles>
+          <ChartTitle Name="Default">
+            <Caption>Chart Title</Caption>
+            <Style>
+              <BackgroundGradientType>None</BackgroundGradientType>
+              <FontWeight>Bold</FontWeight>
+              <TextAlign>General</TextAlign>
+              <VerticalAlign>Top</VerticalAlign>
+            </Style>
+          </ChartTitle>
+        </ChartTitles>
+        <Palette>BrightPastel</Palette>
+        <ChartBorderSkin>
+          <Style>
+            <BackgroundColor>Gray</BackgroundColor>
+            <BackgroundGradientType>None</BackgroundGradientType>
+            <Color>White</Color>
+          </Style>
+        </ChartBorderSkin>
+        <ChartNoDataMessage Name="NoDataMessage">
+          <Caption>No Data Available</Caption>
+          <Style>
+            <BackgroundGradientType>None</BackgroundGradientType>
+            <TextAlign>General</TextAlign>
+            <VerticalAlign>Top</VerticalAlign>
+          </Style>
+        </ChartNoDataMessage>
+        <DataSetName>DataSet1</DataSetName>
+        <Height>2in</Height>
+        <Width>3in</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <BackgroundColor>White</BackgroundColor>
+          <BackgroundGradientType>None</BackgroundGradientType>
+        </Style>
+      </Chart>
+    </ReportItems>
+    <Height>3.73958in</Height>
+    <Style />
+  </Body>
+  <Width>6.50001in</Width>
+  <Page>
+    <LeftMargin>1in</LeftMargin>
+    <RightMargin>1in</RightMargin>
+    <TopMargin>1in</TopMargin>
+    <BottomMargin>1in</BottomMargin>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DS">
+      <DataSourceReference>BIDS</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>bca56fb0-f9c9-445b-9a61-aab6407017e5</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Query>
+        <DataSourceName>DS</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="DimTimeYear">
+            <Value>=Parameters!DimTimeYear.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="DimTimeQuarter">
+            <Value>=Parameters!DimTimeQuarter.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="DimTimeMonth">
+            <Value>=Parameters!DimTimeMonth.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="FromDimTimeDate">
+            <Value>=Parameters!FromDimTimeDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="ToDimTimeDate">
+            <Value>=Parameters!ToDimTimeDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="DimCompanySegmentCompanySegement">
+            <Value>=Parameters!DimCompanySegmentCompanySegement.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="DimBusinessUnitSegmentParentBusinessUnitSegmentKey">
+            <Value>=Parameters!DimBusinessUnitSegmentParentBusinessUnitSegmentKey.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText> SELECT NON EMPTY { [Measures].[Actual Amount] } ON COLUMNS, NON EMPTY { (DESCENDANTS([Dim Account].[Parent Account Key].[Level 02].ALLMEMBERS) * DESCENDANTS([Dim Business Unit Segment].[Parent Business Unit Segment Key].[Level 02].ALLMEMBERS) ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME, PARENT_UNIQUE_NAME, LEVEL_NUMBER ON ROWS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentParentBusinessUnitSegmentKey, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOMEMBER(@FromDimTimeDate, CONSTRAINED) : STRTOMEMBER(@ToDimTimeDate, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeQuarter, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Dim Account].[Parent Account Key].&amp;[257] } ) ON COLUMNS FROM [RLG-Finance]))))))) WHERE ( IIF( STRTOSET(@DimTimeYear, CONSTRAINED).Count = 1, STRTOSET(@DimTimeYear, CONSTRAINED), [Dim Time].[Year].currentmember ), IIF( STRTOSET(@DimTimeQuarter, CONSTRAINED).Count = 1, STRTOSET(@DimTimeQuarter, CONSTRAINED), [Dim Time].[Quarter].currentmember ), IIF( STRTOSET(@DimTimeMonth, CONSTRAINED).Count = 1, STRTOSET(@DimTimeMonth, CONSTRAINED), [Dim Time].[Month].currentmember ), IIF( STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED).Count = 1, STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED), [Dim Company Segment].[Company Segement].currentmember ) ) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</CommandText>
+        <rd:DesignerState>
+          <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+            <CommandType>MDX</CommandType>
+            <QuerySpecification xsi:type="MDXQuerySpecification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <Select>
+                <Items>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Dim Account</DimensionName>
+                      <HierarchyName>Parent Account Key</HierarchyName>
+                      <HierarchyUniqueName>[Dim Account].[Parent Account Key]</HierarchyUniqueName>
+                      <LevelName>Level 02</LevelName>
+                      <UniqueName>[Dim Account].[Parent Account Key].[Level 02]</UniqueName>
+                    </ID>
+                    <ItemCaption>Parent Account Key</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                    <IsParentChild>true</IsParentChild>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Dim Business Unit Segment</DimensionName>
+                      <HierarchyName>Parent Business Unit Segment Key</HierarchyName>
+                      <HierarchyUniqueName>[Dim Business Unit Segment].[Parent Business Unit Segment Key]</HierarchyUniqueName>
+                      <LevelName>Level 02</LevelName>
+                      <UniqueName>[Dim Business Unit Segment].[Parent Business Unit Segment Key].[Level 02]</UniqueName>
+                    </ID>
+                    <ItemCaption>Parent Business Unit Segment Key</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                    <IsParentChild>true</IsParentChild>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>Actual Amount</MeasureName>
+                      <UniqueName>[Measures].[Actual Amount]</UniqueName>
+                    </ID>
+                    <ItemCaption>Actual Amount</ItemCaption>
+                    <BackColor>true</BackColor>
+                    <ForeColor>true</ForeColor>
+                    <FontFamily>true</FontFamily>
+                    <FontSize>true</FontSize>
+                    <FontWeight>true</FontWeight>
+                    <FontStyle>true</FontStyle>
+                    <FontDecoration>true</FontDecoration>
+                    <FormattedValue>true</FormattedValue>
+                    <FormatString>true</FormatString>
+                  </Item>
+                </Items>
+              </Select>
+              <From>RLG-Finance</From>
+              <Filter>
+                <FilterItems>
+                  <FilterItem>
+                    <HierarchyUniqueName>[Dim Account].[Parent Account Key]</HierarchyUniqueName>
+                    <Condition xsi:type="EqualTo">
+                      <Members>
+                        <Member>
+                          <MemberUniqueName>[Dim Account].[Parent Account Key].&amp;[257]</MemberUniqueName>
+                        </Member>
+                      </Members>
+                    </Condition>
+                  </FilterItem>
+                  <FilterItem>
+                    <HierarchyUniqueName>[Dim Time].[Year]</HierarchyUniqueName>
+                    <Condition xsi:type="EqualTo">
+                      <Members>
+                        <Member>
+                          <MemberUniqueName>[Dim Time].[Year].&amp;[2013]</MemberUniqueName>
+                        </Member>
+                      </Members>
+                      <Parametrized>true</Parametrized>
+                    </Condition>
+                  </FilterItem>
+                  <FilterItem>
+                    <HierarchyUniqueName>[Dim Time].[Quarter]</HierarchyUniqueName>
+                    <Condition xsi:type="EqualTo">
+                      <Members>
+                        <Member>
+                          <MemberUniqueName>[Dim Time].[Quarter].[All]</MemberUniqueName>
+                        </Member>
+                      </Members>
+                      <Parametrized>true</Parametrized>
+                    </Condition>
+                  </FilterItem>
+                  <FilterItem>
+                    <HierarchyUniqueName>[Dim Time].[Month]</HierarchyUniqueName>
+                    <Condition xsi:type="EqualTo">
+                      <Members>
+                        <Member>
+                          <MemberUniqueName>[Dim Time].[Month].[All]</MemberUniqueName>
+                        </Member>
+                      </Members>
+                      <Parametrized>true</Parametrized>
+                    </Condition>
+                  </FilterItem>
+                  <FilterItem>
+                    <HierarchyUniqueName>[Dim Time].[Date]</HierarchyUniqueName>
+                    <Condition xsi:type="Range">
+                      <Basis>Member</Basis>
+                      <From>[Dim Time].[Date].[All]</From>
+                      <FromParametrized>true</FromParametrized>
+                      <To>[Dim Time].[Date].[All]</To>
+                      <ToParametrized>true</ToParametrized>
+                    </Condition>
+                  </FilterItem>
+                  <FilterItem>
+                    <HierarchyUniqueName>[Dim Company Segment].[Company Segement]</HierarchyUniqueName>
+                    <Condition xsi:type="EqualTo">
+                      <Members>
+                        <Member>
+                          <MemberUniqueName>[Dim Company Segment].[Company Segement].[All]</MemberUniqueName>
+                        </Member>
+                      </Members>
+                      <Parametrized>true</Parametrized>
+                    </Condition>
+                  </FilterItem>
+                  <FilterItem>
+                    <HierarchyUniqueName>[Dim Business Unit Segment].[Parent Business Unit Segment Key]</HierarchyUniqueName>
+                    <Condition xsi:type="EqualTo">
+                      <Members>
+                        <Member>
+                          <MemberUniqueName>[Dim Business Unit Segment].[Parent Business Unit Segment Key].[All]</MemberUniqueName>
+                        </Member>
+                      </Members>
+                      <Parametrized>true</Parametrized>
+                    </Condition>
+                  </FilterItem>
+                </FilterItems>
+              </Filter>
+              <Calculations />
+              <Aggregates />
+              <QueryProperties />
+            </QuerySpecification>
+            <Query>
+              <Statement> SELECT NON EMPTY { [Measures].[Actual Amount] } ON COLUMNS, NON EMPTY { (DESCENDANTS([Dim Account].[Parent Account Key].[Level 02].ALLMEMBERS) * DESCENDANTS([Dim Business Unit Segment].[Parent Business Unit Segment Key].[Level 02].ALLMEMBERS) ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME, PARENT_UNIQUE_NAME, LEVEL_NUMBER ON ROWS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentParentBusinessUnitSegmentKey, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOMEMBER(@FromDimTimeDate, CONSTRAINED) : STRTOMEMBER(@ToDimTimeDate, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeQuarter, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Dim Account].[Parent Account Key].&amp;[257] } ) ON COLUMNS FROM [RLG-Finance]))))))) WHERE ( IIF( STRTOSET(@DimTimeYear, CONSTRAINED).Count = 1, STRTOSET(@DimTimeYear, CONSTRAINED), [Dim Time].[Year].currentmember ), IIF( STRTOSET(@DimTimeQuarter, CONSTRAINED).Count = 1, STRTOSET(@DimTimeQuarter, CONSTRAINED), [Dim Time].[Quarter].currentmember ), IIF( STRTOSET(@DimTimeMonth, CONSTRAINED).Count = 1, STRTOSET(@DimTimeMonth, CONSTRAINED), [Dim Time].[Month].currentmember ), IIF( STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED).Count = 1, STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED), [Dim Company Segment].[Company Segement].currentmember ) ) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</Statement>
+              <ParameterDefinitions>
+                <ParameterDefinition>
+                  <Name>DimTimeYear</Name>
+                  <DefaultValues>
+                    <DefaultValue>[Dim Time].[Year].&amp;[2013]</DefaultValue>
+                  </DefaultValues>
+                  <Caption>Year</Caption>
+                  <HierarchyUniqueName>[Dim Time].[Year]</HierarchyUniqueName>
+                  <ParameterValuesQuery>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Year].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Year].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Year].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Year].ALLMEMBERS ON ROWS FROM ( SELECT ( { [Dim Account].[Parent Account Key].&amp;[257] } ) ON COLUMNS FROM [RLG-Finance])</Statement>
+                    <ParameterizedStatement>
+                      <ReferencedParameters />
+                    </ParameterizedStatement>
+                  </ParameterValuesQuery>
+                  <MultipleValues>true</MultipleValues>
+                </ParameterDefinition>
+                <ParameterDefinition>
+                  <Name>DimTimeQuarter</Name>
+                  <DefaultValues>
+                    <DefaultValue>[Dim Time].[Quarter].[All]</DefaultValue>
+                  </DefaultValues>
+                  <Caption>Quarter</Caption>
+                  <HierarchyUniqueName>[Dim Time].[Quarter]</HierarchyUniqueName>
+                  <ParameterValuesQuery>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Quarter].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Quarter].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Quarter].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Quarter].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimTimeYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Dim Account].[Parent Account Key].&amp;[257] } ) ON COLUMNS FROM [RLG-Finance]))</Statement>
+                    <ParameterizedStatement>
+                      <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Quarter].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Quarter].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Quarter].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Quarter].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimTimeYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Dim Account].[Parent Account Key].&amp;[257] } ) ON COLUMNS FROM [RLG-Finance]))</Statement>
+                      <ReferencedParameters>
+                        <ReferencedParameter>
+                          <Name>DimTimeYear</Name>
+                        </ReferencedParameter>
+                      </ReferencedParameters>
+                    </ParameterizedStatement>
+                  </ParameterValuesQuery>
+                  <MultipleValues>true</MultipleValues>
+                </ParameterDefinition>
+                <ParameterDefinition>
+                  <Name>DimTimeMonth</Name>
+                  <DefaultValues>
+                    <DefaultValue>[Dim Time].[Month].[All]</DefaultValue>
+                  </DefaultValues>
+                  <Caption>Month</Caption>
+                  <HierarchyUniqueName>[Dim Time].[Month]</HierarchyUniqueName>
+                  <ParameterValuesQuery>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Month].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Month].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Month].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Month].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimTimeQuarter, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Dim Account].[Parent Account Key].&amp;[257] } ) ON COLUMNS FROM [RLG-Finance])))</Statement>
+                    <ParameterizedStatement>
+                      <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Month].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Month].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Month].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Month].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimTimeQuarter, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Dim Account].[Parent Account Key].&amp;[257] } ) ON COLUMNS FROM [RLG-Finance])))</Statement>
+                      <ReferencedParameters>
+                        <ReferencedParameter>
+                          <Name>DimTimeYear</Name>
+                        </ReferencedParameter>
+                        <ReferencedParameter>
+                          <Name>DimTimeQuarter</Name>
+                        </ReferencedParameter>
+                      </ReferencedParameters>
+                    </ParameterizedStatement>
+                  </ParameterValuesQuery>
+                  <MultipleValues>true</MultipleValues>
+                </ParameterDefinition>
+                <ParameterDefinition>
+                  <Name>FromDimTimeDate</Name>
+                  <Usage>RangeFrom</Usage>
+                  <DefaultValues>
+                    <DefaultValue>[Dim Time].[Date].[All]</DefaultValue>
+                  </DefaultValues>
+                  <Caption>From Date</Caption>
+                  <HierarchyUniqueName>[Dim Time].[Date]</HierarchyUniqueName>
+                  <ParameterValuesQuery>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Date].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Date].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Date].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Date].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimTimeMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeQuarter, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Dim Account].[Parent Account Key].&amp;[257] } ) ON COLUMNS FROM [RLG-Finance]))))</Statement>
+                    <ParameterizedStatement>
+                      <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Date].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Date].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Date].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Date].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimTimeMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeQuarter, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Dim Account].[Parent Account Key].&amp;[257] } ) ON COLUMNS FROM [RLG-Finance]))))</Statement>
+                      <ReferencedParameters>
+                        <ReferencedParameter>
+                          <Name>DimTimeYear</Name>
+                        </ReferencedParameter>
+                        <ReferencedParameter>
+                          <Name>DimTimeQuarter</Name>
+                        </ReferencedParameter>
+                        <ReferencedParameter>
+                          <Name>DimTimeMonth</Name>
+                        </ReferencedParameter>
+                      </ReferencedParameters>
+                    </ParameterizedStatement>
+                  </ParameterValuesQuery>
+                </ParameterDefinition>
+                <ParameterDefinition>
+                  <Name>ToDimTimeDate</Name>
+                  <Usage>RangeTo</Usage>
+                  <DefaultValues>
+                    <DefaultValue>[Dim Time].[Date].[All]</DefaultValue>
+                  </DefaultValues>
+                  <Caption>To Date</Caption>
+                  <HierarchyUniqueName>[Dim Time].[Date]</HierarchyUniqueName>
+                  <ParameterValuesQuery>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Date].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Date].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Date].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Date].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimTimeMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeQuarter, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Dim Account].[Parent Account Key].&amp;[257] } ) ON COLUMNS FROM [RLG-Finance]))))</Statement>
+                    <ParameterizedStatement>
+                      <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Date].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Date].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Date].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Date].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimTimeMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeQuarter, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Dim Account].[Parent Account Key].&amp;[257] } ) ON COLUMNS FROM [RLG-Finance]))))</Statement>
+                      <ReferencedParameters>
+                        <ReferencedParameter>
+                          <Name>DimTimeYear</Name>
+                        </ReferencedParameter>
+                        <ReferencedParameter>
+                          <Name>DimTimeQuarter</Name>
+                        </ReferencedParameter>
+                        <ReferencedParameter>
+                          <Name>DimTimeMonth</Name>
+                        </ReferencedParameter>
+                      </ReferencedParameters>
+                    </ParameterizedStatement>
+                  </ParameterValuesQuery>
+                </ParameterDefinition>
+                <ParameterDefinition>
+                  <Name>DimCompanySegmentCompanySegement</Name>
+                  <DefaultValues>
+                    <DefaultValue>[Dim Company Segment].[Company Segement].[All]</DefaultValue>
+                  </DefaultValues>
+                  <Caption>Company Segement</Caption>
+                  <HierarchyUniqueName>[Dim Company Segment].[Company Segement]</HierarchyUniqueName>
+                  <ParameterValuesQuery>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Company Segment].[Company Segement].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Company Segment].[Company Segement].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Company Segment].[Company Segement].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Company Segment].[Company Segement].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOMEMBER(@FromDimTimeDate, CONSTRAINED) : STRTOMEMBER(@ToDimTimeDate, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeQuarter, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Dim Account].[Parent Account Key].&amp;[257] } ) ON COLUMNS FROM [RLG-Finance])))))</Statement>
+                    <ParameterizedStatement>
+                      <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Company Segment].[Company Segement].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Company Segment].[Company Segement].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Company Segment].[Company Segement].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Company Segment].[Company Segement].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOMEMBER(@FromDimTimeDate, CONSTRAINED) : STRTOMEMBER(@ToDimTimeDate, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeQuarter, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Dim Account].[Parent Account Key].&amp;[257] } ) ON COLUMNS FROM [RLG-Finance])))))</Statement>
+                      <ReferencedParameters>
+                        <ReferencedParameter>
+                          <Name>DimTimeYear</Name>
+                        </ReferencedParameter>
+                        <ReferencedParameter>
+                          <Name>DimTimeQuarter</Name>
+                        </ReferencedParameter>
+                        <ReferencedParameter>
+                          <Name>DimTimeMonth</Name>
+                        </ReferencedParameter>
+                        <ReferencedParameter>
+                          <Name>FromDimTimeDate</Name>
+                        </ReferencedParameter>
+                        <ReferencedParameter>
+                          <Name>ToDimTimeDate</Name>
+                        </ReferencedParameter>
+                      </ReferencedParameters>
+                    </ParameterizedStatement>
+                  </ParameterValuesQuery>
+                  <MultipleValues>true</MultipleValues>
+                </ParameterDefinition>
+                <ParameterDefinition>
+                  <Name>DimBusinessUnitSegmentParentBusinessUnitSegmentKey</Name>
+                  <DefaultValues>
+                    <DefaultValue>[Dim Business Unit Segment].[Parent Business Unit Segment Key].[All]</DefaultValue>
+                  </DefaultValues>
+                  <Caption>Parent Business Unit Segment Key</Caption>
+                  <HierarchyUniqueName>[Dim Business Unit Segment].[Parent Business Unit Segment Key]</HierarchyUniqueName>
+                  <ParameterValuesQuery>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Unit Segment].[Parent Business Unit Segment Key].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Unit Segment].[Parent Business Unit Segment Key].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Unit Segment].[Parent Business Unit Segment Key].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Unit Segment].[Parent Business Unit Segment Key].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOMEMBER(@FromDimTimeDate, CONSTRAINED) : STRTOMEMBER(@ToDimTimeDate, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeQuarter, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Dim Account].[Parent Account Key].&amp;[257] } ) ON COLUMNS FROM [RLG-Finance]))))))</Statement>
+                    <ParameterizedStatement>
+                      <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Unit Segment].[Parent Business Unit Segment Key].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Unit Segment].[Parent Business Unit Segment Key].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Unit Segment].[Parent Business Unit Segment Key].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Unit Segment].[Parent Business Unit Segment Key].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOMEMBER(@FromDimTimeDate, CONSTRAINED) : STRTOMEMBER(@ToDimTimeDate, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeQuarter, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Dim Account].[Parent Account Key].&amp;[257] } ) ON COLUMNS FROM [RLG-Finance]))))))</Statement>
+                      <ReferencedParameters>
+                        <ReferencedParameter>
+                          <Name>DimTimeYear</Name>
+                        </ReferencedParameter>
+                        <ReferencedParameter>
+                          <Name>DimTimeQuarter</Name>
+                        </ReferencedParameter>
+                        <ReferencedParameter>
+                          <Name>DimTimeMonth</Name>
+                        </ReferencedParameter>
+                        <ReferencedParameter>
+                          <Name>FromDimTimeDate</Name>
+                        </ReferencedParameter>
+                        <ReferencedParameter>
+                          <Name>ToDimTimeDate</Name>
+                        </ReferencedParameter>
+                        <ReferencedParameter>
+                          <Name>DimCompanySegmentCompanySegement</Name>
+                        </ReferencedParameter>
+                      </ReferencedParameters>
+                    </ParameterizedStatement>
+                  </ParameterValuesQuery>
+                  <MultipleValues>true</MultipleValues>
+                </ParameterDefinition>
+              </ParameterDefinitions>
+            </Query>
+          </QueryDefinition>
+        </rd:DesignerState>
+      </Query>
+      <Fields>
+        <Field Name="Parent_Account_Key">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Dim Account].[Parent Account Key]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Parent_Business_Unit_Segment_Key">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Dim Business Unit Segment].[Parent Business Unit Segment Key]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Actual_Amount">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Actual Amount]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="DimTimeYear">
+      <Query>
+        <DataSourceName>DS</DataSourceName>
+        <CommandText>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Year].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Year].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Year].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Year].ALLMEMBERS ON ROWS FROM [RLG-Finance]</CommandText>
+        <rd:DesignerState>
+          <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+            <CommandType>MDX</CommandType>
+            <Type>Query</Type>
+            <QuerySpecification xsi:type="MDXQuerySpecification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <Select>
+                <Items>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterCaption</MeasureName>
+                      <UniqueName>[Measures].[ParameterCaption]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterCaption</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterValue</MeasureName>
+                      <UniqueName>[Measures].[ParameterValue]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterValue</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterLevel</MeasureName>
+                      <UniqueName>[Measures].[ParameterLevel]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterLevel</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                </Items>
+              </Select>
+              <From>RLG-Finance</From>
+              <Filter>
+                <FilterItems />
+              </Filter>
+              <Calculations />
+              <Aggregates />
+              <QueryProperties />
+            </QuerySpecification>
+            <Query>
+              <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Year].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Year].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Year].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Year].ALLMEMBERS ON ROWS FROM [RLG-Finance]</Statement>
+              <ParameterDefinitions />
+            </Query>
+          </QueryDefinition>
+        </rd:DesignerState>
+        <rd:AutoGenerated>true</rd:AutoGenerated>
+        <rd:Hidden>true</rd:Hidden>
+      </Query>
+      <Fields>
+        <Field Name="ParameterCaption">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterCaption]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterValue">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterValue]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterLevel">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterLevel]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterCaptionIndented">
+          <Value>=Space(3*Fields!ParameterLevel.Value) + Fields!ParameterCaption.Value</Value>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="DimTimeQuarter">
+      <Query>
+        <DataSourceName>DS</DataSourceName>
+        <CommandText>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Quarter].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Quarter].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Quarter].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Quarter].ALLMEMBERS ON ROWS FROM [RLG-Finance]</CommandText>
+        <rd:DesignerState>
+          <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+            <CommandType>MDX</CommandType>
+            <Type>Query</Type>
+            <QuerySpecification xsi:type="MDXQuerySpecification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <Select>
+                <Items>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterCaption</MeasureName>
+                      <UniqueName>[Measures].[ParameterCaption]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterCaption</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterValue</MeasureName>
+                      <UniqueName>[Measures].[ParameterValue]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterValue</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterLevel</MeasureName>
+                      <UniqueName>[Measures].[ParameterLevel]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterLevel</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                </Items>
+              </Select>
+              <From>RLG-Finance</From>
+              <Filter>
+                <FilterItems />
+              </Filter>
+              <Calculations />
+              <Aggregates />
+              <QueryProperties />
+            </QuerySpecification>
+            <Query>
+              <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Quarter].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Quarter].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Quarter].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Quarter].ALLMEMBERS ON ROWS FROM [RLG-Finance]</Statement>
+              <ParameterDefinitions />
+            </Query>
+          </QueryDefinition>
+        </rd:DesignerState>
+        <rd:AutoGenerated>true</rd:AutoGenerated>
+        <rd:Hidden>true</rd:Hidden>
+      </Query>
+      <Fields>
+        <Field Name="ParameterCaption">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterCaption]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterValue">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterValue]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterLevel">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterLevel]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterCaptionIndented">
+          <Value>=Space(3*Fields!ParameterLevel.Value) + Fields!ParameterCaption.Value</Value>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="DimTimeMonth">
+      <Query>
+        <DataSourceName>DS</DataSourceName>
+        <CommandText>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Month].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Month].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Month].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Month].ALLMEMBERS ON ROWS FROM [RLG-Finance]</CommandText>
+        <rd:DesignerState>
+          <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+            <CommandType>MDX</CommandType>
+            <Type>Query</Type>
+            <QuerySpecification xsi:type="MDXQuerySpecification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <Select>
+                <Items>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterCaption</MeasureName>
+                      <UniqueName>[Measures].[ParameterCaption]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterCaption</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterValue</MeasureName>
+                      <UniqueName>[Measures].[ParameterValue]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterValue</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterLevel</MeasureName>
+                      <UniqueName>[Measures].[ParameterLevel]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterLevel</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                </Items>
+              </Select>
+              <From>RLG-Finance</From>
+              <Filter>
+                <FilterItems />
+              </Filter>
+              <Calculations />
+              <Aggregates />
+              <QueryProperties />
+            </QuerySpecification>
+            <Query>
+              <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Month].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Month].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Month].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Month].ALLMEMBERS ON ROWS FROM [RLG-Finance]</Statement>
+              <ParameterDefinitions />
+            </Query>
+          </QueryDefinition>
+        </rd:DesignerState>
+        <rd:AutoGenerated>true</rd:AutoGenerated>
+        <rd:Hidden>true</rd:Hidden>
+      </Query>
+      <Fields>
+        <Field Name="ParameterCaption">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterCaption]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterValue">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterValue]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterLevel">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterLevel]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterCaptionIndented">
+          <Value>=Space(3*Fields!ParameterLevel.Value) + Fields!ParameterCaption.Value</Value>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="FromDimTimeDate">
+      <Query>
+        <DataSourceName>DS</DataSourceName>
+        <CommandText>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Date].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Date].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Date].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Date].ALLMEMBERS ON ROWS FROM [RLG-Finance]</CommandText>
+        <rd:DesignerState>
+          <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+            <CommandType>MDX</CommandType>
+            <Type>Query</Type>
+            <QuerySpecification xsi:type="MDXQuerySpecification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <Select>
+                <Items>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterCaption</MeasureName>
+                      <UniqueName>[Measures].[ParameterCaption]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterCaption</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterValue</MeasureName>
+                      <UniqueName>[Measures].[ParameterValue]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterValue</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterLevel</MeasureName>
+                      <UniqueName>[Measures].[ParameterLevel]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterLevel</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                </Items>
+              </Select>
+              <From>RLG-Finance</From>
+              <Filter>
+                <FilterItems />
+              </Filter>
+              <Calculations />
+              <Aggregates />
+              <QueryProperties />
+            </QuerySpecification>
+            <Query>
+              <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Date].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Date].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Date].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Date].ALLMEMBERS ON ROWS FROM [RLG-Finance]</Statement>
+              <ParameterDefinitions />
+            </Query>
+          </QueryDefinition>
+        </rd:DesignerState>
+        <rd:AutoGenerated>true</rd:AutoGenerated>
+        <rd:Hidden>true</rd:Hidden>
+      </Query>
+      <Fields>
+        <Field Name="ParameterCaption">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterCaption]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterValue">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterValue]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterLevel">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterLevel]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterCaptionIndented">
+          <Value>=Space(3*Fields!ParameterLevel.Value) + Fields!ParameterCaption.Value</Value>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="ToDimTimeDate">
+      <Query>
+        <DataSourceName>DS</DataSourceName>
+        <CommandText>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Date].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Date].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Date].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Date].ALLMEMBERS ON ROWS FROM [RLG-Finance]</CommandText>
+        <rd:DesignerState>
+          <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+            <CommandType>MDX</CommandType>
+            <Type>Query</Type>
+            <QuerySpecification xsi:type="MDXQuerySpecification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <Select>
+                <Items>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterCaption</MeasureName>
+                      <UniqueName>[Measures].[ParameterCaption]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterCaption</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterValue</MeasureName>
+                      <UniqueName>[Measures].[ParameterValue]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterValue</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterLevel</MeasureName>
+                      <UniqueName>[Measures].[ParameterLevel]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterLevel</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                </Items>
+              </Select>
+              <From>RLG-Finance</From>
+              <Filter>
+                <FilterItems />
+              </Filter>
+              <Calculations />
+              <Aggregates />
+              <QueryProperties />
+            </QuerySpecification>
+            <Query>
+              <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Date].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Date].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Date].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Date].ALLMEMBERS ON ROWS FROM [RLG-Finance]</Statement>
+              <ParameterDefinitions />
+            </Query>
+          </QueryDefinition>
+        </rd:DesignerState>
+        <rd:AutoGenerated>true</rd:AutoGenerated>
+        <rd:Hidden>true</rd:Hidden>
+      </Query>
+      <Fields>
+        <Field Name="ParameterCaption">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterCaption]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterValue">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterValue]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterLevel">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterLevel]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterCaptionIndented">
+          <Value>=Space(3*Fields!ParameterLevel.Value) + Fields!ParameterCaption.Value</Value>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="DimCompanySegmentCompanySegement">
+      <Query>
+        <DataSourceName>DS</DataSourceName>
+        <CommandText>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Company Segment].[Company Segement].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Company Segment].[Company Segement].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Company Segment].[Company Segement].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Company Segment].[Company Segement].ALLMEMBERS ON ROWS FROM [RLG-Finance]</CommandText>
+        <rd:DesignerState>
+          <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+            <CommandType>MDX</CommandType>
+            <Type>Query</Type>
+            <QuerySpecification xsi:type="MDXQuerySpecification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <Select>
+                <Items>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterCaption</MeasureName>
+                      <UniqueName>[Measures].[ParameterCaption]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterCaption</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterValue</MeasureName>
+                      <UniqueName>[Measures].[ParameterValue]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterValue</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterLevel</MeasureName>
+                      <UniqueName>[Measures].[ParameterLevel]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterLevel</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                </Items>
+              </Select>
+              <From>RLG-Finance</From>
+              <Filter>
+                <FilterItems />
+              </Filter>
+              <Calculations />
+              <Aggregates />
+              <QueryProperties />
+            </QuerySpecification>
+            <Query>
+              <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Company Segment].[Company Segement].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Company Segment].[Company Segement].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Company Segment].[Company Segement].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Company Segment].[Company Segement].ALLMEMBERS ON ROWS FROM [RLG-Finance]</Statement>
+              <ParameterDefinitions />
+            </Query>
+          </QueryDefinition>
+        </rd:DesignerState>
+        <rd:AutoGenerated>true</rd:AutoGenerated>
+        <rd:Hidden>true</rd:Hidden>
+      </Query>
+      <Fields>
+        <Field Name="ParameterCaption">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterCaption]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterValue">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterValue]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterLevel">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterLevel]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterCaptionIndented">
+          <Value>=Space(3*Fields!ParameterLevel.Value) + Fields!ParameterCaption.Value</Value>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="DimBusinessUnitSegmentParentBusinessUnitSegmentKey">
+      <Query>
+        <DataSourceName>DS</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="DimTimeYear">
+            <Value>=Parameters!DimTimeYear.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="DimTimeQuarter">
+            <Value>=Parameters!DimTimeQuarter.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="DimTimeMonth">
+            <Value>=Parameters!DimTimeMonth.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="FromDimTimeDate">
+            <Value>=Parameters!FromDimTimeDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="ToDimTimeDate">
+            <Value>=Parameters!ToDimTimeDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="DimCompanySegmentCompanySegement">
+            <Value>=Parameters!DimCompanySegmentCompanySegement.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Unit Segment].[Parent Business Unit Segment Key].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Unit Segment].[Parent Business Unit Segment Key].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Unit Segment].[Parent Business Unit Segment Key].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Unit Segment].[Parent Business Unit Segment Key].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOMEMBER(@FromDimTimeDate, CONSTRAINED) : STRTOMEMBER(@ToDimTimeDate, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeQuarter, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Dim Account].[Parent Account Key].&amp;[257] } ) ON COLUMNS FROM [RLG-Finance]))))))</CommandText>
+        <rd:DesignerState>
+          <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+            <CommandType>MDX</CommandType>
+            <Type>Query</Type>
+            <QuerySpecification xsi:type="MDXQuerySpecification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <Select>
+                <Items>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterCaption</MeasureName>
+                      <UniqueName>[Measures].[ParameterCaption]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterCaption</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterValue</MeasureName>
+                      <UniqueName>[Measures].[ParameterValue]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterValue</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterLevel</MeasureName>
+                      <UniqueName>[Measures].[ParameterLevel]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterLevel</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                </Items>
+              </Select>
+              <From>RLG-Finance</From>
+              <Filter>
+                <FilterItems />
+              </Filter>
+              <Calculations />
+              <Aggregates />
+              <QueryProperties />
+            </QuerySpecification>
+            <Query>
+              <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Unit Segment].[Parent Business Unit Segment Key].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Unit Segment].[Parent Business Unit Segment Key].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Unit Segment].[Parent Business Unit Segment Key].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Unit Segment].[Parent Business Unit Segment Key].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOMEMBER(@FromDimTimeDate, CONSTRAINED) : STRTOMEMBER(@ToDimTimeDate, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeQuarter, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Dim Account].[Parent Account Key].&amp;[257] } ) ON COLUMNS FROM [RLG-Finance]))))))</Statement>
+              <ParameterDefinitions>
+                <ParameterDefinition>
+                  <Name>DimTimeYear</Name>
+                  <DefaultValues>
+                    <DefaultValue>[Dim Time].[Year].&amp;[2013]</DefaultValue>
+                  </DefaultValues>
+                  <Caption>Year</Caption>
+                  <HierarchyUniqueName>[Dim Time].[Year]</HierarchyUniqueName>
+                  <ParameterValuesQuery>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Year].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Year].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Year].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Year].ALLMEMBERS ON ROWS FROM ( SELECT ( { [Dim Account].[Parent Account Key].&amp;[257] } ) ON COLUMNS FROM [RLG-Finance])</Statement>
+                    <ParameterizedStatement>
+                      <ReferencedParameters />
+                    </ParameterizedStatement>
+                  </ParameterValuesQuery>
+                  <MultipleValues>true</MultipleValues>
+                </ParameterDefinition>
+                <ParameterDefinition>
+                  <Name>DimTimeQuarter</Name>
+                  <DefaultValues>
+                    <DefaultValue>[Dim Time].[Quarter].[All]</DefaultValue>
+                  </DefaultValues>
+                  <Caption>Quarter</Caption>
+                  <HierarchyUniqueName>[Dim Time].[Quarter]</HierarchyUniqueName>
+                  <ParameterValuesQuery>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Quarter].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Quarter].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Quarter].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Quarter].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimTimeYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Dim Account].[Parent Account Key].&amp;[257] } ) ON COLUMNS FROM [RLG-Finance]))</Statement>
+                    <ParameterizedStatement>
+                      <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Quarter].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Quarter].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Quarter].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Quarter].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimTimeYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Dim Account].[Parent Account Key].&amp;[257] } ) ON COLUMNS FROM [RLG-Finance]))</Statement>
+                      <ReferencedParameters>
+                        <ReferencedParameter>
+                          <Name>DimTimeYear</Name>
+                        </ReferencedParameter>
+                      </ReferencedParameters>
+                    </ParameterizedStatement>
+                  </ParameterValuesQuery>
+                  <MultipleValues>true</MultipleValues>
+                </ParameterDefinition>
+                <ParameterDefinition>
+                  <Name>DimTimeMonth</Name>
+                  <DefaultValues>
+                    <DefaultValue>[Dim Time].[Month].[All]</DefaultValue>
+                  </DefaultValues>
+                  <Caption>Month</Caption>
+                  <HierarchyUniqueName>[Dim Time].[Month]</HierarchyUniqueName>
+                  <ParameterValuesQuery>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Month].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Month].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Month].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Month].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimTimeQuarter, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Dim Account].[Parent Account Key].&amp;[257] } ) ON COLUMNS FROM [RLG-Finance])))</Statement>
+                    <ParameterizedStatement>
+                      <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Month].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Month].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Month].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Month].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimTimeQuarter, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Dim Account].[Parent Account Key].&amp;[257] } ) ON COLUMNS FROM [RLG-Finance])))</Statement>
+                      <ReferencedParameters>
+                        <ReferencedParameter>
+                          <Name>DimTimeYear</Name>
+                        </ReferencedParameter>
+                        <ReferencedParameter>
+                          <Name>DimTimeQuarter</Name>
+                        </ReferencedParameter>
+                      </ReferencedParameters>
+                    </ParameterizedStatement>
+                  </ParameterValuesQuery>
+                  <MultipleValues>true</MultipleValues>
+                </ParameterDefinition>
+                <ParameterDefinition>
+                  <Name>FromDimTimeDate</Name>
+                  <Usage>RangeFrom</Usage>
+                  <DefaultValues>
+                    <DefaultValue>[Dim Time].[Date].[All]</DefaultValue>
+                  </DefaultValues>
+                  <Caption>From Date</Caption>
+                  <HierarchyUniqueName>[Dim Time].[Date]</HierarchyUniqueName>
+                  <ParameterValuesQuery>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Date].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Date].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Date].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Date].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimTimeMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeQuarter, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Dim Account].[Parent Account Key].&amp;[257] } ) ON COLUMNS FROM [RLG-Finance]))))</Statement>
+                    <ParameterizedStatement>
+                      <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Date].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Date].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Date].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Date].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimTimeMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeQuarter, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Dim Account].[Parent Account Key].&amp;[257] } ) ON COLUMNS FROM [RLG-Finance]))))</Statement>
+                      <ReferencedParameters>
+                        <ReferencedParameter>
+                          <Name>DimTimeYear</Name>
+                        </ReferencedParameter>
+                        <ReferencedParameter>
+                          <Name>DimTimeQuarter</Name>
+                        </ReferencedParameter>
+                        <ReferencedParameter>
+                          <Name>DimTimeMonth</Name>
+                        </ReferencedParameter>
+                      </ReferencedParameters>
+                    </ParameterizedStatement>
+                  </ParameterValuesQuery>
+                </ParameterDefinition>
+                <ParameterDefinition>
+                  <Name>ToDimTimeDate</Name>
+                  <Usage>RangeTo</Usage>
+                  <DefaultValues>
+                    <DefaultValue>[Dim Time].[Date].[All]</DefaultValue>
+                  </DefaultValues>
+                  <Caption>To Date</Caption>
+                  <HierarchyUniqueName>[Dim Time].[Date]</HierarchyUniqueName>
+                  <ParameterValuesQuery>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Date].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Date].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Date].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Date].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimTimeMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeQuarter, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Dim Account].[Parent Account Key].&amp;[257] } ) ON COLUMNS FROM [RLG-Finance]))))</Statement>
+                    <ParameterizedStatement>
+                      <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Date].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Date].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Date].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Date].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimTimeMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeQuarter, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Dim Account].[Parent Account Key].&amp;[257] } ) ON COLUMNS FROM [RLG-Finance]))))</Statement>
+                      <ReferencedParameters>
+                        <ReferencedParameter>
+                          <Name>DimTimeYear</Name>
+                        </ReferencedParameter>
+                        <ReferencedParameter>
+                          <Name>DimTimeQuarter</Name>
+                        </ReferencedParameter>
+                        <ReferencedParameter>
+                          <Name>DimTimeMonth</Name>
+                        </ReferencedParameter>
+                      </ReferencedParameters>
+                    </ParameterizedStatement>
+                  </ParameterValuesQuery>
+                </ParameterDefinition>
+                <ParameterDefinition>
+                  <Name>DimCompanySegmentCompanySegement</Name>
+                  <DefaultValues>
+                    <DefaultValue>[Dim Company Segment].[Company Segement].[All]</DefaultValue>
+                  </DefaultValues>
+                  <Caption>Company Segement</Caption>
+                  <HierarchyUniqueName>[Dim Company Segment].[Company Segement]</HierarchyUniqueName>
+                  <ParameterValuesQuery>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Company Segment].[Company Segement].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Company Segment].[Company Segement].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Company Segment].[Company Segement].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Company Segment].[Company Segement].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOMEMBER(@FromDimTimeDate, CONSTRAINED) : STRTOMEMBER(@ToDimTimeDate, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeQuarter, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Dim Account].[Parent Account Key].&amp;[257] } ) ON COLUMNS FROM [RLG-Finance])))))</Statement>
+                    <ParameterizedStatement>
+                      <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Company Segment].[Company Segement].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Company Segment].[Company Segement].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Company Segment].[Company Segement].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Company Segment].[Company Segement].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOMEMBER(@FromDimTimeDate, CONSTRAINED) : STRTOMEMBER(@ToDimTimeDate, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeQuarter, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Dim Account].[Parent Account Key].&amp;[257] } ) ON COLUMNS FROM [RLG-Finance])))))</Statement>
+                      <ReferencedParameters>
+                        <ReferencedParameter>
+                          <Name>DimTimeYear</Name>
+                        </ReferencedParameter>
+                        <ReferencedParameter>
+                          <Name>DimTimeQuarter</Name>
+                        </ReferencedParameter>
+                        <ReferencedParameter>
+                          <Name>DimTimeMonth</Name>
+                        </ReferencedParameter>
+                        <ReferencedParameter>
+                          <Name>FromDimTimeDate</Name>
+                        </ReferencedParameter>
+                        <ReferencedParameter>
+                          <Name>ToDimTimeDate</Name>
+                        </ReferencedParameter>
+                      </ReferencedParameters>
+                    </ParameterizedStatement>
+                  </ParameterValuesQuery>
+                  <MultipleValues>true</MultipleValues>
+                </ParameterDefinition>
+              </ParameterDefinitions>
+            </Query>
+          </QueryDefinition>
+        </rd:DesignerState>
+        <rd:AutoGenerated>true</rd:AutoGenerated>
+        <rd:Hidden>true</rd:Hidden>
+      </Query>
+      <Fields>
+        <Field Name="ParameterCaption">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterCaption]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterValue">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterValue]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterLevel">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterLevel]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterCaptionIndented">
+          <Value>=Space(3*Fields!ParameterLevel.Value) + Fields!ParameterCaption.Value</Value>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="DimBusinessUnitSegmentBusinessUnit">
+      <Query>
+        <DataSourceName>DS</DataSourceName>
+        <CommandText>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Unit Segment].[Business Unit].ALLMEMBERS ON ROWS FROM [RLG-Finance]</CommandText>
+        <rd:DesignerState>
+          <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+            <CommandType>MDX</CommandType>
+            <Type>Query</Type>
+            <QuerySpecification xsi:type="MDXQuerySpecification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <Select>
+                <Items>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterCaption</MeasureName>
+                      <UniqueName>[Measures].[ParameterCaption]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterCaption</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterValue</MeasureName>
+                      <UniqueName>[Measures].[ParameterValue]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterValue</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterLevel</MeasureName>
+                      <UniqueName>[Measures].[ParameterLevel]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterLevel</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                </Items>
+              </Select>
+              <From>RLG-Finance</From>
+              <Filter>
+                <FilterItems />
+              </Filter>
+              <Calculations />
+              <Aggregates />
+              <QueryProperties />
+            </QuerySpecification>
+            <Query>
+              <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Unit Segment].[Business Unit].ALLMEMBERS ON ROWS FROM [RLG-Finance]</Statement>
+              <ParameterDefinitions />
+            </Query>
+          </QueryDefinition>
+        </rd:DesignerState>
+        <rd:AutoGenerated>true</rd:AutoGenerated>
+        <rd:Hidden>true</rd:Hidden>
+      </Query>
+      <Fields>
+        <Field Name="ParameterCaption">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterCaption]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterValue">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterValue]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterLevel">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterLevel]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterCaptionIndented">
+          <Value>=Space(3*Fields!ParameterLevel.Value) + Fields!ParameterCaption.Value</Value>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="DataSet2">
+      <Query>
+        <DataSourceName>DS</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="DimTimeYear">
+            <Value>=Parameters!DimTimeYear.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="DimTimeQuarter">
+            <Value>=Parameters!DimTimeQuarter.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="DimTimeMonth">
+            <Value>=Parameters!DimTimeMonth.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="FromDimTimeDate">
+            <Value>=Parameters!FromDimTimeDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="ToDimTimeDate">
+            <Value>=Parameters!ToDimTimeDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="DimCompanySegmentCompanySegement">
+            <Value>=Parameters!DimCompanySegmentCompanySegement.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="DimBusinessUnitSegmentBusinessUnit">
+            <Value>=Parameters!DimBusinessUnitSegmentBusinessUnit.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText> SELECT NON EMPTY { [Measures].[Actual Amount] } ON COLUMNS, 
+NON EMPTY { (
+{
+[Dim Account].[Parent Account Key].&amp;[257],
+[Dim Account].[Parent Account Key].&amp;[324],
+[Dim Account].[Parent Account Key].&amp;[325],
+[Dim Account].[Parent Account Key].&amp;[326],
+[Dim Account].[Parent Account Key].&amp;[327],
+[Dim Account].[Parent Account Key].&amp;[328],
+[Dim Account].[Parent Account Key].&amp;[329],
+[Dim Account].[Parent Account Key].&amp;[330],
+[Dim Account].[Parent Account Key].&amp;[331],
+[Dim Account].[Parent Account Key].&amp;[332],
+[Dim Account].[Parent Account Key].&amp;[333],
+[Dim Account].[Parent Account Key].&amp;[334],
+[Dim Account].[Parent Account Key].&amp;[335],
+[Dim Account].[Parent Account Key].&amp;[336],
+[Dim Account].[Parent Account Key].&amp;[337],
+[Dim Account].[Parent Account Key].&amp;[338],
+[Dim Account].[Parent Account Key].&amp;[339],
+[Dim Account].[Parent Account Key].&amp;[340],
+[Dim Account].[Parent Account Key].&amp;[341],
+[Dim Account].[Parent Account Key].&amp;[342],
+[Dim Account].[Parent Account Key].&amp;[343],
+[Dim Account].[Parent Account Key].&amp;[344],
+[Dim Account].[Parent Account Key].&amp;[345],
+[Dim Account].[Parent Account Key].&amp;[346],
+[Dim Account].[Parent Account Key].&amp;[347],
+[Dim Account].[Parent Account Key].&amp;[348],
+[Dim Account].[Parent Account Key].&amp;[349],
+[Dim Account].[Parent Account Key].&amp;[350],
+[Dim Account].[Parent Account Key].&amp;[351],
+[Dim Account].[Parent Account Key].&amp;[352],
+[Dim Account].[Parent Account Key].&amp;[353],
+[Dim Account].[Parent Account Key].&amp;[354],
+[Dim Account].[Parent Account Key].&amp;[355],
+[Dim Account].[Parent Account Key].&amp;[356],
+[Dim Account].[Parent Account Key].&amp;[357],
+[Dim Account].[Parent Account Key].&amp;[358],
+[Dim Account].[Parent Account Key].&amp;[359],
+[Dim Account].[Parent Account Key].&amp;[360],
+[Dim Account].[Parent Account Key].&amp;[361],
+[Dim Account].[Parent Account Key].&amp;[362],
+[Dim Account].[Parent Account Key].&amp;[363],
+[Dim Account].[Parent Account Key].&amp;[364],
+[Dim Account].[Parent Account Key].&amp;[365],
+[Dim Account].[Parent Account Key].&amp;[366],
+[Dim Account].[Parent Account Key].&amp;[367],
+[Dim Account].[Parent Account Key].&amp;[368],
+[Dim Account].[Parent Account Key].&amp;[369],
+[Dim Account].[Parent Account Key].&amp;[370],
+[Dim Account].[Parent Account Key].&amp;[371],
+[Dim Account].[Parent Account Key].&amp;[372],
+[Dim Account].[Parent Account Key].&amp;[373],
+[Dim Account].[Parent Account Key].&amp;[374],
+[Dim Account].[Parent Account Key].&amp;[375],
+[Dim Account].[Parent Account Key].&amp;[376],
+[Dim Account].[Parent Account Key].&amp;[377],
+[Dim Account].[Parent Account Key].&amp;[378],
+[Dim Account].[Parent Account Key].&amp;[379],
+[Dim Account].[Parent Account Key].&amp;[380],
+[Dim Account].[Parent Account Key].&amp;[381],
+[Dim Account].[Parent Account Key].&amp;[382],
+[Dim Account].[Parent Account Key].&amp;[383],
+[Dim Account].[Parent Account Key].&amp;[384],
+[Dim Account].[Parent Account Key].&amp;[385],
+[Dim Account].[Parent Account Key].&amp;[386],
+[Dim Account].[Parent Account Key].&amp;[387],
+[Dim Account].[Parent Account Key].&amp;[388],
+[Dim Account].[Parent Account Key].&amp;[389],
+[Dim Account].[Parent Account Key].&amp;[390],
+[Dim Account].[Parent Account Key].&amp;[391],
+[Dim Account].[Parent Account Key].&amp;[392],
+[Dim Account].[Parent Account Key].&amp;[393],
+[Dim Account].[Parent Account Key].&amp;[394],
+[Dim Account].[Parent Account Key].&amp;[395],
+[Dim Account].[Parent Account Key].&amp;[396],
+[Dim Account].[Parent Account Key].&amp;[397],
+[Dim Account].[Parent Account Key].&amp;[398],
+[Dim Account].[Parent Account Key].&amp;[399],
+[Dim Account].[Parent Account Key].&amp;[400],
+[Dim Account].[Parent Account Key].&amp;[401],
+[Dim Account].[Parent Account Key].&amp;[402],
+[Dim Account].[Parent Account Key].&amp;[403],
+[Dim Account].[Parent Account Key].&amp;[404],
+[Dim Account].[Parent Account Key].&amp;[405],
+[Dim Account].[Parent Account Key].&amp;[406],
+[Dim Account].[Parent Account Key].&amp;[407],
+[Dim Account].[Parent Account Key].&amp;[408],
+[Dim Account].[Parent Account Key].&amp;[409],
+[Dim Account].[Parent Account Key].&amp;[410],
+[Dim Account].[Parent Account Key].&amp;[411],
+[Dim Account].[Parent Account Key].&amp;[412],
+[Dim Account].[Parent Account Key].&amp;[413],
+[Dim Account].[Parent Account Key].&amp;[414],
+[Dim Account].[Parent Account Key].&amp;[415],
+[Dim Account].[Parent Account Key].&amp;[416],
+[Dim Account].[Parent Account Key].&amp;[417],
+[Dim Account].[Parent Account Key].&amp;[418],
+[Dim Account].[Parent Account Key].&amp;[419],
+[Dim Account].[Parent Account Key].&amp;[420],
+[Dim Account].[Parent Account Key].&amp;[421],
+[Dim Account].[Parent Account Key].&amp;[422],
+[Dim Account].[Parent Account Key].&amp;[423],
+[Dim Account].[Parent Account Key].&amp;[424],
+[Dim Account].[Parent Account Key].&amp;[425],
+[Dim Account].[Parent Account Key].&amp;[426],
+[Dim Account].[Parent Account Key].&amp;[427],
+[Dim Account].[Parent Account Key].&amp;[428],
+[Dim Account].[Parent Account Key].&amp;[429],
+[Dim Account].[Parent Account Key].&amp;[430],
+[Dim Account].[Parent Account Key].&amp;[431],
+[Dim Account].[Parent Account Key].&amp;[432],
+[Dim Account].[Parent Account Key].&amp;[433],
+[Dim Account].[Parent Account Key].&amp;[434],
+[Dim Account].[Parent Account Key].&amp;[435],
+[Dim Account].[Parent Account Key].&amp;[436],
+[Dim Account].[Parent Account Key].&amp;[437],
+[Dim Account].[Parent Account Key].&amp;[438],
+[Dim Account].[Parent Account Key].&amp;[439],
+[Dim Account].[Parent Account Key].&amp;[440],
+[Dim Account].[Parent Account Key].&amp;[441],
+[Dim Account].[Parent Account Key].&amp;[442],
+[Dim Account].[Parent Account Key].&amp;[443],
+[Dim Account].[Parent Account Key].&amp;[444],
+[Dim Account].[Parent Account Key].&amp;[445],
+[Dim Account].[Parent Account Key].&amp;[446],
+[Dim Account].[Parent Account Key].&amp;[447],
+[Dim Account].[Parent Account Key].&amp;[448],
+[Dim Account].[Parent Account Key].&amp;[449],
+[Dim Account].[Parent Account Key].&amp;[450],
+[Dim Account].[Parent Account Key].&amp;[451],
+[Dim Account].[Parent Account Key].&amp;[452],
+[Dim Account].[Parent Account Key].&amp;[453],
+[Dim Account].[Parent Account Key].&amp;[454],
+[Dim Account].[Parent Account Key].&amp;[455],
+[Dim Account].[Parent Account Key].&amp;[456],
+[Dim Account].[Parent Account Key].&amp;[457],
+[Dim Account].[Parent Account Key].&amp;[458],
+[Dim Account].[Parent Account Key].&amp;[459],
+[Dim Account].[Parent Account Key].&amp;[460],
+[Dim Account].[Parent Account Key].&amp;[461],
+[Dim Account].[Parent Account Key].&amp;[462],
+[Dim Account].[Parent Account Key].&amp;[463],
+[Dim Account].[Parent Account Key].&amp;[464],
+[Dim Account].[Parent Account Key].&amp;[465],
+[Dim Account].[Parent Account Key].&amp;[466],
+[Dim Account].[Parent Account Key].&amp;[467],
+[Dim Account].[Parent Account Key].&amp;[468],
+[Dim Account].[Parent Account Key].&amp;[469],
+[Dim Account].[Parent Account Key].&amp;[470],
+[Dim Account].[Parent Account Key].&amp;[471],
+[Dim Account].[Parent Account Key].&amp;[472],
+[Dim Account].[Parent Account Key].&amp;[473],
+[Dim Account].[Parent Account Key].&amp;[474],
+[Dim Account].[Parent Account Key].&amp;[475],
+[Dim Account].[Parent Account Key].&amp;[476],
+[Dim Account].[Parent Account Key].&amp;[477],
+[Dim Account].[Parent Account Key].&amp;[478],
+[Dim Account].[Parent Account Key].&amp;[479],
+[Dim Account].[Parent Account Key].&amp;[480],
+[Dim Account].[Parent Account Key].&amp;[481],
+[Dim Account].[Parent Account Key].&amp;[482],
+[Dim Account].[Parent Account Key].&amp;[483],
+[Dim Account].[Parent Account Key].&amp;[484],
+[Dim Account].[Parent Account Key].&amp;[485],
+[Dim Account].[Parent Account Key].&amp;[486],
+[Dim Account].[Parent Account Key].&amp;[487],
+[Dim Account].[Parent Account Key].&amp;[488],
+[Dim Account].[Parent Account Key].&amp;[489],
+[Dim Account].[Parent Account Key].&amp;[490],
+[Dim Account].[Parent Account Key].&amp;[491],
+[Dim Account].[Parent Account Key].&amp;[492],
+[Dim Account].[Parent Account Key].&amp;[493],
+[Dim Account].[Parent Account Key].&amp;[494],
+[Dim Account].[Parent Account Key].&amp;[495],
+[Dim Account].[Parent Account Key].&amp;[496],
+[Dim Account].[Parent Account Key].&amp;[497],
+[Dim Account].[Parent Account Key].&amp;[498],
+[Dim Account].[Parent Account Key].&amp;[499],
+[Dim Account].[Parent Account Key].&amp;[500],
+[Dim Account].[Parent Account Key].&amp;[501],
+[Dim Account].[Parent Account Key].&amp;[502],
+[Dim Account].[Parent Account Key].&amp;[503],
+[Dim Account].[Parent Account Key].&amp;[504],
+[Dim Account].[Parent Account Key].&amp;[505],
+[Dim Account].[Parent Account Key].&amp;[506],
+[Dim Account].[Parent Account Key].&amp;[507],
+[Dim Account].[Parent Account Key].&amp;[508],
+[Dim Account].[Parent Account Key].&amp;[509],
+[Dim Account].[Parent Account Key].&amp;[510],
+[Dim Account].[Parent Account Key].&amp;[511],
+[Dim Account].[Parent Account Key].&amp;[512],
+[Dim Account].[Parent Account Key].&amp;[513],
+[Dim Account].[Parent Account Key].&amp;[514],
+[Dim Account].[Parent Account Key].&amp;[515],
+[Dim Account].[Parent Account Key].&amp;[516],
+[Dim Account].[Parent Account Key].&amp;[517],
+[Dim Account].[Parent Account Key].&amp;[518],
+[Dim Account].[Parent Account Key].&amp;[519],
+[Dim Account].[Parent Account Key].&amp;[520],
+[Dim Account].[Parent Account Key].&amp;[521],
+[Dim Account].[Parent Account Key].&amp;[522],
+[Dim Account].[Parent Account Key].&amp;[523],
+[Dim Account].[Parent Account Key].&amp;[524],
+[Dim Account].[Parent Account Key].&amp;[525],
+[Dim Account].[Parent Account Key].&amp;[526],
+[Dim Account].[Parent Account Key].&amp;[527],
+[Dim Account].[Parent Account Key].&amp;[528],
+[Dim Account].[Parent Account Key].&amp;[529],
+[Dim Account].[Parent Account Key].&amp;[530],
+[Dim Account].[Parent Account Key].&amp;[531],
+[Dim Account].[Parent Account Key].&amp;[532],
+[Dim Account].[Parent Account Key].&amp;[533],
+[Dim Account].[Parent Account Key].&amp;[534],
+[Dim Account].[Parent Account Key].&amp;[535],
+[Dim Account].[Parent Account Key].&amp;[536],
+[Dim Account].[Parent Account Key].&amp;[537],
+[Dim Account].[Parent Account Key].&amp;[538],
+[Dim Account].[Parent Account Key].&amp;[539],
+[Dim Account].[Parent Account Key].&amp;[540],
+[Dim Account].[Parent Account Key].&amp;[541],
+[Dim Account].[Parent Account Key].&amp;[542],
+[Dim Account].[Parent Account Key].&amp;[543],
+[Dim Account].[Parent Account Key].&amp;[544],
+[Dim Account].[Parent Account Key].&amp;[545],
+[Dim Account].[Parent Account Key].&amp;[546],
+[Dim Account].[Parent Account Key].&amp;[547],
+[Dim Account].[Parent Account Key].&amp;[548],
+[Dim Account].[Parent Account Key].&amp;[549],
+[Dim Account].[Parent Account Key].&amp;[550],
+[Dim Account].[Parent Account Key].&amp;[551],
+[Dim Account].[Parent Account Key].&amp;[552],
+[Dim Account].[Parent Account Key].&amp;[553],
+[Dim Account].[Parent Account Key].&amp;[554],
+[Dim Account].[Parent Account Key].&amp;[555],
+[Dim Account].[Parent Account Key].&amp;[556],
+[Dim Account].[Parent Account Key].&amp;[557],
+[Dim Account].[Parent Account Key].&amp;[558],
+[Dim Account].[Parent Account Key].&amp;[559],
+[Dim Account].[Parent Account Key].&amp;[560],
+[Dim Account].[Parent Account Key].&amp;[561],
+[Dim Account].[Parent Account Key].&amp;[562],
+[Dim Account].[Parent Account Key].&amp;[563],
+[Dim Account].[Parent Account Key].&amp;[564],
+[Dim Account].[Parent Account Key].&amp;[565],
+[Dim Account].[Parent Account Key].&amp;[566],
+[Dim Account].[Parent Account Key].&amp;[567],
+[Dim Account].[Parent Account Key].&amp;[568],
+[Dim Account].[Parent Account Key].&amp;[569],
+[Dim Account].[Parent Account Key].&amp;[570],
+[Dim Account].[Parent Account Key].&amp;[571],
+[Dim Account].[Parent Account Key].&amp;[572],
+[Dim Account].[Parent Account Key].&amp;[573],
+[Dim Account].[Parent Account Key].&amp;[574],
+[Dim Account].[Parent Account Key].&amp;[575],
+[Dim Account].[Parent Account Key].&amp;[576],
+[Dim Account].[Parent Account Key].&amp;[577],
+[Dim Account].[Parent Account Key].&amp;[578],
+[Dim Account].[Parent Account Key].&amp;[579],
+[Dim Account].[Parent Account Key].&amp;[580],
+[Dim Account].[Parent Account Key].&amp;[581],
+[Dim Account].[Parent Account Key].&amp;[582],
+[Dim Account].[Parent Account Key].&amp;[583],
+[Dim Account].[Parent Account Key].&amp;[584],
+[Dim Account].[Parent Account Key].&amp;[585],
+[Dim Account].[Parent Account Key].&amp;[586],
+[Dim Account].[Parent Account Key].&amp;[587],
+[Dim Account].[Parent Account Key].&amp;[588],
+[Dim Account].[Parent Account Key].&amp;[589],
+[Dim Account].[Parent Account Key].&amp;[590],
+[Dim Account].[Parent Account Key].&amp;[591],
+[Dim Account].[Parent Account Key].&amp;[592],
+[Dim Account].[Parent Account Key].&amp;[593],
+[Dim Account].[Parent Account Key].&amp;[594],
+[Dim Account].[Parent Account Key].&amp;[595],
+[Dim Account].[Parent Account Key].&amp;[596],
+[Dim Account].[Parent Account Key].&amp;[597],
+[Dim Account].[Parent Account Key].&amp;[598],
+[Dim Account].[Parent Account Key].&amp;[599],
+[Dim Account].[Parent Account Key].&amp;[600],
+[Dim Account].[Parent Account Key].&amp;[601],
+[Dim Account].[Parent Account Key].&amp;[602],
+[Dim Account].[Parent Account Key].&amp;[603],
+[Dim Account].[Parent Account Key].&amp;[604],
+[Dim Account].[Parent Account Key].&amp;[605],
+[Dim Account].[Parent Account Key].&amp;[606],
+[Dim Account].[Parent Account Key].&amp;[607],
+[Dim Account].[Parent Account Key].&amp;[608],
+[Dim Account].[Parent Account Key].&amp;[609],
+[Dim Account].[Parent Account Key].&amp;[610],
+[Dim Account].[Parent Account Key].&amp;[611],
+[Dim Account].[Parent Account Key].&amp;[612],
+[Dim Account].[Parent Account Key].&amp;[613],
+[Dim Account].[Parent Account Key].&amp;[614],
+[Dim Account].[Parent Account Key].&amp;[615],
+[Dim Account].[Parent Account Key].&amp;[616],
+[Dim Account].[Parent Account Key].&amp;[617],
+[Dim Account].[Parent Account Key].&amp;[618],
+[Dim Account].[Parent Account Key].&amp;[619],
+[Dim Account].[Parent Account Key].&amp;[620],
+[Dim Account].[Parent Account Key].&amp;[621],
+[Dim Account].[Parent Account Key].&amp;[622],
+[Dim Account].[Parent Account Key].&amp;[623],
+[Dim Account].[Parent Account Key].&amp;[624],
+[Dim Account].[Parent Account Key].&amp;[625],
+[Dim Account].[Parent Account Key].&amp;[626],
+[Dim Account].[Parent Account Key].&amp;[627],
+[Dim Account].[Parent Account Key].&amp;[628],
+[Dim Account].[Parent Account Key].&amp;[629],
+[Dim Account].[Parent Account Key].&amp;[630],
+[Dim Account].[Parent Account Key].&amp;[631],
+[Dim Account].[Parent Account Key].&amp;[632],
+[Dim Account].[Parent Account Key].&amp;[633],
+[Dim Account].[Parent Account Key].&amp;[634],
+[Dim Account].[Parent Account Key].&amp;[635],
+[Dim Account].[Parent Account Key].&amp;[636],
+[Dim Account].[Parent Account Key].&amp;[637],
+[Dim Account].[Parent Account Key].&amp;[638],
+[Dim Account].[Parent Account Key].&amp;[639],
+[Dim Account].[Parent Account Key].&amp;[640],
+[Dim Account].[Parent Account Key].&amp;[641],
+[Dim Account].[Parent Account Key].&amp;[642],
+[Dim Account].[Parent Account Key].&amp;[643],
+[Dim Account].[Parent Account Key].&amp;[644],
+[Dim Account].[Parent Account Key].&amp;[645],
+[Dim Account].[Parent Account Key].&amp;[646],
+[Dim Account].[Parent Account Key].&amp;[647],
+[Dim Account].[Parent Account Key].&amp;[648],
+[Dim Account].[Parent Account Key].&amp;[649],
+[Dim Account].[Parent Account Key].&amp;[650],
+[Dim Account].[Parent Account Key].&amp;[651],
+[Dim Account].[Parent Account Key].&amp;[652],
+[Dim Account].[Parent Account Key].&amp;[653],
+[Dim Account].[Parent Account Key].&amp;[654],
+[Dim Account].[Parent Account Key].&amp;[655],
+[Dim Account].[Parent Account Key].&amp;[656],
+[Dim Account].[Parent Account Key].&amp;[657],
+[Dim Account].[Parent Account Key].&amp;[658]
+}
+ * DESCENDANTS([Dim Business Unit Segment].[Parent Business Unit Segment Key].[Level 02].ALLMEMBERS) 
+) } 
+DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME, PARENT_UNIQUE_NAME, LEVEL_NUMBER ON ROWS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOMEMBER(@FromDimTimeDate, CONSTRAINED) : STRTOMEMBER(@ToDimTimeDate, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeQuarter, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-Finance])))))) WHERE ( IIF( STRTOSET(@DimTimeYear, CONSTRAINED).Count = 1, STRTOSET(@DimTimeYear, CONSTRAINED), [Dim Time].[Year].currentmember ), IIF( STRTOSET(@DimTimeQuarter, CONSTRAINED).Count = 1, STRTOSET(@DimTimeQuarter, CONSTRAINED), [Dim Time].[Quarter].currentmember ), IIF( STRTOSET(@DimTimeMonth, CONSTRAINED).Count = 1, STRTOSET(@DimTimeMonth, CONSTRAINED), [Dim Time].[Month].currentmember ), IIF( STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED).Count = 1, STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED), [Dim Company Segment].[Company Segement].currentmember ), IIF( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED).Count = 1, STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED), [Dim Business Unit Segment].[Business Unit].currentmember ) ) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</CommandText>
+        <rd:DesignerState>
+          <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+            <CommandType>MDX</CommandType>
+            <Type>Query</Type>
+            <QuerySpecification xsi:type="MDXQuerySpecification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <Select>
+                <Items>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Dim Account</DimensionName>
+                      <HierarchyName>Parent Account Key</HierarchyName>
+                      <HierarchyUniqueName>[Dim Account].[Parent Account Key]</HierarchyUniqueName>
+                      <LevelName>Level 02</LevelName>
+                      <UniqueName>[Dim Account].[Parent Account Key].[Level 02]</UniqueName>
+                    </ID>
+                    <ItemCaption>Parent Account Key</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                    <IsParentChild>true</IsParentChild>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Dim Business Unit Segment</DimensionName>
+                      <HierarchyName>Parent Business Unit Segment Key</HierarchyName>
+                      <HierarchyUniqueName>[Dim Business Unit Segment].[Parent Business Unit Segment Key]</HierarchyUniqueName>
+                      <LevelName>Level 02</LevelName>
+                      <UniqueName>[Dim Business Unit Segment].[Parent Business Unit Segment Key].[Level 02]</UniqueName>
+                    </ID>
+                    <ItemCaption>Parent Business Unit Segment Key</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                    <IsParentChild>true</IsParentChild>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>Actual Amount</MeasureName>
+                      <UniqueName>[Measures].[Actual Amount]</UniqueName>
+                    </ID>
+                    <ItemCaption>Actual Amount</ItemCaption>
+                    <BackColor>true</BackColor>
+                    <ForeColor>true</ForeColor>
+                    <FontFamily>true</FontFamily>
+                    <FontSize>true</FontSize>
+                    <FontWeight>true</FontWeight>
+                    <FontStyle>true</FontStyle>
+                    <FontDecoration>true</FontDecoration>
+                    <FormattedValue>true</FormattedValue>
+                    <FormatString>true</FormatString>
+                  </Item>
+                </Items>
+              </Select>
+              <From>RLG-Finance</From>
+              <Filter>
+                <FilterItems />
+              </Filter>
+              <Calculations />
+              <Aggregates />
+              <QueryProperties />
+            </QuerySpecification>
+            <Query>
+              <Statement> SELECT NON EMPTY { [Measures].[Actual Amount] } ON COLUMNS, 
+NON EMPTY { (
+{
+[Dim Account].[Parent Account Key].&amp;[257],
+[Dim Account].[Parent Account Key].&amp;[324],
+[Dim Account].[Parent Account Key].&amp;[325],
+[Dim Account].[Parent Account Key].&amp;[326],
+[Dim Account].[Parent Account Key].&amp;[327],
+[Dim Account].[Parent Account Key].&amp;[328],
+[Dim Account].[Parent Account Key].&amp;[329],
+[Dim Account].[Parent Account Key].&amp;[330],
+[Dim Account].[Parent Account Key].&amp;[331],
+[Dim Account].[Parent Account Key].&amp;[332],
+[Dim Account].[Parent Account Key].&amp;[333],
+[Dim Account].[Parent Account Key].&amp;[334],
+[Dim Account].[Parent Account Key].&amp;[335],
+[Dim Account].[Parent Account Key].&amp;[336],
+[Dim Account].[Parent Account Key].&amp;[337],
+[Dim Account].[Parent Account Key].&amp;[338],
+[Dim Account].[Parent Account Key].&amp;[339],
+[Dim Account].[Parent Account Key].&amp;[340],
+[Dim Account].[Parent Account Key].&amp;[341],
+[Dim Account].[Parent Account Key].&amp;[342],
+[Dim Account].[Parent Account Key].&amp;[343],
+[Dim Account].[Parent Account Key].&amp;[344],
+[Dim Account].[Parent Account Key].&amp;[345],
+[Dim Account].[Parent Account Key].&amp;[346],
+[Dim Account].[Parent Account Key].&amp;[347],
+[Dim Account].[Parent Account Key].&amp;[348],
+[Dim Account].[Parent Account Key].&amp;[349],
+[Dim Account].[Parent Account Key].&amp;[350],
+[Dim Account].[Parent Account Key].&amp;[351],
+[Dim Account].[Parent Account Key].&amp;[352],
+[Dim Account].[Parent Account Key].&amp;[353],
+[Dim Account].[Parent Account Key].&amp;[354],
+[Dim Account].[Parent Account Key].&amp;[355],
+[Dim Account].[Parent Account Key].&amp;[356],
+[Dim Account].[Parent Account Key].&amp;[357],
+[Dim Account].[Parent Account Key].&amp;[358],
+[Dim Account].[Parent Account Key].&amp;[359],
+[Dim Account].[Parent Account Key].&amp;[360],
+[Dim Account].[Parent Account Key].&amp;[361],
+[Dim Account].[Parent Account Key].&amp;[362],
+[Dim Account].[Parent Account Key].&amp;[363],
+[Dim Account].[Parent Account Key].&amp;[364],
+[Dim Account].[Parent Account Key].&amp;[365],
+[Dim Account].[Parent Account Key].&amp;[366],
+[Dim Account].[Parent Account Key].&amp;[367],
+[Dim Account].[Parent Account Key].&amp;[368],
+[Dim Account].[Parent Account Key].&amp;[369],
+[Dim Account].[Parent Account Key].&amp;[370],
+[Dim Account].[Parent Account Key].&amp;[371],
+[Dim Account].[Parent Account Key].&amp;[372],
+[Dim Account].[Parent Account Key].&amp;[373],
+[Dim Account].[Parent Account Key].&amp;[374],
+[Dim Account].[Parent Account Key].&amp;[375],
+[Dim Account].[Parent Account Key].&amp;[376],
+[Dim Account].[Parent Account Key].&amp;[377],
+[Dim Account].[Parent Account Key].&amp;[378],
+[Dim Account].[Parent Account Key].&amp;[379],
+[Dim Account].[Parent Account Key].&amp;[380],
+[Dim Account].[Parent Account Key].&amp;[381],
+[Dim Account].[Parent Account Key].&amp;[382],
+[Dim Account].[Parent Account Key].&amp;[383],
+[Dim Account].[Parent Account Key].&amp;[384],
+[Dim Account].[Parent Account Key].&amp;[385],
+[Dim Account].[Parent Account Key].&amp;[386],
+[Dim Account].[Parent Account Key].&amp;[387],
+[Dim Account].[Parent Account Key].&amp;[388],
+[Dim Account].[Parent Account Key].&amp;[389],
+[Dim Account].[Parent Account Key].&amp;[390],
+[Dim Account].[Parent Account Key].&amp;[391],
+[Dim Account].[Parent Account Key].&amp;[392],
+[Dim Account].[Parent Account Key].&amp;[393],
+[Dim Account].[Parent Account Key].&amp;[394],
+[Dim Account].[Parent Account Key].&amp;[395],
+[Dim Account].[Parent Account Key].&amp;[396],
+[Dim Account].[Parent Account Key].&amp;[397],
+[Dim Account].[Parent Account Key].&amp;[398],
+[Dim Account].[Parent Account Key].&amp;[399],
+[Dim Account].[Parent Account Key].&amp;[400],
+[Dim Account].[Parent Account Key].&amp;[401],
+[Dim Account].[Parent Account Key].&amp;[402],
+[Dim Account].[Parent Account Key].&amp;[403],
+[Dim Account].[Parent Account Key].&amp;[404],
+[Dim Account].[Parent Account Key].&amp;[405],
+[Dim Account].[Parent Account Key].&amp;[406],
+[Dim Account].[Parent Account Key].&amp;[407],
+[Dim Account].[Parent Account Key].&amp;[408],
+[Dim Account].[Parent Account Key].&amp;[409],
+[Dim Account].[Parent Account Key].&amp;[410],
+[Dim Account].[Parent Account Key].&amp;[411],
+[Dim Account].[Parent Account Key].&amp;[412],
+[Dim Account].[Parent Account Key].&amp;[413],
+[Dim Account].[Parent Account Key].&amp;[414],
+[Dim Account].[Parent Account Key].&amp;[415],
+[Dim Account].[Parent Account Key].&amp;[416],
+[Dim Account].[Parent Account Key].&amp;[417],
+[Dim Account].[Parent Account Key].&amp;[418],
+[Dim Account].[Parent Account Key].&amp;[419],
+[Dim Account].[Parent Account Key].&amp;[420],
+[Dim Account].[Parent Account Key].&amp;[421],
+[Dim Account].[Parent Account Key].&amp;[422],
+[Dim Account].[Parent Account Key].&amp;[423],
+[Dim Account].[Parent Account Key].&amp;[424],
+[Dim Account].[Parent Account Key].&amp;[425],
+[Dim Account].[Parent Account Key].&amp;[426],
+[Dim Account].[Parent Account Key].&amp;[427],
+[Dim Account].[Parent Account Key].&amp;[428],
+[Dim Account].[Parent Account Key].&amp;[429],
+[Dim Account].[Parent Account Key].&amp;[430],
+[Dim Account].[Parent Account Key].&amp;[431],
+[Dim Account].[Parent Account Key].&amp;[432],
+[Dim Account].[Parent Account Key].&amp;[433],
+[Dim Account].[Parent Account Key].&amp;[434],
+[Dim Account].[Parent Account Key].&amp;[435],
+[Dim Account].[Parent Account Key].&amp;[436],
+[Dim Account].[Parent Account Key].&amp;[437],
+[Dim Account].[Parent Account Key].&amp;[438],
+[Dim Account].[Parent Account Key].&amp;[439],
+[Dim Account].[Parent Account Key].&amp;[440],
+[Dim Account].[Parent Account Key].&amp;[441],
+[Dim Account].[Parent Account Key].&amp;[442],
+[Dim Account].[Parent Account Key].&amp;[443],
+[Dim Account].[Parent Account Key].&amp;[444],
+[Dim Account].[Parent Account Key].&amp;[445],
+[Dim Account].[Parent Account Key].&amp;[446],
+[Dim Account].[Parent Account Key].&amp;[447],
+[Dim Account].[Parent Account Key].&amp;[448],
+[Dim Account].[Parent Account Key].&amp;[449],
+[Dim Account].[Parent Account Key].&amp;[450],
+[Dim Account].[Parent Account Key].&amp;[451],
+[Dim Account].[Parent Account Key].&amp;[452],
+[Dim Account].[Parent Account Key].&amp;[453],
+[Dim Account].[Parent Account Key].&amp;[454],
+[Dim Account].[Parent Account Key].&amp;[455],
+[Dim Account].[Parent Account Key].&amp;[456],
+[Dim Account].[Parent Account Key].&amp;[457],
+[Dim Account].[Parent Account Key].&amp;[458],
+[Dim Account].[Parent Account Key].&amp;[459],
+[Dim Account].[Parent Account Key].&amp;[460],
+[Dim Account].[Parent Account Key].&amp;[461],
+[Dim Account].[Parent Account Key].&amp;[462],
+[Dim Account].[Parent Account Key].&amp;[463],
+[Dim Account].[Parent Account Key].&amp;[464],
+[Dim Account].[Parent Account Key].&amp;[465],
+[Dim Account].[Parent Account Key].&amp;[466],
+[Dim Account].[Parent Account Key].&amp;[467],
+[Dim Account].[Parent Account Key].&amp;[468],
+[Dim Account].[Parent Account Key].&amp;[469],
+[Dim Account].[Parent Account Key].&amp;[470],
+[Dim Account].[Parent Account Key].&amp;[471],
+[Dim Account].[Parent Account Key].&amp;[472],
+[Dim Account].[Parent Account Key].&amp;[473],
+[Dim Account].[Parent Account Key].&amp;[474],
+[Dim Account].[Parent Account Key].&amp;[475],
+[Dim Account].[Parent Account Key].&amp;[476],
+[Dim Account].[Parent Account Key].&amp;[477],
+[Dim Account].[Parent Account Key].&amp;[478],
+[Dim Account].[Parent Account Key].&amp;[479],
+[Dim Account].[Parent Account Key].&amp;[480],
+[Dim Account].[Parent Account Key].&amp;[481],
+[Dim Account].[Parent Account Key].&amp;[482],
+[Dim Account].[Parent Account Key].&amp;[483],
+[Dim Account].[Parent Account Key].&amp;[484],
+[Dim Account].[Parent Account Key].&amp;[485],
+[Dim Account].[Parent Account Key].&amp;[486],
+[Dim Account].[Parent Account Key].&amp;[487],
+[Dim Account].[Parent Account Key].&amp;[488],
+[Dim Account].[Parent Account Key].&amp;[489],
+[Dim Account].[Parent Account Key].&amp;[490],
+[Dim Account].[Parent Account Key].&amp;[491],
+[Dim Account].[Parent Account Key].&amp;[492],
+[Dim Account].[Parent Account Key].&amp;[493],
+[Dim Account].[Parent Account Key].&amp;[494],
+[Dim Account].[Parent Account Key].&amp;[495],
+[Dim Account].[Parent Account Key].&amp;[496],
+[Dim Account].[Parent Account Key].&amp;[497],
+[Dim Account].[Parent Account Key].&amp;[498],
+[Dim Account].[Parent Account Key].&amp;[499],
+[Dim Account].[Parent Account Key].&amp;[500],
+[Dim Account].[Parent Account Key].&amp;[501],
+[Dim Account].[Parent Account Key].&amp;[502],
+[Dim Account].[Parent Account Key].&amp;[503],
+[Dim Account].[Parent Account Key].&amp;[504],
+[Dim Account].[Parent Account Key].&amp;[505],
+[Dim Account].[Parent Account Key].&amp;[506],
+[Dim Account].[Parent Account Key].&amp;[507],
+[Dim Account].[Parent Account Key].&amp;[508],
+[Dim Account].[Parent Account Key].&amp;[509],
+[Dim Account].[Parent Account Key].&amp;[510],
+[Dim Account].[Parent Account Key].&amp;[511],
+[Dim Account].[Parent Account Key].&amp;[512],
+[Dim Account].[Parent Account Key].&amp;[513],
+[Dim Account].[Parent Account Key].&amp;[514],
+[Dim Account].[Parent Account Key].&amp;[515],
+[Dim Account].[Parent Account Key].&amp;[516],
+[Dim Account].[Parent Account Key].&amp;[517],
+[Dim Account].[Parent Account Key].&amp;[518],
+[Dim Account].[Parent Account Key].&amp;[519],
+[Dim Account].[Parent Account Key].&amp;[520],
+[Dim Account].[Parent Account Key].&amp;[521],
+[Dim Account].[Parent Account Key].&amp;[522],
+[Dim Account].[Parent Account Key].&amp;[523],
+[Dim Account].[Parent Account Key].&amp;[524],
+[Dim Account].[Parent Account Key].&amp;[525],
+[Dim Account].[Parent Account Key].&amp;[526],
+[Dim Account].[Parent Account Key].&amp;[527],
+[Dim Account].[Parent Account Key].&amp;[528],
+[Dim Account].[Parent Account Key].&amp;[529],
+[Dim Account].[Parent Account Key].&amp;[530],
+[Dim Account].[Parent Account Key].&amp;[531],
+[Dim Account].[Parent Account Key].&amp;[532],
+[Dim Account].[Parent Account Key].&amp;[533],
+[Dim Account].[Parent Account Key].&amp;[534],
+[Dim Account].[Parent Account Key].&amp;[535],
+[Dim Account].[Parent Account Key].&amp;[536],
+[Dim Account].[Parent Account Key].&amp;[537],
+[Dim Account].[Parent Account Key].&amp;[538],
+[Dim Account].[Parent Account Key].&amp;[539],
+[Dim Account].[Parent Account Key].&amp;[540],
+[Dim Account].[Parent Account Key].&amp;[541],
+[Dim Account].[Parent Account Key].&amp;[542],
+[Dim Account].[Parent Account Key].&amp;[543],
+[Dim Account].[Parent Account Key].&amp;[544],
+[Dim Account].[Parent Account Key].&amp;[545],
+[Dim Account].[Parent Account Key].&amp;[546],
+[Dim Account].[Parent Account Key].&amp;[547],
+[Dim Account].[Parent Account Key].&amp;[548],
+[Dim Account].[Parent Account Key].&amp;[549],
+[Dim Account].[Parent Account Key].&amp;[550],
+[Dim Account].[Parent Account Key].&amp;[551],
+[Dim Account].[Parent Account Key].&amp;[552],
+[Dim Account].[Parent Account Key].&amp;[553],
+[Dim Account].[Parent Account Key].&amp;[554],
+[Dim Account].[Parent Account Key].&amp;[555],
+[Dim Account].[Parent Account Key].&amp;[556],
+[Dim Account].[Parent Account Key].&amp;[557],
+[Dim Account].[Parent Account Key].&amp;[558],
+[Dim Account].[Parent Account Key].&amp;[559],
+[Dim Account].[Parent Account Key].&amp;[560],
+[Dim Account].[Parent Account Key].&amp;[561],
+[Dim Account].[Parent Account Key].&amp;[562],
+[Dim Account].[Parent Account Key].&amp;[563],
+[Dim Account].[Parent Account Key].&amp;[564],
+[Dim Account].[Parent Account Key].&amp;[565],
+[Dim Account].[Parent Account Key].&amp;[566],
+[Dim Account].[Parent Account Key].&amp;[567],
+[Dim Account].[Parent Account Key].&amp;[568],
+[Dim Account].[Parent Account Key].&amp;[569],
+[Dim Account].[Parent Account Key].&amp;[570],
+[Dim Account].[Parent Account Key].&amp;[571],
+[Dim Account].[Parent Account Key].&amp;[572],
+[Dim Account].[Parent Account Key].&amp;[573],
+[Dim Account].[Parent Account Key].&amp;[574],
+[Dim Account].[Parent Account Key].&amp;[575],
+[Dim Account].[Parent Account Key].&amp;[576],
+[Dim Account].[Parent Account Key].&amp;[577],
+[Dim Account].[Parent Account Key].&amp;[578],
+[Dim Account].[Parent Account Key].&amp;[579],
+[Dim Account].[Parent Account Key].&amp;[580],
+[Dim Account].[Parent Account Key].&amp;[581],
+[Dim Account].[Parent Account Key].&amp;[582],
+[Dim Account].[Parent Account Key].&amp;[583],
+[Dim Account].[Parent Account Key].&amp;[584],
+[Dim Account].[Parent Account Key].&amp;[585],
+[Dim Account].[Parent Account Key].&amp;[586],
+[Dim Account].[Parent Account Key].&amp;[587],
+[Dim Account].[Parent Account Key].&amp;[588],
+[Dim Account].[Parent Account Key].&amp;[589],
+[Dim Account].[Parent Account Key].&amp;[590],
+[Dim Account].[Parent Account Key].&amp;[591],
+[Dim Account].[Parent Account Key].&amp;[592],
+[Dim Account].[Parent Account Key].&amp;[593],
+[Dim Account].[Parent Account Key].&amp;[594],
+[Dim Account].[Parent Account Key].&amp;[595],
+[Dim Account].[Parent Account Key].&amp;[596],
+[Dim Account].[Parent Account Key].&amp;[597],
+[Dim Account].[Parent Account Key].&amp;[598],
+[Dim Account].[Parent Account Key].&amp;[599],
+[Dim Account].[Parent Account Key].&amp;[600],
+[Dim Account].[Parent Account Key].&amp;[601],
+[Dim Account].[Parent Account Key].&amp;[602],
+[Dim Account].[Parent Account Key].&amp;[603],
+[Dim Account].[Parent Account Key].&amp;[604],
+[Dim Account].[Parent Account Key].&amp;[605],
+[Dim Account].[Parent Account Key].&amp;[606],
+[Dim Account].[Parent Account Key].&amp;[607],
+[Dim Account].[Parent Account Key].&amp;[608],
+[Dim Account].[Parent Account Key].&amp;[609],
+[Dim Account].[Parent Account Key].&amp;[610],
+[Dim Account].[Parent Account Key].&amp;[611],
+[Dim Account].[Parent Account Key].&amp;[612],
+[Dim Account].[Parent Account Key].&amp;[613],
+[Dim Account].[Parent Account Key].&amp;[614],
+[Dim Account].[Parent Account Key].&amp;[615],
+[Dim Account].[Parent Account Key].&amp;[616],
+[Dim Account].[Parent Account Key].&amp;[617],
+[Dim Account].[Parent Account Key].&amp;[618],
+[Dim Account].[Parent Account Key].&amp;[619],
+[Dim Account].[Parent Account Key].&amp;[620],
+[Dim Account].[Parent Account Key].&amp;[621],
+[Dim Account].[Parent Account Key].&amp;[622],
+[Dim Account].[Parent Account Key].&amp;[623],
+[Dim Account].[Parent Account Key].&amp;[624],
+[Dim Account].[Parent Account Key].&amp;[625],
+[Dim Account].[Parent Account Key].&amp;[626],
+[Dim Account].[Parent Account Key].&amp;[627],
+[Dim Account].[Parent Account Key].&amp;[628],
+[Dim Account].[Parent Account Key].&amp;[629],
+[Dim Account].[Parent Account Key].&amp;[630],
+[Dim Account].[Parent Account Key].&amp;[631],
+[Dim Account].[Parent Account Key].&amp;[632],
+[Dim Account].[Parent Account Key].&amp;[633],
+[Dim Account].[Parent Account Key].&amp;[634],
+[Dim Account].[Parent Account Key].&amp;[635],
+[Dim Account].[Parent Account Key].&amp;[636],
+[Dim Account].[Parent Account Key].&amp;[637],
+[Dim Account].[Parent Account Key].&amp;[638],
+[Dim Account].[Parent Account Key].&amp;[639],
+[Dim Account].[Parent Account Key].&amp;[640],
+[Dim Account].[Parent Account Key].&amp;[641],
+[Dim Account].[Parent Account Key].&amp;[642],
+[Dim Account].[Parent Account Key].&amp;[643],
+[Dim Account].[Parent Account Key].&amp;[644],
+[Dim Account].[Parent Account Key].&amp;[645],
+[Dim Account].[Parent Account Key].&amp;[646],
+[Dim Account].[Parent Account Key].&amp;[647],
+[Dim Account].[Parent Account Key].&amp;[648],
+[Dim Account].[Parent Account Key].&amp;[649],
+[Dim Account].[Parent Account Key].&amp;[650],
+[Dim Account].[Parent Account Key].&amp;[651],
+[Dim Account].[Parent Account Key].&amp;[652],
+[Dim Account].[Parent Account Key].&amp;[653],
+[Dim Account].[Parent Account Key].&amp;[654],
+[Dim Account].[Parent Account Key].&amp;[655],
+[Dim Account].[Parent Account Key].&amp;[656],
+[Dim Account].[Parent Account Key].&amp;[657],
+[Dim Account].[Parent Account Key].&amp;[658]
+}
+ * DESCENDANTS([Dim Business Unit Segment].[Parent Business Unit Segment Key].[Level 02].ALLMEMBERS) 
+) } 
+DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME, PARENT_UNIQUE_NAME, LEVEL_NUMBER ON ROWS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOMEMBER(@FromDimTimeDate, CONSTRAINED) : STRTOMEMBER(@ToDimTimeDate, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeQuarter, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-Finance])))))) WHERE ( IIF( STRTOSET(@DimTimeYear, CONSTRAINED).Count = 1, STRTOSET(@DimTimeYear, CONSTRAINED), [Dim Time].[Year].currentmember ), IIF( STRTOSET(@DimTimeQuarter, CONSTRAINED).Count = 1, STRTOSET(@DimTimeQuarter, CONSTRAINED), [Dim Time].[Quarter].currentmember ), IIF( STRTOSET(@DimTimeMonth, CONSTRAINED).Count = 1, STRTOSET(@DimTimeMonth, CONSTRAINED), [Dim Time].[Month].currentmember ), IIF( STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED).Count = 1, STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED), [Dim Company Segment].[Company Segement].currentmember ), IIF( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED).Count = 1, STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED), [Dim Business Unit Segment].[Business Unit].currentmember ) ) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</Statement>
+              <ParameterDefinitions>
+                <ParameterDefinition>
+                  <Name>DimTimeYear</Name>
+                  <DefaultValues>
+                    <DefaultValue>[Dim Time].[Year].&amp;[2014]</DefaultValue>
+                  </DefaultValues>
+                  <Caption>Year</Caption>
+                  <HierarchyUniqueName>[Dim Time].[Year]</HierarchyUniqueName>
+                  <ParameterValuesQuery>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Year].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Year].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Year].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Year].ALLMEMBERS ON ROWS FROM [RLG-Finance]</Statement>
+                    <ParameterizedStatement>
+                      <ReferencedParameters />
+                    </ParameterizedStatement>
+                  </ParameterValuesQuery>
+                  <MultipleValues>true</MultipleValues>
+                </ParameterDefinition>
+                <ParameterDefinition>
+                  <Name>DimTimeQuarter</Name>
+                  <DefaultValues>
+                    <DefaultValue>[Dim Time].[Quarter].[All]</DefaultValue>
+                  </DefaultValues>
+                  <Caption>Quarter</Caption>
+                  <HierarchyUniqueName>[Dim Time].[Quarter]</HierarchyUniqueName>
+                  <ParameterValuesQuery>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Quarter].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Quarter].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Quarter].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Quarter].ALLMEMBERS ON ROWS FROM [RLG-Finance]</Statement>
+                    <ParameterizedStatement>
+                      <ReferencedParameters />
+                    </ParameterizedStatement>
+                  </ParameterValuesQuery>
+                  <MultipleValues>true</MultipleValues>
+                </ParameterDefinition>
+                <ParameterDefinition>
+                  <Name>DimTimeMonth</Name>
+                  <DefaultValues>
+                    <DefaultValue>[Dim Time].[Month].[All]</DefaultValue>
+                  </DefaultValues>
+                  <Caption>Month</Caption>
+                  <HierarchyUniqueName>[Dim Time].[Month]</HierarchyUniqueName>
+                  <ParameterValuesQuery>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Month].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Month].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Month].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Month].ALLMEMBERS ON ROWS FROM [RLG-Finance]</Statement>
+                    <ParameterizedStatement>
+                      <ReferencedParameters />
+                    </ParameterizedStatement>
+                  </ParameterValuesQuery>
+                  <MultipleValues>true</MultipleValues>
+                </ParameterDefinition>
+                <ParameterDefinition>
+                  <Name>FromDimTimeDate</Name>
+                  <Usage>RangeFrom</Usage>
+                  <DefaultValues>
+                    <DefaultValue>[Dim Time].[Date].[All]</DefaultValue>
+                  </DefaultValues>
+                  <Caption>From Date</Caption>
+                  <HierarchyUniqueName>[Dim Time].[Date]</HierarchyUniqueName>
+                  <ParameterValuesQuery>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Date].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Date].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Date].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Date].ALLMEMBERS ON ROWS FROM [RLG-Finance]</Statement>
+                    <ParameterizedStatement>
+                      <ReferencedParameters />
+                    </ParameterizedStatement>
+                  </ParameterValuesQuery>
+                </ParameterDefinition>
+                <ParameterDefinition>
+                  <Name>ToDimTimeDate</Name>
+                  <Usage>RangeTo</Usage>
+                  <DefaultValues>
+                    <DefaultValue>[Dim Time].[Date].[All]</DefaultValue>
+                  </DefaultValues>
+                  <Caption>To Date</Caption>
+                  <HierarchyUniqueName>[Dim Time].[Date]</HierarchyUniqueName>
+                  <ParameterValuesQuery>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Date].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Date].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Date].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Date].ALLMEMBERS ON ROWS FROM [RLG-Finance]</Statement>
+                    <ParameterizedStatement>
+                      <ReferencedParameters />
+                    </ParameterizedStatement>
+                  </ParameterValuesQuery>
+                </ParameterDefinition>
+                <ParameterDefinition>
+                  <Name>DimCompanySegmentCompanySegement</Name>
+                  <DefaultValues>
+                    <DefaultValue>[Dim Company Segment].[Company Segement].[All]</DefaultValue>
+                  </DefaultValues>
+                  <Caption>Company Segement</Caption>
+                  <HierarchyUniqueName>[Dim Company Segment].[Company Segement]</HierarchyUniqueName>
+                  <ParameterValuesQuery>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Company Segment].[Company Segement].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Company Segment].[Company Segement].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Company Segment].[Company Segement].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Company Segment].[Company Segement].ALLMEMBERS ON ROWS FROM [RLG-Finance]</Statement>
+                    <ParameterizedStatement>
+                      <ReferencedParameters />
+                    </ParameterizedStatement>
+                  </ParameterValuesQuery>
+                  <MultipleValues>true</MultipleValues>
+                </ParameterDefinition>
+                <ParameterDefinition>
+                  <Name>DimBusinessUnitSegmentBusinessUnit</Name>
+                  <DefaultValues>
+                    <DefaultValue>[Dim Business Unit Segment].[Business Unit].[All]</DefaultValue>
+                  </DefaultValues>
+                  <Caption>Business Unit</Caption>
+                  <HierarchyUniqueName>[Dim Business Unit Segment].[Business Unit]</HierarchyUniqueName>
+                  <ParameterValuesQuery>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Unit Segment].[Business Unit].ALLMEMBERS ON ROWS FROM [RLG-Finance]</Statement>
+                    <ParameterizedStatement>
+                      <ReferencedParameters />
+                    </ParameterizedStatement>
+                  </ParameterValuesQuery>
+                  <MultipleValues>true</MultipleValues>
+                </ParameterDefinition>
+              </ParameterDefinitions>
+            </Query>
+          </QueryDefinition>
+        </rd:DesignerState>
+      </Query>
+      <Fields>
+        <Field Name="Parent_Account_Key">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Dim Account].[Parent Account Key]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Parent_Business_Unit_Segment_Key">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Dim Business Unit Segment].[Parent Business Unit Segment Key]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Actual_Amount">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Actual Amount]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="DimTimeYear">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>[Dim Time].[Year].&amp;[2014]</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Year</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>DimTimeYear</DataSetName>
+          <ValueField>ParameterValue</ValueField>
+          <LabelField>ParameterCaptionIndented</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="DimTimeQuarter">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>[Dim Time].[Quarter].[All]</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Quarter</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>DimTimeQuarter</DataSetName>
+          <ValueField>ParameterValue</ValueField>
+          <LabelField>ParameterCaptionIndented</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="DimTimeMonth">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>[Dim Time].[Month].[All]</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Month</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>DimTimeMonth</DataSetName>
+          <ValueField>ParameterValue</ValueField>
+          <LabelField>ParameterCaptionIndented</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="FromDimTimeDate">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>[Dim Time].[Date].[All]</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>From Date</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>FromDimTimeDate</DataSetName>
+          <ValueField>ParameterValue</ValueField>
+          <LabelField>ParameterCaptionIndented</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="ToDimTimeDate">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>[Dim Time].[Date].[All]</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>To Date</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>ToDimTimeDate</DataSetName>
+          <ValueField>ParameterValue</ValueField>
+          <LabelField>ParameterCaptionIndented</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="DimCompanySegmentCompanySegement">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>[Dim Company Segment].[Company Segement].[All]</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Company Segement</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>DimCompanySegmentCompanySegement</DataSetName>
+          <ValueField>ParameterValue</ValueField>
+          <LabelField>ParameterCaptionIndented</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="DimBusinessUnitSegmentParentBusinessUnitSegmentKey">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>[Dim Business Unit Segment].[Parent Business Unit Segment Key].[All]</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Parent Business Unit Segment Key</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>DimBusinessUnitSegmentParentBusinessUnitSegmentKey</DataSetName>
+          <ValueField>ParameterValue</ValueField>
+          <LabelField>ParameterCaptionIndented</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="DimBusinessUnitSegmentBusinessUnit">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>[Dim Business Unit Segment].[Business Unit].[All]</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Business Unit</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>DimBusinessUnitSegmentBusinessUnit</DataSetName>
+          <ValueField>ParameterValue</ValueField>
+          <LabelField>ParameterCaptionIndented</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>d0632ce7-5360-4eef-b630-31b19a0574ed</rd:ReportID>
+</Report>

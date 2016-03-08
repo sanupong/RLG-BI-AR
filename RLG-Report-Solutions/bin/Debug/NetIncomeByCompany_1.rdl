@@ -1,0 +1,1319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:cl="http://schemas.microsoft.com/sqlserver/reporting/2010/01/componentdefinition" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="Finance">
+      <DataSourceReference>BIDS</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>7ae7acb9-2159-496d-8f8b-9b1da2c6662c</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="NetIncomeByCompany">
+      <Query>
+        <DataSourceName>Finance</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="DimCompanySegmentCompanySegement">
+            <Value>=Parameters!DimCompanySegmentCompanySegement.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="DimBusinessUnitSegmentBusinessUnit">
+            <Value>=Parameters!DimBusinessUnitSegmentBusinessUnit.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="DimTimeYear">
+            <Value>=Parameters!DimTimeYear.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="DimTimeQuarter">
+            <Value>=Parameters!DimTimeQuarter.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="DimTimeMonth">
+            <Value>=Parameters!DimTimeMonth.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="DimAccountParentAccountKey">
+            <Value>=Parameters!ClickAction.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText> SELECT NON EMPTY { [Measures].[Actual Amount], [Measures].[Budget Amount] } ON COLUMNS, NON EMPTY { (DESCENDANTS([Dim Account].[Parent Account Key].[Level 02].ALLMEMBERS) ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME, PARENT_UNIQUE_NAME, LEVEL_NUMBER ON ROWS FROM ( SELECT ( STRTOSET(@DimAccountParentAccountKey, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeQuarter, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED) ) ON COLUMNS FROM [RLG-Finance])))))) WHERE ( IIF( STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED).Count = 1, STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED), [Dim Company Segment].[Company Segement].currentmember ), IIF( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED).Count = 1, STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED), [Dim Business Unit Segment].[Business Unit].currentmember ), IIF( STRTOSET(@DimTimeYear, CONSTRAINED).Count = 1, STRTOSET(@DimTimeYear, CONSTRAINED), [Dim Time].[Year].currentmember ), IIF( STRTOSET(@DimTimeQuarter, CONSTRAINED).Count = 1, STRTOSET(@DimTimeQuarter, CONSTRAINED), [Dim Time].[Quarter].currentmember ), IIF( STRTOSET(@DimTimeMonth, CONSTRAINED).Count = 1, STRTOSET(@DimTimeMonth, CONSTRAINED), [Dim Time].[Month].currentmember ) ) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</CommandText>
+        <rd:DesignerState><QueryDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition"><CommandType>MDX</CommandType><QuerySpecification xsi:type="MDXQuerySpecification"><Select><Items><Item><ID xsi:type="Level"><DimensionName>Dim Account</DimensionName><HierarchyName>Parent Account Key</HierarchyName><HierarchyUniqueName>[Dim Account].[Parent Account Key]</HierarchyUniqueName><LevelName>Level 02</LevelName><UniqueName>[Dim Account].[Parent Account Key].[Level 02]</UniqueName></ID><ItemCaption>Parent Account Key</ItemCaption><UniqueName>true</UniqueName><IsParentChild>true</IsParentChild></Item><Item><ID xsi:type="Measure"><MeasureName>Budget Amount</MeasureName><UniqueName>[Measures].[Budget Amount]</UniqueName></ID><ItemCaption>Budget Amount</ItemCaption><BackColor>true</BackColor><ForeColor>true</ForeColor><FontFamily>true</FontFamily><FontSize>true</FontSize><FontWeight>true</FontWeight><FontStyle>true</FontStyle><FontDecoration>true</FontDecoration><FormattedValue>true</FormattedValue><FormatString>true</FormatString></Item><Item><ID xsi:type="Measure"><MeasureName>Actual Amount</MeasureName><UniqueName>[Measures].[Actual Amount]</UniqueName></ID><ItemCaption>Actual Amount</ItemCaption><BackColor>true</BackColor><ForeColor>true</ForeColor><FontFamily>true</FontFamily><FontSize>true</FontSize><FontWeight>true</FontWeight><FontStyle>true</FontStyle><FontDecoration>true</FontDecoration><FormattedValue>true</FormattedValue><FormatString>true</FormatString></Item></Items></Select><From>RLG-Finance</From><Filter><FilterItems><FilterItem><HierarchyUniqueName>[Dim Company Segment].[Company Segement]</HierarchyUniqueName><Condition xsi:type="EqualTo"><Members /><Parametrized>true</Parametrized></Condition></FilterItem><FilterItem><HierarchyUniqueName>[Dim Business Unit Segment].[Business Unit]</HierarchyUniqueName><Condition xsi:type="EqualTo"><Members /><Parametrized>true</Parametrized></Condition></FilterItem><FilterItem><HierarchyUniqueName>[Dim Time].[Year]</HierarchyUniqueName><Condition xsi:type="EqualTo"><Members /><Parametrized>true</Parametrized></Condition></FilterItem><FilterItem><HierarchyUniqueName>[Dim Time].[Quarter]</HierarchyUniqueName><Condition xsi:type="EqualTo"><Members /><Parametrized>true</Parametrized></Condition></FilterItem><FilterItem><HierarchyUniqueName>[Dim Time].[Month]</HierarchyUniqueName><Condition xsi:type="EqualTo"><Members /><Parametrized>true</Parametrized></Condition></FilterItem><FilterItem><HierarchyUniqueName>[Dim Account].[Parent Account Key]</HierarchyUniqueName><Condition xsi:type="EqualTo"><Members><Member><MemberUniqueName>[Dim Account].[Parent Account Key].&amp;[257]</MemberUniqueName></Member></Members><Parametrized>true</Parametrized></Condition></FilterItem></FilterItems></Filter><Calculations /><Aggregates /><QueryProperties /></QuerySpecification><Query><Statement> SELECT NON EMPTY { [Measures].[Actual Amount], [Measures].[Budget Amount] } ON COLUMNS, NON EMPTY { (DESCENDANTS([Dim Account].[Parent Account Key].[Level 02].ALLMEMBERS) ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME, PARENT_UNIQUE_NAME, LEVEL_NUMBER ON ROWS FROM ( SELECT ( STRTOSET(@DimAccountParentAccountKey, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeQuarter, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED) ) ON COLUMNS FROM [RLG-Finance])))))) WHERE ( IIF( STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED).Count = 1, STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED), [Dim Company Segment].[Company Segement].currentmember ), IIF( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED).Count = 1, STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED), [Dim Business Unit Segment].[Business Unit].currentmember ), IIF( STRTOSET(@DimTimeYear, CONSTRAINED).Count = 1, STRTOSET(@DimTimeYear, CONSTRAINED), [Dim Time].[Year].currentmember ), IIF( STRTOSET(@DimTimeQuarter, CONSTRAINED).Count = 1, STRTOSET(@DimTimeQuarter, CONSTRAINED), [Dim Time].[Quarter].currentmember ), IIF( STRTOSET(@DimTimeMonth, CONSTRAINED).Count = 1, STRTOSET(@DimTimeMonth, CONSTRAINED), [Dim Time].[Month].currentmember ) ) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</Statement><ParameterDefinitions><ParameterDefinition><Name>DimCompanySegmentCompanySegement</Name><DefaultValues /><Caption>Company Segement</Caption><HierarchyUniqueName>[Dim Company Segment].[Company Segement]</HierarchyUniqueName><ParameterValuesQuery><Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Company Segment].[Company Segement].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Company Segment].[Company Segement].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Company Segment].[Company Segement].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Company Segment].[Company Segement].ALLMEMBERS ON ROWS FROM [RLG-Finance]</Statement><ParameterizedStatement><ReferencedParameters /></ParameterizedStatement></ParameterValuesQuery><MultipleValues>true</MultipleValues></ParameterDefinition><ParameterDefinition><Name>DimBusinessUnitSegmentBusinessUnit</Name><DefaultValues /><Caption>Business Unit</Caption><HierarchyUniqueName>[Dim Business Unit Segment].[Business Unit]</HierarchyUniqueName><ParameterValuesQuery><Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Unit Segment].[Business Unit].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED) ) ON COLUMNS FROM [RLG-Finance])</Statement><ParameterizedStatement><Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Unit Segment].[Business Unit].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED) ) ON COLUMNS FROM [RLG-Finance])</Statement><ReferencedParameters><ReferencedParameter><Name>DimCompanySegmentCompanySegement</Name></ReferencedParameter></ReferencedParameters></ParameterizedStatement></ParameterValuesQuery><MultipleValues>true</MultipleValues></ParameterDefinition><ParameterDefinition><Name>DimTimeYear</Name><DefaultValues /><Caption>Year</Caption><HierarchyUniqueName>[Dim Time].[Year]</HierarchyUniqueName><ParameterValuesQuery><Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Year].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Year].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Year].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Year].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED) ) ON COLUMNS FROM [RLG-Finance]))</Statement><ParameterizedStatement><Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Year].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Year].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Year].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Year].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED) ) ON COLUMNS FROM [RLG-Finance]))</Statement><ReferencedParameters><ReferencedParameter><Name>DimCompanySegmentCompanySegement</Name></ReferencedParameter><ReferencedParameter><Name>DimBusinessUnitSegmentBusinessUnit</Name></ReferencedParameter></ReferencedParameters></ParameterizedStatement></ParameterValuesQuery><MultipleValues>true</MultipleValues></ParameterDefinition><ParameterDefinition><Name>DimTimeQuarter</Name><DefaultValues /><Caption>Quarter</Caption><HierarchyUniqueName>[Dim Time].[Quarter]</HierarchyUniqueName><ParameterValuesQuery><Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Quarter].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Quarter].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Quarter].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Quarter].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimTimeYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED) ) ON COLUMNS FROM [RLG-Finance])))</Statement><ParameterizedStatement><Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Quarter].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Quarter].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Quarter].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Quarter].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimTimeYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED) ) ON COLUMNS FROM [RLG-Finance])))</Statement><ReferencedParameters><ReferencedParameter><Name>DimCompanySegmentCompanySegement</Name></ReferencedParameter><ReferencedParameter><Name>DimBusinessUnitSegmentBusinessUnit</Name></ReferencedParameter><ReferencedParameter><Name>DimTimeYear</Name></ReferencedParameter></ReferencedParameters></ParameterizedStatement></ParameterValuesQuery><MultipleValues>true</MultipleValues></ParameterDefinition><ParameterDefinition><Name>DimTimeMonth</Name><DefaultValues /><Caption>Month</Caption><HierarchyUniqueName>[Dim Time].[Month]</HierarchyUniqueName><ParameterValuesQuery><Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Month].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Month].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Month].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Month].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimTimeQuarter, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED) ) ON COLUMNS FROM [RLG-Finance]))))</Statement><ParameterizedStatement><Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Month].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Month].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Month].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Month].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimTimeQuarter, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED) ) ON COLUMNS FROM [RLG-Finance]))))</Statement><ReferencedParameters><ReferencedParameter><Name>DimCompanySegmentCompanySegement</Name></ReferencedParameter><ReferencedParameter><Name>DimBusinessUnitSegmentBusinessUnit</Name></ReferencedParameter><ReferencedParameter><Name>DimTimeYear</Name></ReferencedParameter><ReferencedParameter><Name>DimTimeQuarter</Name></ReferencedParameter></ReferencedParameters></ParameterizedStatement></ParameterValuesQuery><MultipleValues>true</MultipleValues></ParameterDefinition><ParameterDefinition><Name>DimAccountParentAccountKey</Name><DefaultValues><DefaultValue>[Dim Account].[Parent Account Key].&amp;[257]</DefaultValue></DefaultValues><Caption>Parent Account Key</Caption><HierarchyUniqueName>[Dim Account].[Parent Account Key]</HierarchyUniqueName><ParameterValuesQuery><Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Account].[Parent Account Key].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Account].[Parent Account Key].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Account].[Parent Account Key].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Account].[Parent Account Key].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimTimeMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeQuarter, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED) ) ON COLUMNS FROM [RLG-Finance])))))</Statement><ParameterizedStatement><Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Account].[Parent Account Key].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Account].[Parent Account Key].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Account].[Parent Account Key].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Account].[Parent Account Key].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimTimeMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeQuarter, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED) ) ON COLUMNS FROM [RLG-Finance])))))</Statement><ReferencedParameters><ReferencedParameter><Name>DimCompanySegmentCompanySegement</Name></ReferencedParameter><ReferencedParameter><Name>DimBusinessUnitSegmentBusinessUnit</Name></ReferencedParameter><ReferencedParameter><Name>DimTimeYear</Name></ReferencedParameter><ReferencedParameter><Name>DimTimeQuarter</Name></ReferencedParameter><ReferencedParameter><Name>DimTimeMonth</Name></ReferencedParameter></ReferencedParameters></ParameterizedStatement></ParameterValuesQuery><MultipleValues>true</MultipleValues></ParameterDefinition></ParameterDefinitions></Query></QueryDefinition></rd:DesignerState>
+      </Query>
+      <Fields>
+        <Field Name="Parent_Account_Key">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Dim Account].[Parent Account Key]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Budget_Amount">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Budget Amount]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Actual_Amount">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Actual Amount]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="DimCompanySegmentCompanySegement">
+      <Query>
+        <DataSourceName>Finance</DataSourceName>
+        <CommandText>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Company Segment].[Company Segement].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Company Segment].[Company Segement].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Company Segment].[Company Segement].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Company Segment].[Company Segement].ALLMEMBERS ON ROWS FROM [RLG-Finance]</CommandText>
+        <rd:DesignerState><QueryDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition"><CommandType>MDX</CommandType><Type>Query</Type><QuerySpecification xsi:type="MDXQuerySpecification"><Select><Items><Item><ID xsi:type="Measure"><MeasureName>ParameterCaption</MeasureName><UniqueName>[Measures].[ParameterCaption]</UniqueName></ID><ItemCaption>ParameterCaption</ItemCaption><FormattedValue>true</FormattedValue></Item><Item><ID xsi:type="Measure"><MeasureName>ParameterValue</MeasureName><UniqueName>[Measures].[ParameterValue]</UniqueName></ID><ItemCaption>ParameterValue</ItemCaption><FormattedValue>true</FormattedValue></Item><Item><ID xsi:type="Measure"><MeasureName>ParameterLevel</MeasureName><UniqueName>[Measures].[ParameterLevel]</UniqueName></ID><ItemCaption>ParameterLevel</ItemCaption><FormattedValue>true</FormattedValue></Item></Items></Select><From>RLG-Finance</From><Filter><FilterItems /></Filter><Calculations /><Aggregates /><QueryProperties /></QuerySpecification><Query><Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Company Segment].[Company Segement].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Company Segment].[Company Segement].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Company Segment].[Company Segement].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Company Segment].[Company Segement].ALLMEMBERS ON ROWS FROM [RLG-Finance]</Statement><ParameterDefinitions /></Query></QueryDefinition></rd:DesignerState>
+        <rd:AutoGenerated>true</rd:AutoGenerated>
+        <rd:Hidden>true</rd:Hidden>
+      </Query>
+      <Fields>
+        <Field Name="ParameterCaption">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterCaption]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterValue">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterValue]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterLevel">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterLevel]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterCaptionIndented">
+          <Value>=Space(3*Fields!ParameterLevel.Value) + Fields!ParameterCaption.Value</Value>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="DimBusinessUnitSegmentBusinessUnit">
+      <Query>
+        <DataSourceName>Finance</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="DimCompanySegmentCompanySegement">
+            <Value>=Parameters!DimCompanySegmentCompanySegement.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Unit Segment].[Business Unit].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED) ) ON COLUMNS FROM [RLG-Finance])</CommandText>
+        <rd:DesignerState><QueryDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition"><CommandType>MDX</CommandType><Type>Query</Type><QuerySpecification xsi:type="MDXQuerySpecification"><Select><Items><Item><ID xsi:type="Measure"><MeasureName>ParameterCaption</MeasureName><UniqueName>[Measures].[ParameterCaption]</UniqueName></ID><ItemCaption>ParameterCaption</ItemCaption><FormattedValue>true</FormattedValue></Item><Item><ID xsi:type="Measure"><MeasureName>ParameterValue</MeasureName><UniqueName>[Measures].[ParameterValue]</UniqueName></ID><ItemCaption>ParameterValue</ItemCaption><FormattedValue>true</FormattedValue></Item><Item><ID xsi:type="Measure"><MeasureName>ParameterLevel</MeasureName><UniqueName>[Measures].[ParameterLevel]</UniqueName></ID><ItemCaption>ParameterLevel</ItemCaption><FormattedValue>true</FormattedValue></Item></Items></Select><From>RLG-Finance</From><Filter><FilterItems /></Filter><Calculations /><Aggregates /><QueryProperties /></QuerySpecification><Query><Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Unit Segment].[Business Unit].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED) ) ON COLUMNS FROM [RLG-Finance])</Statement><ParameterDefinitions><ParameterDefinition><Name>DimCompanySegmentCompanySegement</Name><DefaultValues /><Caption>Company Segement</Caption><HierarchyUniqueName>[Dim Company Segment].[Company Segement]</HierarchyUniqueName><ParameterValuesQuery><Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Company Segment].[Company Segement].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Company Segment].[Company Segement].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Company Segment].[Company Segement].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Company Segment].[Company Segement].ALLMEMBERS ON ROWS FROM [RLG-Finance]</Statement><ParameterizedStatement><ReferencedParameters /></ParameterizedStatement></ParameterValuesQuery><MultipleValues>true</MultipleValues></ParameterDefinition></ParameterDefinitions></Query></QueryDefinition></rd:DesignerState>
+        <rd:AutoGenerated>true</rd:AutoGenerated>
+        <rd:Hidden>true</rd:Hidden>
+      </Query>
+      <Fields>
+        <Field Name="ParameterCaption">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterCaption]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterValue">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterValue]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterLevel">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterLevel]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterCaptionIndented">
+          <Value>=Space(3*Fields!ParameterLevel.Value) + Fields!ParameterCaption.Value</Value>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="DimTimeYear">
+      <Query>
+        <DataSourceName>Finance</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="DimCompanySegmentCompanySegement">
+            <Value>=Parameters!DimCompanySegmentCompanySegement.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="DimBusinessUnitSegmentBusinessUnit">
+            <Value>=Parameters!DimBusinessUnitSegmentBusinessUnit.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Year].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Year].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Year].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Year].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED) ) ON COLUMNS FROM [RLG-Finance]))</CommandText>
+        <rd:DesignerState><QueryDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition"><CommandType>MDX</CommandType><Type>Query</Type><QuerySpecification xsi:type="MDXQuerySpecification"><Select><Items><Item><ID xsi:type="Measure"><MeasureName>ParameterCaption</MeasureName><UniqueName>[Measures].[ParameterCaption]</UniqueName></ID><ItemCaption>ParameterCaption</ItemCaption><FormattedValue>true</FormattedValue></Item><Item><ID xsi:type="Measure"><MeasureName>ParameterValue</MeasureName><UniqueName>[Measures].[ParameterValue]</UniqueName></ID><ItemCaption>ParameterValue</ItemCaption><FormattedValue>true</FormattedValue></Item><Item><ID xsi:type="Measure"><MeasureName>ParameterLevel</MeasureName><UniqueName>[Measures].[ParameterLevel]</UniqueName></ID><ItemCaption>ParameterLevel</ItemCaption><FormattedValue>true</FormattedValue></Item></Items></Select><From>RLG-Finance</From><Filter><FilterItems /></Filter><Calculations /><Aggregates /><QueryProperties /></QuerySpecification><Query><Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Year].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Year].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Year].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Year].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED) ) ON COLUMNS FROM [RLG-Finance]))</Statement><ParameterDefinitions><ParameterDefinition><Name>DimCompanySegmentCompanySegement</Name><DefaultValues /><Caption>Company Segement</Caption><HierarchyUniqueName>[Dim Company Segment].[Company Segement]</HierarchyUniqueName><ParameterValuesQuery><Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Company Segment].[Company Segement].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Company Segment].[Company Segement].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Company Segment].[Company Segement].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Company Segment].[Company Segement].ALLMEMBERS ON ROWS FROM [RLG-Finance]</Statement><ParameterizedStatement><ReferencedParameters /></ParameterizedStatement></ParameterValuesQuery><MultipleValues>true</MultipleValues></ParameterDefinition><ParameterDefinition><Name>DimBusinessUnitSegmentBusinessUnit</Name><DefaultValues /><Caption>Business Unit</Caption><HierarchyUniqueName>[Dim Business Unit Segment].[Business Unit]</HierarchyUniqueName><ParameterValuesQuery><Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Unit Segment].[Business Unit].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED) ) ON COLUMNS FROM [RLG-Finance])</Statement><ParameterizedStatement><Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Unit Segment].[Business Unit].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED) ) ON COLUMNS FROM [RLG-Finance])</Statement><ReferencedParameters><ReferencedParameter><Name>DimCompanySegmentCompanySegement</Name></ReferencedParameter></ReferencedParameters></ParameterizedStatement></ParameterValuesQuery><MultipleValues>true</MultipleValues></ParameterDefinition></ParameterDefinitions></Query></QueryDefinition></rd:DesignerState>
+        <rd:AutoGenerated>true</rd:AutoGenerated>
+        <rd:Hidden>true</rd:Hidden>
+      </Query>
+      <Fields>
+        <Field Name="ParameterCaption">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterCaption]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterValue">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterValue]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterLevel">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterLevel]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterCaptionIndented">
+          <Value>=Space(3*Fields!ParameterLevel.Value) + Fields!ParameterCaption.Value</Value>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="DimTimeQuarter">
+      <Query>
+        <DataSourceName>Finance</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="DimCompanySegmentCompanySegement">
+            <Value>=Parameters!DimCompanySegmentCompanySegement.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="DimBusinessUnitSegmentBusinessUnit">
+            <Value>=Parameters!DimBusinessUnitSegmentBusinessUnit.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="DimTimeYear">
+            <Value>=Parameters!DimTimeYear.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Quarter].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Quarter].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Quarter].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Quarter].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimTimeYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED) ) ON COLUMNS FROM [RLG-Finance])))</CommandText>
+        <rd:DesignerState><QueryDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition"><CommandType>MDX</CommandType><Type>Query</Type><QuerySpecification xsi:type="MDXQuerySpecification"><Select><Items><Item><ID xsi:type="Measure"><MeasureName>ParameterCaption</MeasureName><UniqueName>[Measures].[ParameterCaption]</UniqueName></ID><ItemCaption>ParameterCaption</ItemCaption><FormattedValue>true</FormattedValue></Item><Item><ID xsi:type="Measure"><MeasureName>ParameterValue</MeasureName><UniqueName>[Measures].[ParameterValue]</UniqueName></ID><ItemCaption>ParameterValue</ItemCaption><FormattedValue>true</FormattedValue></Item><Item><ID xsi:type="Measure"><MeasureName>ParameterLevel</MeasureName><UniqueName>[Measures].[ParameterLevel]</UniqueName></ID><ItemCaption>ParameterLevel</ItemCaption><FormattedValue>true</FormattedValue></Item></Items></Select><From>RLG-Finance</From><Filter><FilterItems /></Filter><Calculations /><Aggregates /><QueryProperties /></QuerySpecification><Query><Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Quarter].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Quarter].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Quarter].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Quarter].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimTimeYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED) ) ON COLUMNS FROM [RLG-Finance])))</Statement><ParameterDefinitions><ParameterDefinition><Name>DimCompanySegmentCompanySegement</Name><DefaultValues /><Caption>Company Segement</Caption><HierarchyUniqueName>[Dim Company Segment].[Company Segement]</HierarchyUniqueName><ParameterValuesQuery><Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Company Segment].[Company Segement].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Company Segment].[Company Segement].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Company Segment].[Company Segement].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Company Segment].[Company Segement].ALLMEMBERS ON ROWS FROM [RLG-Finance]</Statement><ParameterizedStatement><ReferencedParameters /></ParameterizedStatement></ParameterValuesQuery><MultipleValues>true</MultipleValues></ParameterDefinition><ParameterDefinition><Name>DimBusinessUnitSegmentBusinessUnit</Name><DefaultValues /><Caption>Business Unit</Caption><HierarchyUniqueName>[Dim Business Unit Segment].[Business Unit]</HierarchyUniqueName><ParameterValuesQuery><Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Unit Segment].[Business Unit].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED) ) ON COLUMNS FROM [RLG-Finance])</Statement><ParameterizedStatement><Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Unit Segment].[Business Unit].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED) ) ON COLUMNS FROM [RLG-Finance])</Statement><ReferencedParameters><ReferencedParameter><Name>DimCompanySegmentCompanySegement</Name></ReferencedParameter></ReferencedParameters></ParameterizedStatement></ParameterValuesQuery><MultipleValues>true</MultipleValues></ParameterDefinition><ParameterDefinition><Name>DimTimeYear</Name><DefaultValues /><Caption>Year</Caption><HierarchyUniqueName>[Dim Time].[Year]</HierarchyUniqueName><ParameterValuesQuery><Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Year].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Year].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Year].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Year].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED) ) ON COLUMNS FROM [RLG-Finance]))</Statement><ParameterizedStatement><Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Year].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Year].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Year].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Year].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED) ) ON COLUMNS FROM [RLG-Finance]))</Statement><ReferencedParameters><ReferencedParameter><Name>DimCompanySegmentCompanySegement</Name></ReferencedParameter><ReferencedParameter><Name>DimBusinessUnitSegmentBusinessUnit</Name></ReferencedParameter></ReferencedParameters></ParameterizedStatement></ParameterValuesQuery><MultipleValues>true</MultipleValues></ParameterDefinition></ParameterDefinitions></Query></QueryDefinition></rd:DesignerState>
+        <rd:AutoGenerated>true</rd:AutoGenerated>
+        <rd:Hidden>true</rd:Hidden>
+      </Query>
+      <Fields>
+        <Field Name="ParameterCaption">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterCaption]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterValue">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterValue]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterLevel">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterLevel]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterCaptionIndented">
+          <Value>=Space(3*Fields!ParameterLevel.Value) + Fields!ParameterCaption.Value</Value>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="DimTimeMonth">
+      <Query>
+        <DataSourceName>Finance</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="DimCompanySegmentCompanySegement">
+            <Value>=Parameters!DimCompanySegmentCompanySegement.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="DimBusinessUnitSegmentBusinessUnit">
+            <Value>=Parameters!DimBusinessUnitSegmentBusinessUnit.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="DimTimeYear">
+            <Value>=Parameters!DimTimeYear.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="DimTimeQuarter">
+            <Value>=Parameters!DimTimeQuarter.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Month].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Month].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Month].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Month].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimTimeQuarter, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED) ) ON COLUMNS FROM [RLG-Finance]))))</CommandText>
+        <rd:DesignerState><QueryDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition"><CommandType>MDX</CommandType><Type>Query</Type><QuerySpecification xsi:type="MDXQuerySpecification"><Select><Items><Item><ID xsi:type="Measure"><MeasureName>ParameterCaption</MeasureName><UniqueName>[Measures].[ParameterCaption]</UniqueName></ID><ItemCaption>ParameterCaption</ItemCaption><FormattedValue>true</FormattedValue></Item><Item><ID xsi:type="Measure"><MeasureName>ParameterValue</MeasureName><UniqueName>[Measures].[ParameterValue]</UniqueName></ID><ItemCaption>ParameterValue</ItemCaption><FormattedValue>true</FormattedValue></Item><Item><ID xsi:type="Measure"><MeasureName>ParameterLevel</MeasureName><UniqueName>[Measures].[ParameterLevel]</UniqueName></ID><ItemCaption>ParameterLevel</ItemCaption><FormattedValue>true</FormattedValue></Item></Items></Select><From>RLG-Finance</From><Filter><FilterItems /></Filter><Calculations /><Aggregates /><QueryProperties /></QuerySpecification><Query><Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Month].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Month].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Month].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Month].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimTimeQuarter, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimTimeYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED) ) ON COLUMNS FROM [RLG-Finance]))))</Statement><ParameterDefinitions><ParameterDefinition><Name>DimCompanySegmentCompanySegement</Name><DefaultValues /><Caption>Company Segement</Caption><HierarchyUniqueName>[Dim Company Segment].[Company Segement]</HierarchyUniqueName><ParameterValuesQuery><Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Company Segment].[Company Segement].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Company Segment].[Company Segement].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Company Segment].[Company Segement].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Company Segment].[Company Segement].ALLMEMBERS ON ROWS FROM [RLG-Finance]</Statement><ParameterizedStatement><ReferencedParameters /></ParameterizedStatement></ParameterValuesQuery><MultipleValues>true</MultipleValues></ParameterDefinition><ParameterDefinition><Name>DimBusinessUnitSegmentBusinessUnit</Name><DefaultValues /><Caption>Business Unit</Caption><HierarchyUniqueName>[Dim Business Unit Segment].[Business Unit]</HierarchyUniqueName><ParameterValuesQuery><Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Unit Segment].[Business Unit].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED) ) ON COLUMNS FROM [RLG-Finance])</Statement><ParameterizedStatement><Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Unit Segment].[Business Unit].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED) ) ON COLUMNS FROM [RLG-Finance])</Statement><ReferencedParameters><ReferencedParameter><Name>DimCompanySegmentCompanySegement</Name></ReferencedParameter></ReferencedParameters></ParameterizedStatement></ParameterValuesQuery><MultipleValues>true</MultipleValues></ParameterDefinition><ParameterDefinition><Name>DimTimeYear</Name><DefaultValues /><Caption>Year</Caption><HierarchyUniqueName>[Dim Time].[Year]</HierarchyUniqueName><ParameterValuesQuery><Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Year].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Year].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Year].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Year].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED) ) ON COLUMNS FROM [RLG-Finance]))</Statement><ParameterizedStatement><Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Year].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Year].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Year].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Year].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED) ) ON COLUMNS FROM [RLG-Finance]))</Statement><ReferencedParameters><ReferencedParameter><Name>DimCompanySegmentCompanySegement</Name></ReferencedParameter><ReferencedParameter><Name>DimBusinessUnitSegmentBusinessUnit</Name></ReferencedParameter></ReferencedParameters></ParameterizedStatement></ParameterValuesQuery><MultipleValues>true</MultipleValues></ParameterDefinition><ParameterDefinition><Name>DimTimeQuarter</Name><DefaultValues /><Caption>Quarter</Caption><HierarchyUniqueName>[Dim Time].[Quarter]</HierarchyUniqueName><ParameterValuesQuery><Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Quarter].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Quarter].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Quarter].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Quarter].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimTimeYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED) ) ON COLUMNS FROM [RLG-Finance])))</Statement><ParameterizedStatement><Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Quarter].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Quarter].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Quarter].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Quarter].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimTimeYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegement, CONSTRAINED) ) ON COLUMNS FROM [RLG-Finance])))</Statement><ReferencedParameters><ReferencedParameter><Name>DimCompanySegmentCompanySegement</Name></ReferencedParameter><ReferencedParameter><Name>DimBusinessUnitSegmentBusinessUnit</Name></ReferencedParameter><ReferencedParameter><Name>DimTimeYear</Name></ReferencedParameter></ReferencedParameters></ParameterizedStatement></ParameterValuesQuery><MultipleValues>true</MultipleValues></ParameterDefinition></ParameterDefinitions></Query></QueryDefinition></rd:DesignerState>
+        <rd:AutoGenerated>true</rd:AutoGenerated>
+        <rd:Hidden>true</rd:Hidden>
+      </Query>
+      <Fields>
+        <Field Name="ParameterCaption">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterCaption]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterValue">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterValue]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterLevel">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterLevel]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterCaptionIndented">
+          <Value>=Space(3*Fields!ParameterLevel.Value) + Fields!ParameterCaption.Value</Value>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Chart Name="Chart1">
+            <ChartCategoryHierarchy>
+              <ChartMembers>
+                <ChartMember>
+                  <Group Name="Chart1_CategoryGroup">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!Parent_Account_Key.UniqueName</GroupExpression>
+                    </GroupExpressions>
+                    <Parent>=Fields!Parent_Account_Key.ParentUniqueName</Parent>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!Parent_Account_Key.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <Label>=Fields!Parent_Account_Key.Value</Label>
+                </ChartMember>
+              </ChartMembers>
+            </ChartCategoryHierarchy>
+            <ChartSeriesHierarchy>
+              <ChartMembers>
+                <ChartMember>
+                  <Label>Budget Amount</Label>
+                </ChartMember>
+                <ChartMember>
+                  <Label>Actual Amount</Label>
+                </ChartMember>
+              </ChartMembers>
+            </ChartSeriesHierarchy>
+            <ChartData>
+              <ChartSeriesCollection>
+                <ChartSeries Name="Budget_Amount">
+                  <ChartDataPoints>
+                    <ChartDataPoint>
+                      <ChartDataPointValues>
+                        <Y>=Sum(Fields!Budget_Amount.Value)</Y>
+                      </ChartDataPointValues>
+                      <ChartDataLabel>
+                        <Style />
+                      </ChartDataLabel>
+                      <Style />
+                      <ChartMarker>
+                        <Style />
+                      </ChartMarker>
+                      <DataElementOutput>Output</DataElementOutput>
+                    </ChartDataPoint>
+                  </ChartDataPoints>
+                  <Style />
+                  <ChartEmptyPoints>
+                    <Style />
+                    <ChartMarker>
+                      <Style />
+                    </ChartMarker>
+                    <ChartDataLabel>
+                      <Style />
+                    </ChartDataLabel>
+                  </ChartEmptyPoints>
+                  <CustomProperties>
+                    <CustomProperty>
+                      <Name>DrawingStyle</Name>
+                      <Value>Emboss</Value>
+                    </CustomProperty>
+                  </CustomProperties>
+                  <ValueAxisName>Primary</ValueAxisName>
+                  <CategoryAxisName>Primary</CategoryAxisName>
+                  <ChartSmartLabel>
+                    <CalloutLineColor>Black</CalloutLineColor>
+                    <MinMovingDistance>0pt</MinMovingDistance>
+                  </ChartSmartLabel>
+                </ChartSeries>
+                <ChartSeries Name="Actual_Amount">
+                  <ChartDataPoints>
+                    <ChartDataPoint>
+                      <ChartDataPointValues>
+                        <Y>=Sum(Fields!Actual_Amount.Value)</Y>
+                      </ChartDataPointValues>
+                      <ChartDataLabel>
+                        <Style />
+                      </ChartDataLabel>
+                      <Style />
+                      <ChartMarker>
+                        <Style />
+                      </ChartMarker>
+                      <DataElementOutput>Output</DataElementOutput>
+                    </ChartDataPoint>
+                  </ChartDataPoints>
+                  <Style />
+                  <ChartEmptyPoints>
+                    <Style />
+                    <ChartMarker>
+                      <Style />
+                    </ChartMarker>
+                    <ChartDataLabel>
+                      <Style />
+                    </ChartDataLabel>
+                  </ChartEmptyPoints>
+                  <CustomProperties>
+                    <CustomProperty>
+                      <Name>DrawingStyle</Name>
+                      <Value>Emboss</Value>
+                    </CustomProperty>
+                  </CustomProperties>
+                  <ValueAxisName>Primary</ValueAxisName>
+                  <CategoryAxisName>Primary</CategoryAxisName>
+                  <ChartSmartLabel>
+                    <CalloutLineColor>Black</CalloutLineColor>
+                    <MinMovingDistance>0pt</MinMovingDistance>
+                  </ChartSmartLabel>
+                </ChartSeries>
+              </ChartSeriesCollection>
+            </ChartData>
+            <ChartAreas>
+              <ChartArea Name="Default">
+                <ChartCategoryAxes>
+                  <ChartAxis Name="Primary">
+                    <Style>
+                      <FontFamily>Tahoma</FontFamily>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption />
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </ChartAxisTitle>
+                    <Interval>1</Interval>
+                    <ChartMajorGridLines>
+                      <Enabled>False</Enabled>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMajorTickMarks>
+                      <Type>Inside</Type>
+                    </ChartMajorTickMarks>
+                    <ChartMinorTickMarks>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <Angle>-90</Angle>
+                    <AllowLabelRotation>None</AllowLabelRotation>
+                    <LabelsAutoFitDisabled>true</LabelsAutoFitDisabled>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                  <ChartAxis Name="Secondary">
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption>Axis Title</Caption>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Enabled>False</Enabled>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMinorTickMarks>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Location>Opposite</Location>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                </ChartCategoryAxes>
+                <ChartValueAxes>
+                  <ChartAxis Name="Primary">
+                    <Style>
+                      <FontFamily>Tahoma</FontFamily>
+                      <Format>0;(0)</Format>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption />
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMinorTickMarks>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <LogBase>1000</LogBase>
+                    <LabelsAutoFitDisabled>true</LabelsAutoFitDisabled>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                  <ChartAxis Name="Secondary">
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption>Axis Title</Caption>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMinorTickMarks>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Location>Opposite</Location>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                </ChartValueAxes>
+                <ChartThreeDProperties>
+                  <Enabled>true</Enabled>
+                  <Clustered>true</Clustered>
+                </ChartThreeDProperties>
+                <Style>
+                  <BackgroundGradientType>None</BackgroundGradientType>
+                </Style>
+              </ChartArea>
+            </ChartAreas>
+            <ChartLegends>
+              <ChartLegend Name="Default">
+                <Style>
+                  <BackgroundGradientType>None</BackgroundGradientType>
+                  <FontFamily>Tahoma</FontFamily>
+                </Style>
+                <ChartLegendTitle>
+                  <Caption />
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </ChartLegendTitle>
+                <AutoFitTextDisabled>true</AutoFitTextDisabled>
+                <HeaderSeparatorColor>Black</HeaderSeparatorColor>
+                <ColumnSeparatorColor>Black</ColumnSeparatorColor>
+              </ChartLegend>
+            </ChartLegends>
+            <Palette>BrightPastel</Palette>
+            <ChartBorderSkin>
+              <Style>
+                <BackgroundColor>Gray</BackgroundColor>
+                <BackgroundGradientType>None</BackgroundGradientType>
+                <Color>White</Color>
+              </Style>
+            </ChartBorderSkin>
+            <ChartNoDataMessage Name="NoDataMessage">
+              <Caption>No Data Available</Caption>
+              <Style>
+                <BackgroundGradientType>None</BackgroundGradientType>
+                <TextAlign>General</TextAlign>
+                <VerticalAlign>Top</VerticalAlign>
+              </Style>
+            </ChartNoDataMessage>
+            <DataSetName>NetIncomeByCompany</DataSetName>
+            <Filters>
+              <Filter>
+                <FilterExpression>=Fields!Parent_Account_Key.ParentUniqueName</FilterExpression>
+                <Operator>Equal</Operator>
+                <FilterValues>
+                  <FilterValue>=Parameters!ClickAction.Value</FilterValue>
+                </FilterValues>
+              </Filter>
+            </Filters>
+            <Top>0.68056in</Top>
+            <Left>6.02778in</Left>
+            <Height>5.61458in</Height>
+            <Width>9.04167in</Width>
+            <Visibility>
+              <Hidden>=IIF(Globals!RenderFormat.Name="EXCEL",True,False)</Hidden>
+            </Visibility>
+            <Style>
+              <Border>
+                <Color>LightGrey</Color>
+                <Style>Solid</Style>
+              </Border>
+              <BackgroundColor>White</BackgroundColor>
+              <BackgroundGradientType>None</BackgroundGradientType>
+            </Style>
+          </Chart>
+          <Tablix Name="Tablix1">
+            <TablixCorner>
+              <TablixCornerRows>
+                <TablixCornerRow>
+                  <TablixCornerCell>
+                    <CellContents>
+                      <Textbox Name="Textbox4">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>Account Key</Value>
+                                <Style>
+                                  <FontFamily>Tahoma</FontFamily>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox4</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixCornerCell>
+                </TablixCornerRow>
+              </TablixCornerRows>
+            </TablixCorner>
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>1.0625in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.42709in</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.41667in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Budget_Amount">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!Budget_Amount.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <Format>#,0.00;(#,0.00)</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Budget_Amount</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Actual_Amount">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!Actual_Amount.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <Format>#,0.00;(#,0.00)</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Actual_Amount</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="ColumnGroup">
+                    <GroupExpressions>
+                      <GroupExpression />
+                    </GroupExpressions>
+                  </Group>
+                  <TablixMembers>
+                    <TablixMember>
+                      <TablixHeader>
+                        <Size>0.41667in</Size>
+                        <CellContents>
+                          <Textbox Name="Textbox3">
+                            <CanGrow>true</CanGrow>
+                            <KeepTogether>true</KeepTogether>
+                            <Paragraphs>
+                              <Paragraph>
+                                <TextRuns>
+                                  <TextRun>
+                                    <Value>Budget Amount</Value>
+                                    <Style>
+                                      <FontFamily>Tahoma</FontFamily>
+                                    </Style>
+                                  </TextRun>
+                                </TextRuns>
+                                <Style />
+                              </Paragraph>
+                            </Paragraphs>
+                            <rd:DefaultName>Textbox2</rd:DefaultName>
+                            <Style>
+                              <Border>
+                                <Color>LightGrey</Color>
+                                <Style>Solid</Style>
+                              </Border>
+                              <PaddingLeft>2pt</PaddingLeft>
+                              <PaddingRight>2pt</PaddingRight>
+                              <PaddingTop>2pt</PaddingTop>
+                              <PaddingBottom>2pt</PaddingBottom>
+                            </Style>
+                          </Textbox>
+                        </CellContents>
+                      </TablixHeader>
+                      <TablixMembers>
+                        <TablixMember />
+                      </TablixMembers>
+                    </TablixMember>
+                    <TablixMember>
+                      <TablixHeader>
+                        <Size>0.41667in</Size>
+                        <CellContents>
+                          <Textbox Name="Textbox8">
+                            <CanGrow>true</CanGrow>
+                            <KeepTogether>true</KeepTogether>
+                            <Paragraphs>
+                              <Paragraph>
+                                <TextRuns>
+                                  <TextRun>
+                                    <Value>Actual Amount</Value>
+                                    <Style>
+                                      <FontFamily>Tahoma</FontFamily>
+                                    </Style>
+                                  </TextRun>
+                                </TextRuns>
+                                <Style />
+                              </Paragraph>
+                            </Paragraphs>
+                            <rd:DefaultName>Textbox8</rd:DefaultName>
+                            <Style>
+                              <Border>
+                                <Color>LightGrey</Color>
+                                <Style>Solid</Style>
+                              </Border>
+                              <PaddingLeft>2pt</PaddingLeft>
+                              <PaddingRight>2pt</PaddingRight>
+                              <PaddingTop>2pt</PaddingTop>
+                              <PaddingBottom>2pt</PaddingBottom>
+                            </Style>
+                          </Textbox>
+                        </CellContents>
+                      </TablixHeader>
+                      <TablixMembers>
+                        <TablixMember />
+                      </TablixMembers>
+                    </TablixMember>
+                  </TablixMembers>
+                </TablixMember>
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="Parent_Account_Key">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!Parent_Account_Key.UniqueName</GroupExpression>
+                    </GroupExpressions>
+                    <Parent>=Fields!Parent_Account_Key.ParentUniqueName</Parent>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!Parent_Account_Key.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <TablixHeader>
+                    <Size>3.35417in</Size>
+                    <CellContents>
+                      <Textbox Name="Parent_Account_Key">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>=Fields!Parent_Account_Key.Value</Value>
+                                <ActionInfo>
+                                  <Actions>
+                                    <Action>
+                                      <Drillthrough>
+                                        <ReportName>Copy of NetIncomeByCompany</ReportName>
+                                        <Parameters>
+                                          <Parameter Name="DimCompanySegmentCompanySegement">
+                                            <Value>=Parameters!DimCompanySegmentCompanySegement.Value</Value>
+                                          </Parameter>
+                                          <Parameter Name="DimBusinessUnitSegmentBusinessUnit">
+                                            <Value>=Parameters!DimBusinessUnitSegmentBusinessUnit.Value</Value>
+                                          </Parameter>
+                                          <Parameter Name="DimTimeYear">
+                                            <Value>=Parameters!DimTimeYear.Value</Value>
+                                          </Parameter>
+                                          <Parameter Name="DimTimeQuarter">
+                                            <Value>=Parameters!DimTimeQuarter.Value</Value>
+                                          </Parameter>
+                                          <Parameter Name="DimTimeMonth">
+                                            <Value>=Parameters!DimTimeMonth.Value</Value>
+                                          </Parameter>
+                                          <Parameter Name="ClickAction">
+                                            <Value>=Fields!Parent_Account_Key.UniqueName</Value>
+                                          </Parameter>
+                                        </Parameters>
+                                      </Drillthrough>
+                                    </Action>
+                                  </Actions>
+                                </ActionInfo>
+                                <Style>
+                                  <FontFamily>Tahoma</FontFamily>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Parent_Account_Key</rd:DefaultName>
+                        <ActionInfo>
+                          <Actions>
+                            <Action>
+                              <Drillthrough>
+                                <ReportName>NetIncomeByCompany_1</ReportName>
+                                <Parameters>
+                                  <Parameter Name="DimCompanySegmentCompanySegement">
+                                    <Value>=Parameters!DimCompanySegmentCompanySegement.Value</Value>
+                                  </Parameter>
+                                  <Parameter Name="DimBusinessUnitSegmentBusinessUnit">
+                                    <Value>=Parameters!DimBusinessUnitSegmentBusinessUnit.Value</Value>
+                                  </Parameter>
+                                  <Parameter Name="DimTimeYear">
+                                    <Value>=Parameters!DimTimeYear.Value</Value>
+                                  </Parameter>
+                                  <Parameter Name="DimTimeQuarter">
+                                    <Value>=Parameters!DimTimeQuarter.Value</Value>
+                                  </Parameter>
+                                  <Parameter Name="DimTimeMonth">
+                                    <Value>=Parameters!DimTimeMonth.Value</Value>
+                                  </Parameter>
+                                  <Parameter Name="ClickAction">
+                                    <Value>=Fields!Parent_Account_Key.UniqueName</Value>
+                                  </Parameter>
+                                </Parameters>
+                              </Drillthrough>
+                            </Action>
+                          </Actions>
+                        </ActionInfo>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <PaddingLeft>=Cstr(Fields!Parent_Account_Key.LevelNumber * 15) &amp; "pt"</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                  <Visibility>
+                    <Hidden>true</Hidden>
+                    <ToggleItem>Parent_Account_Key</ToggleItem>
+                  </Visibility>
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>NetIncomeByCompany</DataSetName>
+            <Top>0.68056in</Top>
+            <Height>0.83334in</Height>
+            <Width>5.84376in</Width>
+            <ZIndex>1</ZIndex>
+            <Visibility>
+              <Hidden>=IIF(Globals!RenderFormat.Name="EXCEL",True,False)</Hidden>
+            </Visibility>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+          <Textbox Name="Textbox1">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>รายงานรายได้สุทธิ</Value>
+                    <Style>
+                      <FontFamily>Tahoma</FontFamily>
+                      <FontSize>26pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox1</rd:DefaultName>
+            <Left>4.82167in</Left>
+            <Height>0.58333in</Height>
+            <Width>3.5325in</Width>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+        </ReportItems>
+        <Height>11.5139in</Height>
+        <Style />
+      </Body>
+      <Width>15.06946in</Width>
+      <Page>
+        <PageHeader>
+          <Height>1.5in</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Image Name="Logo">
+              <Source>Embedded</Source>
+              <Value>raklukegroupscreenshot1</Value>
+              <Sizing>FitProportional</Sizing>
+              <Height>1.5in</Height>
+              <Width>1.30208in</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Image>
+            <Textbox Name="Textbox2">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>="Page " &amp; Globals!PageNumber &amp; "/" &amp; Globals!TotalPages</Value>
+                      <Style>
+                        <FontFamily>Tahoma</FontFamily>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox2</rd:DefaultName>
+              <Left>12.99654in</Left>
+              <Height>0.25in</Height>
+              <Width>2.07292in</Width>
+              <ZIndex>1</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox5">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>="Company : " &amp; Parameters!DimCompanySegmentCompanySegement.Label</Value>
+                      <Style>
+                        <FontFamily>Tahoma</FontFamily>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox5</rd:DefaultName>
+              <Top>0.25in</Top>
+              <Left>12.99654in</Left>
+              <Height>0.25in</Height>
+              <Width>2.07292in</Width>
+              <ZIndex>2</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox6">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>="Business Unit : " &amp; Parameters!DimBusinessUnitSegmentBusinessUnit.Label</Value>
+                      <Style>
+                        <FontFamily>Tahoma</FontFamily>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox5</rd:DefaultName>
+              <Top>0.5in</Top>
+              <Left>12.99653in</Left>
+              <Height>0.25in</Height>
+              <Width>2.07292in</Width>
+              <ZIndex>3</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox7">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>="Year : " &amp; Parameters!DimTimeYear.Label</Value>
+                      <Style>
+                        <FontFamily>Tahoma</FontFamily>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox5</rd:DefaultName>
+              <Top>0.75in</Top>
+              <Left>12.99654in</Left>
+              <Height>0.25in</Height>
+              <Width>2.07292in</Width>
+              <ZIndex>4</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox9">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>="Quarter : " &amp; Parameters!DimTimeQuarter.Label</Value>
+                      <Style>
+                        <FontFamily>Tahoma</FontFamily>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox5</rd:DefaultName>
+              <Top>1in</Top>
+              <Left>12.99653in</Left>
+              <Height>0.25in</Height>
+              <Width>2.07292in</Width>
+              <ZIndex>5</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox10">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>="Month : " &amp; Parameters!DimTimeMonth.Label</Value>
+                      <Style>
+                        <FontFamily>Tahoma</FontFamily>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox5</rd:DefaultName>
+              <Top>1.25in</Top>
+              <Left>12.99653in</Left>
+              <Height>0.25in</Height>
+              <Width>2.07292in</Width>
+              <ZIndex>6</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageHeader>
+        <LeftMargin>1in</LeftMargin>
+        <RightMargin>1in</RightMargin>
+        <TopMargin>1in</TopMargin>
+        <BottomMargin>1in</BottomMargin>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="DimCompanySegmentCompanySegement">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>DimCompanySegmentCompanySegement</DataSetName>
+          <ValueField>ParameterValue</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>Company Segement</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>DimCompanySegmentCompanySegement</DataSetName>
+          <ValueField>ParameterValue</ValueField>
+          <LabelField>ParameterCaptionIndented</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="DimBusinessUnitSegmentBusinessUnit">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>DimBusinessUnitSegmentBusinessUnit</DataSetName>
+          <ValueField>ParameterValue</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>Business Unit</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>DimBusinessUnitSegmentBusinessUnit</DataSetName>
+          <ValueField>ParameterValue</ValueField>
+          <LabelField>ParameterCaptionIndented</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="DimTimeYear">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>DimTimeYear</DataSetName>
+          <ValueField>ParameterValue</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>Year</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>DimTimeYear</DataSetName>
+          <ValueField>ParameterValue</ValueField>
+          <LabelField>ParameterCaptionIndented</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="DimTimeQuarter">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>DimTimeQuarter</DataSetName>
+          <ValueField>ParameterValue</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>Quarter</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>DimTimeQuarter</DataSetName>
+          <ValueField>ParameterValue</ValueField>
+          <LabelField>ParameterCaptionIndented</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="DimTimeMonth">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>DimTimeMonth</DataSetName>
+          <ValueField>ParameterValue</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>Month</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>DimTimeMonth</DataSetName>
+          <ValueField>ParameterValue</ValueField>
+          <LabelField>ParameterCaptionIndented</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="ClickAction">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>="[Dim Account].[Parent Account Key].&amp;[257]"</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ClickAction</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+  </ReportParameters>
+  <EmbeddedImages>
+    <EmbeddedImage Name="raklukegroupscreenshot1">
+      <MIMEType>image/jpeg</MIMEType>
+      <ImageData>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
+AKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgCte2VpqOlz2V/bQXlnMu2WGZAyOPQg0AeJ6p+z34Ev7157N9X0fcc+VbXAaMfQOCR+dXzsjkRc0H4DeBNF1OK8nivtcnjO5Fv5Q0QPrsUAH8cik5sagjqvFHwy8IeMNag1DXLCaa5htxBGYrhowEBJAwpx3NJSaG4pnZ3NhbXfh+40ydWa0mt2gkUMQSjLtIz9DSuM860b4OeBNB8T2Osabp93FfWknmQO15IwDYx0JwetU5Nk8qPUako4bxX8OvCvjXU7S81+ymuLi2iMcTx3DR/KTnB2nnmmpNCaTLvhTwXoXguwu7XQIrqC2uJBJJHLcvIoYDGQGPBI6464HpQ22CVjqnRJImjkVXRgQysMgg9QRSGeM698B/AetX8l1Bb3uhzucsLCULGT67GBA/DFUpslwRgW37N3hGO4DXWsa/dRg/cDxpn8QuafOxciPY/DXhHw94R0k2egaZBYxtgyuMtJKfVnPJ/OpbbKSsdJSGYPiHwxoPirRf7P1/TYNRtwcpvBDRn1Vhyp+hpp2E1c8buv2cfBctwXttS8QWiH/lmJo3A+hKZ/Wq52TyI3dC+BPgLRdQjupba91ueM5QahMHjB9digA/jmk5sagj2NVVI1RFVEUYVQMAD0qSjivFnw88L+Nb6zuPEFpPcy2sbJCY7ho8BiCeh56U1JoTSZo+FfCGh+DNCm07QbeW3tZZzM6yTNISxAGcn2AobuCVjpqQwoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgA
+oAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoA//2Q==</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>be6ecf7d-3206-4552-a24d-c9ee58aaf42a</rd:ReportID>
+</Report>
