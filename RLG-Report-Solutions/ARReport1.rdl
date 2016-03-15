@@ -282,6 +282,8 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>ARDataSet</DataSetName>
+        <Top>1.25in</Top>
+        <Left>0.25in</Left>
         <Height>3.69667in</Height>
         <Width>11.10417in</Width>
         <Style>
@@ -338,7 +340,10 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>1.84375in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.66667in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -378,6 +383,109 @@
                     </Textbox>
                   </CellContents>
                 </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox10">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!Amount.Value)</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <Format>n2</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox10</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.25in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox6">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!Amount.Value)</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <Format>n2</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox6</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox13">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox13</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
               </TablixCells>
             </TablixRow>
           </TablixRows>
@@ -392,7 +500,7 @@
               </Group>
               <SortExpressions>
                 <SortExpression>
-                  <Value>=Fields!Month.Key</Value>
+                  <Value>=Fields!Month_Number.Value</Value>
                 </SortExpression>
               </SortExpressions>
               <TablixHeader>
@@ -417,6 +525,44 @@
                       </Paragraph>
                     </Paragraphs>
                     <rd:DefaultName>Month</rd:DefaultName>
+                    <Style>
+                      <Border>
+                        <Color>LightGrey</Color>
+                        <Style>Solid</Style>
+                      </Border>
+                      <BackgroundColor>#f79646</BackgroundColor>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixHeader>
+            </TablixMember>
+            <TablixMember>
+              <TablixHeader>
+                <Size>0.25in</Size>
+                <CellContents>
+                  <Textbox Name="Textbox9">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>Total</Value>
+                            <Style>
+                              <FontFamily>Tahoma</FontFamily>
+                              <FontWeight>Bold</FontWeight>
+                              <Color>White</Color>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>Textbox9</rd:DefaultName>
                     <Style>
                       <Border>
                         <Color>LightGrey</Color>
@@ -482,12 +628,50 @@
                 </CellContents>
               </TablixHeader>
             </TablixMember>
+            <TablixMember>
+              <TablixHeader>
+                <Size>3.86458in</Size>
+                <CellContents>
+                  <Textbox Name="Textbox5">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>Total</Value>
+                            <Style>
+                              <FontFamily>Tahoma</FontFamily>
+                              <FontWeight>Bold</FontWeight>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>Textbox5</rd:DefaultName>
+                    <Style>
+                      <Border>
+                        <Color>LightGrey</Color>
+                        <Style>Solid</Style>
+                      </Border>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixHeader>
+              <KeepWithGroup>Before</KeepWithGroup>
+            </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>ARDataSet</DataSetName>
-        <Top>3.69667in</Top>
-        <Height>0.5in</Height>
-        <Width>4.86458in</Width>
+        <Top>5.08556in</Top>
+        <Left>0.375in</Left>
+        <Height>0.75in</Height>
+        <Width>7.375in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -495,11 +679,127 @@
           </Border>
         </Style>
       </Tablix>
+      <Textbox Name="Textbox1">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!DimCompanySegmentCompanySegementDesc.Label</Value>
+                <Style>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>0.115in</Top>
+        <Left>0.125in</Left>
+        <Height>0.25in</Height>
+        <Width>2.22917in</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox11">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value EvaluationMode="Constant">XXXXXXXXXX</Value>
+                <Style>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>0.39278in</Top>
+        <Left>0.125in</Left>
+        <Height>0.25in</Height>
+        <Width>2.22917in</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox12">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value EvaluationMode="Constant">XXXXX</Value>
+                <Style>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>0.68444in</Top>
+        <Left>0.125in</Left>
+        <Height>0.25in</Height>
+        <Width>6.52084in</Width>
+        <ZIndex>4</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Line Name="Line5">
+        <Top>1.05389in</Top>
+        <Left>0.125in</Left>
+        <Height>0in</Height>
+        <Width>10.49938in</Width>
+        <ZIndex>5</ZIndex>
+        <Style>
+          <Border>
+            <Color>Maroon</Color>
+            <Style>Solid</Style>
+            <Width>2pt</Width>
+          </Border>
+        </Style>
+      </Line>
     </ReportItems>
-    <Height>4.19667in</Height>
+    <Height>5.96056in</Height>
     <Style />
   </Body>
-  <Width>11.10417in</Width>
+  <Width>11.35417in</Width>
   <Page>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>
@@ -700,7 +1000,7 @@
             <Value>=Parameters!DocumentActualDateMonth.Value</Value>
           </QueryParameter>
         </QueryParameters>
-        <CommandText> SELECT NON EMPTY { [Measures].[Amount] } ON COLUMNS, NON EMPTY { ([Dim Customer].[Customer Name].[Customer Name].ALLMEMBERS * [Document Actual Date].[Month].[Month].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt] } ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegementDesc, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable]))))) WHERE ( IIF( STRTOSET(@DimCompanySegmentCompanySegementDesc, CONSTRAINED).Count = 1, STRTOSET(@DimCompanySegmentCompanySegementDesc, CONSTRAINED), [Dim Company Segment].[Company Segement Desc].currentmember ), IIF( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED).Count = 1, STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED), [Dim Business Unit Segment].[Business Unit].currentmember ), [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt], IIF( STRTOSET(@DocumentActualDateYear, CONSTRAINED).Count = 1, STRTOSET(@DocumentActualDateYear, CONSTRAINED), [Document Actual Date].[Year].currentmember ) ) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</CommandText>
+        <CommandText> SELECT NON EMPTY { [Measures].[Amount] } ON COLUMNS, NON EMPTY { ([Dim Customer].[Customer Name].[Customer Name].ALLMEMBERS * [Dim Time].[Hierarchy].[Month].ALLMEMBERS * [Dim Time].[Month Number].[Month Number].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt] } ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegementDesc, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable]))))) WHERE ( IIF( STRTOSET(@DimCompanySegmentCompanySegementDesc, CONSTRAINED).Count = 1, STRTOSET(@DimCompanySegmentCompanySegementDesc, CONSTRAINED), [Dim Company Segment].[Company Segement Desc].currentmember ), IIF( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED).Count = 1, STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED), [Dim Business Unit Segment].[Business Unit].currentmember ), [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt], IIF( STRTOSET(@DocumentActualDateYear, CONSTRAINED).Count = 1, STRTOSET(@DocumentActualDateYear, CONSTRAINED), [Document Actual Date].[Year].currentmember ), IIF( STRTOSET(@DocumentActualDateMonth, CONSTRAINED).Count = 1, STRTOSET(@DocumentActualDateMonth, CONSTRAINED), [Document Actual Date].[Month].currentmember ) ) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</CommandText>
         <rd:DesignerState>
           <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
             <CommandType>MDX</CommandType>
@@ -720,13 +1020,24 @@
                   </Item>
                   <Item>
                     <ID xsi:type="Level">
-                      <DimensionName>Document Actual Date</DimensionName>
-                      <HierarchyName>Month</HierarchyName>
-                      <HierarchyUniqueName>[Document Actual Date].[Month]</HierarchyUniqueName>
+                      <DimensionName>Dim Time</DimensionName>
+                      <HierarchyName>Hierarchy</HierarchyName>
+                      <HierarchyUniqueName>[Dim Time].[Hierarchy]</HierarchyUniqueName>
                       <LevelName>Month</LevelName>
-                      <UniqueName>[Document Actual Date].[Month].[Month]</UniqueName>
+                      <UniqueName>[Dim Time].[Hierarchy].[Month]</UniqueName>
                     </ID>
                     <ItemCaption>Month</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Dim Time</DimensionName>
+                      <HierarchyName>Month Number</HierarchyName>
+                      <HierarchyUniqueName>[Dim Time].[Month Number]</HierarchyUniqueName>
+                      <LevelName>Month Number</LevelName>
+                      <UniqueName>[Dim Time].[Month Number].[Month Number]</UniqueName>
+                    </ID>
+                    <ItemCaption>Month Number</ItemCaption>
                     <UniqueName>true</UniqueName>
                   </Item>
                   <Item>
@@ -811,7 +1122,7 @@
               <QueryProperties />
             </QuerySpecification>
             <Query>
-              <Statement> SELECT NON EMPTY { [Measures].[Amount] } ON COLUMNS, NON EMPTY { ([Dim Customer].[Customer Name].[Customer Name].ALLMEMBERS * [Document Actual Date].[Month].[Month].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt] } ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegementDesc, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable]))))) WHERE ( IIF( STRTOSET(@DimCompanySegmentCompanySegementDesc, CONSTRAINED).Count = 1, STRTOSET(@DimCompanySegmentCompanySegementDesc, CONSTRAINED), [Dim Company Segment].[Company Segement Desc].currentmember ), IIF( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED).Count = 1, STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED), [Dim Business Unit Segment].[Business Unit].currentmember ), [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt], IIF( STRTOSET(@DocumentActualDateYear, CONSTRAINED).Count = 1, STRTOSET(@DocumentActualDateYear, CONSTRAINED), [Document Actual Date].[Year].currentmember ) ) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</Statement>
+              <Statement> SELECT NON EMPTY { [Measures].[Amount] } ON COLUMNS, NON EMPTY { ([Dim Customer].[Customer Name].[Customer Name].ALLMEMBERS * [Dim Time].[Hierarchy].[Month].ALLMEMBERS * [Dim Time].[Month Number].[Month Number].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt] } ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegementDesc, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable]))))) WHERE ( IIF( STRTOSET(@DimCompanySegmentCompanySegementDesc, CONSTRAINED).Count = 1, STRTOSET(@DimCompanySegmentCompanySegementDesc, CONSTRAINED), [Dim Company Segment].[Company Segement Desc].currentmember ), IIF( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED).Count = 1, STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED), [Dim Business Unit Segment].[Business Unit].currentmember ), [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt], IIF( STRTOSET(@DocumentActualDateYear, CONSTRAINED).Count = 1, STRTOSET(@DocumentActualDateYear, CONSTRAINED), [Document Actual Date].[Year].currentmember ), IIF( STRTOSET(@DocumentActualDateMonth, CONSTRAINED).Count = 1, STRTOSET(@DocumentActualDateMonth, CONSTRAINED), [Document Actual Date].[Month].currentmember ) ) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</Statement>
               <ParameterDefinitions>
                 <ParameterDefinition>
                   <Name>DimCompanySegmentCompanySegementDesc</Name>
@@ -908,7 +1219,11 @@
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Month">
-          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Document Actual Date].[Month].[Month]" /&gt;</DataField>
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Dim Time].[Hierarchy].[Month]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Month_Number">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Dim Time].[Month Number].[Month Number]" /&gt;</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Amount">
@@ -1194,7 +1509,6 @@
           <LabelField>ParameterCaptionIndented</LabelField>
         </DataSetReference>
       </ValidValues>
-      <MultiValue>true</MultiValue>
     </ReportParameter>
     <ReportParameter Name="DimBusinessUnitSegmentBusinessUnit">
       <DataType>String</DataType>
@@ -1228,7 +1542,6 @@
           <LabelField>ParameterCaptionIndented</LabelField>
         </DataSetReference>
       </ValidValues>
-      <MultiValue>true</MultiValue>
     </ReportParameter>
     <ReportParameter Name="DocumentActualDateMonth">
       <DataType>String</DataType>
@@ -1245,7 +1558,6 @@
           <LabelField>ParameterCaptionIndented</LabelField>
         </DataSetReference>
       </ValidValues>
-      <MultiValue>true</MultiValue>
     </ReportParameter>
   </ReportParameters>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
