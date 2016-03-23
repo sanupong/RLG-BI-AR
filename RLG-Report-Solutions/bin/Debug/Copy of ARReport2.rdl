@@ -336,8 +336,6 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <RepeatColumnHeaders>true</RepeatColumnHeaders>
-        <FixedColumnHeaders>true</FixedColumnHeaders>
         <DataSetName>ARDataSet</DataSetName>
         <Filters>
           <Filter>
@@ -691,8 +689,6 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <RepeatColumnHeaders>true</RepeatColumnHeaders>
-        <FixedColumnHeaders>true</FixedColumnHeaders>
         <DataSetName>ARDataSet</DataSetName>
         <Filters>
           <Filter>
@@ -1703,7 +1699,7 @@
           <Top>0.27778in</Top>
           <Left>0.13225in</Left>
           <Height>0.25in</Height>
-          <Width>6.76041in</Width>
+          <Width>4.11458in</Width>
           <ZIndex>2</ZIndex>
           <Style>
             <Border>

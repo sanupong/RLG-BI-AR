@@ -255,7 +255,7 @@
         </ChartLegends>
         <ChartTitles>
           <ChartTitle Name="Title1">
-            <Caption>รายงานการรับชำระแยกตามรายลูกหนี้ (ล้านบาท)</Caption>
+            <Caption>รายงานการรับชำระเงินแยกตามรายลูกหนี้ (ล้านบาท)</Caption>
             <Style>
               <BackgroundGradientType>None</BackgroundGradientType>
               <FontFamily>Tahoma</FontFamily>
@@ -282,8 +282,8 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>ARDataSet</DataSetName>
-        <Top>1.25in</Top>
-        <Left>0.25in</Left>
+        <Top>0.125in</Top>
+        <Left>0.125in</Left>
         <Height>3.69667in</Height>
         <Width>11.10417in</Width>
         <Style>
@@ -340,10 +340,16 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.84375in</Width>
+              <Width>1.75in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.64583in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.66667in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.65625in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -385,6 +391,40 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
+                    <Textbox Name="Textbox8">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!Amount.Value)/Code.SumLookup(LOOKUPSET(Fields!Month.Value, Fields!Month.Value, Fields!Amount.Value,"ARDataSet"))</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <Format>#,0.00%</Format>
+                                <Color>=IIf(Sum(Fields!Amount.Value)&lt;&gt;0,"Black","White")</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox8</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
                     <Textbox Name="Textbox10">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
@@ -403,6 +443,39 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox10</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox16">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!Amount.Value)/Sum(Fields!Amount.Value, "ARDataSet")</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <Format>#,0.00;(#,0.00)</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox16</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -456,6 +529,39 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
+                    <Textbox Name="Textbox14">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=sum(Fields!Amount.Value)/Sum(Fields!Amount.Value)</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <Format>0.00%</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox14</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
                     <Textbox Name="Textbox13">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
@@ -463,9 +569,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>=Sum(Fields!Amount.Value, "ARDataSet")</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
+                                <Format>#,0.00;(#,0.00)</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -473,6 +580,39 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox13</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox17">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!Amount.Value, "ARDataSet")/Sum(Fields!Amount.Value, "ARDataSet")</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <Format>0.00%</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox17</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -500,7 +640,7 @@
               </Group>
               <SortExpressions>
                 <SortExpression>
-                  <Value>=Fields!Month_Number.Value</Value>
+                  <Value>=Fields!Month.Key</Value>
                 </SortExpression>
               </SortExpressions>
               <TablixHeader>
@@ -539,6 +679,10 @@
                   </Textbox>
                 </CellContents>
               </TablixHeader>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
             </TablixMember>
             <TablixMember>
               <TablixHeader>
@@ -563,6 +707,44 @@
                       </Paragraph>
                     </Paragraphs>
                     <rd:DefaultName>Textbox9</rd:DefaultName>
+                    <Style>
+                      <Border>
+                        <Color>LightGrey</Color>
+                        <Style>Solid</Style>
+                      </Border>
+                      <BackgroundColor>#f79646</BackgroundColor>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixHeader>
+            </TablixMember>
+            <TablixMember>
+              <TablixHeader>
+                <Size>0.25in</Size>
+                <CellContents>
+                  <Textbox Name="Textbox15">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value />
+                            <Style>
+                              <FontFamily>Tahoma</FontFamily>
+                              <FontWeight>Bold</FontWeight>
+                              <Color>White</Color>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>Textbox15</rd:DefaultName>
                     <Style>
                       <Border>
                         <Color>LightGrey</Color>
@@ -667,11 +849,13 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
+        <RepeatColumnHeaders>true</RepeatColumnHeaders>
+        <FixedColumnHeaders>true</FixedColumnHeaders>
         <DataSetName>ARDataSet</DataSetName>
-        <Top>5.08556in</Top>
+        <Top>3.99181in</Top>
         <Left>0.375in</Left>
         <Height>0.75in</Height>
-        <Width>7.375in</Width>
+        <Width>8.58333in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -679,128 +863,141 @@
           </Border>
         </Style>
       </Tablix>
-      <Textbox Name="Textbox1">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=Parameters!DimCompanySegmentCompanySegementDesc.Label</Value>
-                <Style>
-                  <FontFamily>Calibri</FontFamily>
-                  <FontSize>12pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>0.115in</Top>
-        <Left>0.125in</Left>
-        <Height>0.25in</Height>
-        <Width>2.22917in</Width>
-        <ZIndex>2</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox11">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value EvaluationMode="Constant">XXXXXXXXXX</Value>
-                <Style>
-                  <FontFamily>Calibri</FontFamily>
-                  <FontSize>12pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>0.39278in</Top>
-        <Left>0.125in</Left>
-        <Height>0.25in</Height>
-        <Width>2.22917in</Width>
-        <ZIndex>3</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox12">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value EvaluationMode="Constant">XXXXX</Value>
-                <Style>
-                  <FontFamily>Calibri</FontFamily>
-                  <FontSize>12pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>0.68444in</Top>
-        <Left>0.125in</Left>
-        <Height>0.25in</Height>
-        <Width>6.52084in</Width>
-        <ZIndex>4</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Line Name="Line5">
-        <Top>1.05389in</Top>
-        <Left>0.125in</Left>
-        <Height>0in</Height>
-        <Width>10.49938in</Width>
-        <ZIndex>5</ZIndex>
-        <Style>
-          <Border>
-            <Color>Maroon</Color>
-            <Style>Solid</Style>
-            <Width>2pt</Width>
-          </Border>
-        </Style>
-      </Line>
     </ReportItems>
     <Height>5.96056in</Height>
     <Style />
   </Body>
   <Width>11.35417in</Width>
   <Page>
+    <PageHeader>
+      <Height>1.67708in</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="Textbox1">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=trim(Parameters!DimCompanySegmentCompanySegmentName.Label)</Value>
+                  <Style>
+                    <FontFamily>Calibri</FontFamily>
+                    <FontSize>12pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Left</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>0.14625in</Top>
+          <Left>0.125in</Left>
+          <Height>0.25in</Height>
+          <Width>4.11458in</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox11">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>รายงานการรับชำระเงินแยกตามรายลูกหนี้</Value>
+                  <Style>
+                    <FontFamily>Calibri</FontFamily>
+                    <FontSize>12pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>0.42403in</Top>
+          <Left>0.125in</Left>
+          <Height>0.25in</Height>
+          <Width>4.11458in</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox12">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>= "ปี : " &amp; trim(CStr(Parameters!DocumentActualDateYear.Label)) &amp; " เดือน : " &amp; trim(Parameters!DocumentActualDateMonth.Label)</Value>
+                  <Style>
+                    <FontFamily>Calibri</FontFamily>
+                    <FontSize>12pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>0.71569in</Top>
+          <Left>0.125in</Left>
+          <Height>0.25in</Height>
+          <Width>4.11458in</Width>
+          <ZIndex>2</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Line Name="Line5">
+          <Top>1.58514in</Top>
+          <Left>0.125in</Left>
+          <Height>0in</Height>
+          <Width>10.49938in</Width>
+          <ZIndex>3</ZIndex>
+          <Style>
+            <Border>
+              <Color>Maroon</Color>
+              <Style>Solid</Style>
+              <Width>2pt</Width>
+            </Border>
+          </Style>
+        </Line>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageHeader>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>
     <TopMargin>1in</TopMargin>
@@ -816,88 +1013,15 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DimCompanySegmentCompanySegementDesc">
-      <Query>
-        <DataSourceName>DS</DataSourceName>
-        <CommandText>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Company Segment].[Company Segement Desc].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Company Segment].[Company Segement Desc].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Company Segment].[Company Segement Desc].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Company Segment].[Company Segement Desc].ALLMEMBERS ON ROWS FROM [RLG-AccountReceivable]</CommandText>
-        <rd:DesignerState>
-          <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
-            <CommandType>MDX</CommandType>
-            <Type>Query</Type>
-            <QuerySpecification xsi:type="MDXQuerySpecification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-              <Select>
-                <Items>
-                  <Item>
-                    <ID xsi:type="Measure">
-                      <MeasureName>ParameterCaption</MeasureName>
-                      <UniqueName>[Measures].[ParameterCaption]</UniqueName>
-                    </ID>
-                    <ItemCaption>ParameterCaption</ItemCaption>
-                    <FormattedValue>true</FormattedValue>
-                  </Item>
-                  <Item>
-                    <ID xsi:type="Measure">
-                      <MeasureName>ParameterValue</MeasureName>
-                      <UniqueName>[Measures].[ParameterValue]</UniqueName>
-                    </ID>
-                    <ItemCaption>ParameterValue</ItemCaption>
-                    <FormattedValue>true</FormattedValue>
-                  </Item>
-                  <Item>
-                    <ID xsi:type="Measure">
-                      <MeasureName>ParameterLevel</MeasureName>
-                      <UniqueName>[Measures].[ParameterLevel]</UniqueName>
-                    </ID>
-                    <ItemCaption>ParameterLevel</ItemCaption>
-                    <FormattedValue>true</FormattedValue>
-                  </Item>
-                </Items>
-              </Select>
-              <From>RLG-AccountReceivable</From>
-              <Filter>
-                <FilterItems />
-              </Filter>
-              <Calculations />
-              <Aggregates />
-              <QueryProperties />
-            </QuerySpecification>
-            <Query>
-              <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Company Segment].[Company Segement Desc].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Company Segment].[Company Segement Desc].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Company Segment].[Company Segement Desc].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Company Segment].[Company Segement Desc].ALLMEMBERS ON ROWS FROM [RLG-AccountReceivable]</Statement>
-              <ParameterDefinitions />
-            </Query>
-          </QueryDefinition>
-        </rd:DesignerState>
-        <rd:AutoGenerated>true</rd:AutoGenerated>
-        <rd:Hidden>true</rd:Hidden>
-      </Query>
-      <Fields>
-        <Field Name="ParameterCaption">
-          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterCaption]" /&gt;</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="ParameterValue">
-          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterValue]" /&gt;</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="ParameterLevel">
-          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterLevel]" /&gt;</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="ParameterCaptionIndented">
-          <Value>=Space(3*Fields!ParameterLevel.Value) + Fields!ParameterCaption.Value</Value>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-      </Fields>
-    </DataSet>
     <DataSet Name="DimBusinessUnitSegmentBusinessUnit">
       <Query>
         <DataSourceName>DS</DataSourceName>
         <QueryParameters>
-          <QueryParameter Name="DimCompanySegmentCompanySegementDesc">
-            <Value>=Parameters!DimCompanySegmentCompanySegementDesc.Value</Value>
+          <QueryParameter Name="DimCompanySegmentCompanySegmentName">
+            <Value>=Parameters!DimCompanySegmentCompanySegmentName.Value</Value>
           </QueryParameter>
         </QueryParameters>
-        <CommandText>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Unit Segment].[Business Unit].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegementDesc, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])</CommandText>
+        <CommandText>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Unit Segment].[Business Unit].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegmentName, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])</CommandText>
         <rd:DesignerState>
           <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
             <CommandType>MDX</CommandType>
@@ -940,17 +1064,17 @@
               <QueryProperties />
             </QuerySpecification>
             <Query>
-              <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Unit Segment].[Business Unit].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegementDesc, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])</Statement>
+              <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Unit Segment].[Business Unit].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegmentName, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])</Statement>
               <ParameterDefinitions>
                 <ParameterDefinition>
-                  <Name>DimCompanySegmentCompanySegementDesc</Name>
+                  <Name>DimCompanySegmentCompanySegmentName</Name>
                   <DefaultValues>
-                    <DefaultValue>[Dim Company Segment].[Company Segement Desc].[All]</DefaultValue>
+                    <DefaultValue>[Dim Company Segment].[Company Segment Name].[All]</DefaultValue>
                   </DefaultValues>
-                  <Caption>Company Segement Desc</Caption>
-                  <HierarchyUniqueName>[Dim Company Segment].[Company Segement Desc]</HierarchyUniqueName>
+                  <Caption>Company Segment Name</Caption>
+                  <HierarchyUniqueName>[Dim Company Segment].[Company Segment Name]</HierarchyUniqueName>
                   <ParameterValuesQuery>
-                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Company Segment].[Company Segement Desc].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Company Segment].[Company Segement Desc].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Company Segment].[Company Segement Desc].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Company Segment].[Company Segement Desc].ALLMEMBERS ON ROWS FROM [RLG-AccountReceivable]</Statement>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Company Segment].[Company Segment Name].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Company Segment].[Company Segment Name].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Company Segment].[Company Segment Name].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Company Segment].[Company Segment Name].ALLMEMBERS ON ROWS FROM [RLG-AccountReceivable]</Statement>
                     <ParameterizedStatement>
                       <ReferencedParameters />
                     </ParameterizedStatement>
@@ -987,8 +1111,8 @@
       <Query>
         <DataSourceName>DS</DataSourceName>
         <QueryParameters>
-          <QueryParameter Name="DimCompanySegmentCompanySegementDesc">
-            <Value>=Parameters!DimCompanySegmentCompanySegementDesc.Value</Value>
+          <QueryParameter Name="DimCompanySegmentCompanySegmentName">
+            <Value>=Parameters!DimCompanySegmentCompanySegmentName.Value</Value>
           </QueryParameter>
           <QueryParameter Name="DimBusinessUnitSegmentBusinessUnit">
             <Value>=Parameters!DimBusinessUnitSegmentBusinessUnit.Value</Value>
@@ -1000,13 +1124,24 @@
             <Value>=Parameters!DocumentActualDateMonth.Value</Value>
           </QueryParameter>
         </QueryParameters>
-        <CommandText> SELECT NON EMPTY { [Measures].[Amount] } ON COLUMNS, NON EMPTY { ([Dim Customer].[Customer Name].[Customer Name].ALLMEMBERS * [Dim Time].[Hierarchy].[Month].ALLMEMBERS * [Dim Time].[Month Number].[Month Number].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt] } ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegementDesc, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable]))))) WHERE ( IIF( STRTOSET(@DimCompanySegmentCompanySegementDesc, CONSTRAINED).Count = 1, STRTOSET(@DimCompanySegmentCompanySegementDesc, CONSTRAINED), [Dim Company Segment].[Company Segement Desc].currentmember ), IIF( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED).Count = 1, STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED), [Dim Business Unit Segment].[Business Unit].currentmember ), [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt], IIF( STRTOSET(@DocumentActualDateYear, CONSTRAINED).Count = 1, STRTOSET(@DocumentActualDateYear, CONSTRAINED), [Document Actual Date].[Year].currentmember ), IIF( STRTOSET(@DocumentActualDateMonth, CONSTRAINED).Count = 1, STRTOSET(@DocumentActualDateMonth, CONSTRAINED), [Document Actual Date].[Month].currentmember ) ) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</CommandText>
+        <CommandText> SELECT NON EMPTY { [Measures].[Amount] } ON COLUMNS, NON EMPTY { ([Dim Time].[Month].[Month].ALLMEMBERS * [Dim Customer].[Customer Name].[Customer Name].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt] } ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegmentName, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable]))))) WHERE ( IIF( STRTOSET(@DimCompanySegmentCompanySegmentName, CONSTRAINED).Count = 1, STRTOSET(@DimCompanySegmentCompanySegmentName, CONSTRAINED), [Dim Company Segment].[Company Segment Name].currentmember ), IIF( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED).Count = 1, STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED), [Dim Business Unit Segment].[Business Unit].currentmember ), [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt], IIF( STRTOSET(@DocumentActualDateYear, CONSTRAINED).Count = 1, STRTOSET(@DocumentActualDateYear, CONSTRAINED), [Document Actual Date].[Year].currentmember ), IIF( STRTOSET(@DocumentActualDateMonth, CONSTRAINED).Count = 1, STRTOSET(@DocumentActualDateMonth, CONSTRAINED), [Document Actual Date].[Month].currentmember ) ) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</CommandText>
         <rd:DesignerState>
           <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
             <CommandType>MDX</CommandType>
             <QuerySpecification xsi:type="MDXQuerySpecification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
               <Select>
                 <Items>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Dim Time</DimensionName>
+                      <HierarchyName>Month</HierarchyName>
+                      <HierarchyUniqueName>[Dim Time].[Month]</HierarchyUniqueName>
+                      <LevelName>Month</LevelName>
+                      <UniqueName>[Dim Time].[Month].[Month]</UniqueName>
+                    </ID>
+                    <ItemCaption>Month</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
                   <Item>
                     <ID xsi:type="Level">
                       <DimensionName>Dim Customer</DimensionName>
@@ -1016,28 +1151,6 @@
                       <UniqueName>[Dim Customer].[Customer Name].[Customer Name]</UniqueName>
                     </ID>
                     <ItemCaption>Customer Name</ItemCaption>
-                    <UniqueName>true</UniqueName>
-                  </Item>
-                  <Item>
-                    <ID xsi:type="Level">
-                      <DimensionName>Dim Time</DimensionName>
-                      <HierarchyName>Hierarchy</HierarchyName>
-                      <HierarchyUniqueName>[Dim Time].[Hierarchy]</HierarchyUniqueName>
-                      <LevelName>Month</LevelName>
-                      <UniqueName>[Dim Time].[Hierarchy].[Month]</UniqueName>
-                    </ID>
-                    <ItemCaption>Month</ItemCaption>
-                    <UniqueName>true</UniqueName>
-                  </Item>
-                  <Item>
-                    <ID xsi:type="Level">
-                      <DimensionName>Dim Time</DimensionName>
-                      <HierarchyName>Month Number</HierarchyName>
-                      <HierarchyUniqueName>[Dim Time].[Month Number]</HierarchyUniqueName>
-                      <LevelName>Month Number</LevelName>
-                      <UniqueName>[Dim Time].[Month Number].[Month Number]</UniqueName>
-                    </ID>
-                    <ItemCaption>Month Number</ItemCaption>
                     <UniqueName>true</UniqueName>
                   </Item>
                   <Item>
@@ -1062,11 +1175,11 @@
               <Filter>
                 <FilterItems>
                   <FilterItem>
-                    <HierarchyUniqueName>[Dim Company Segment].[Company Segement Desc]</HierarchyUniqueName>
+                    <HierarchyUniqueName>[Dim Company Segment].[Company Segment Name]</HierarchyUniqueName>
                     <Condition xsi:type="EqualTo">
                       <Members>
                         <Member>
-                          <MemberUniqueName>[Dim Company Segment].[Company Segement Desc].[All]</MemberUniqueName>
+                          <MemberUniqueName>[Dim Company Segment].[Company Segment Name].[All]</MemberUniqueName>
                         </Member>
                       </Members>
                       <Parametrized>true</Parametrized>
@@ -1122,17 +1235,17 @@
               <QueryProperties />
             </QuerySpecification>
             <Query>
-              <Statement> SELECT NON EMPTY { [Measures].[Amount] } ON COLUMNS, NON EMPTY { ([Dim Customer].[Customer Name].[Customer Name].ALLMEMBERS * [Dim Time].[Hierarchy].[Month].ALLMEMBERS * [Dim Time].[Month Number].[Month Number].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt] } ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegementDesc, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable]))))) WHERE ( IIF( STRTOSET(@DimCompanySegmentCompanySegementDesc, CONSTRAINED).Count = 1, STRTOSET(@DimCompanySegmentCompanySegementDesc, CONSTRAINED), [Dim Company Segment].[Company Segement Desc].currentmember ), IIF( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED).Count = 1, STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED), [Dim Business Unit Segment].[Business Unit].currentmember ), [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt], IIF( STRTOSET(@DocumentActualDateYear, CONSTRAINED).Count = 1, STRTOSET(@DocumentActualDateYear, CONSTRAINED), [Document Actual Date].[Year].currentmember ), IIF( STRTOSET(@DocumentActualDateMonth, CONSTRAINED).Count = 1, STRTOSET(@DocumentActualDateMonth, CONSTRAINED), [Document Actual Date].[Month].currentmember ) ) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</Statement>
+              <Statement> SELECT NON EMPTY { [Measures].[Amount] } ON COLUMNS, NON EMPTY { ([Dim Time].[Month].[Month].ALLMEMBERS * [Dim Customer].[Customer Name].[Customer Name].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt] } ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegmentName, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable]))))) WHERE ( IIF( STRTOSET(@DimCompanySegmentCompanySegmentName, CONSTRAINED).Count = 1, STRTOSET(@DimCompanySegmentCompanySegmentName, CONSTRAINED), [Dim Company Segment].[Company Segment Name].currentmember ), IIF( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED).Count = 1, STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED), [Dim Business Unit Segment].[Business Unit].currentmember ), [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt], IIF( STRTOSET(@DocumentActualDateYear, CONSTRAINED).Count = 1, STRTOSET(@DocumentActualDateYear, CONSTRAINED), [Document Actual Date].[Year].currentmember ), IIF( STRTOSET(@DocumentActualDateMonth, CONSTRAINED).Count = 1, STRTOSET(@DocumentActualDateMonth, CONSTRAINED), [Document Actual Date].[Month].currentmember ) ) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</Statement>
               <ParameterDefinitions>
                 <ParameterDefinition>
-                  <Name>DimCompanySegmentCompanySegementDesc</Name>
+                  <Name>DimCompanySegmentCompanySegmentName</Name>
                   <DefaultValues>
-                    <DefaultValue>[Dim Company Segment].[Company Segement Desc].[All]</DefaultValue>
+                    <DefaultValue>[Dim Company Segment].[Company Segment Name].[All]</DefaultValue>
                   </DefaultValues>
-                  <Caption>Company Segement Desc</Caption>
-                  <HierarchyUniqueName>[Dim Company Segment].[Company Segement Desc]</HierarchyUniqueName>
+                  <Caption>Company Segment Name</Caption>
+                  <HierarchyUniqueName>[Dim Company Segment].[Company Segment Name]</HierarchyUniqueName>
                   <ParameterValuesQuery>
-                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Company Segment].[Company Segement Desc].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Company Segment].[Company Segement Desc].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Company Segment].[Company Segement Desc].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Company Segment].[Company Segement Desc].ALLMEMBERS ON ROWS FROM [RLG-AccountReceivable]</Statement>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Company Segment].[Company Segment Name].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Company Segment].[Company Segment Name].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Company Segment].[Company Segment Name].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Company Segment].[Company Segment Name].ALLMEMBERS ON ROWS FROM [RLG-AccountReceivable]</Statement>
                     <ParameterizedStatement>
                       <ReferencedParameters />
                     </ParameterizedStatement>
@@ -1147,12 +1260,12 @@
                   <Caption>Business Unit</Caption>
                   <HierarchyUniqueName>[Dim Business Unit Segment].[Business Unit]</HierarchyUniqueName>
                   <ParameterValuesQuery>
-                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Unit Segment].[Business Unit].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegementDesc, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])</Statement>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Unit Segment].[Business Unit].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegmentName, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])</Statement>
                     <ParameterizedStatement>
-                      <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Unit Segment].[Business Unit].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegementDesc, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])</Statement>
+                      <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Unit Segment].[Business Unit].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegmentName, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])</Statement>
                       <ReferencedParameters>
                         <ReferencedParameter>
-                          <Name>DimCompanySegmentCompanySegementDesc</Name>
+                          <Name>DimCompanySegmentCompanySegmentName</Name>
                         </ReferencedParameter>
                       </ReferencedParameters>
                     </ParameterizedStatement>
@@ -1167,12 +1280,12 @@
                   <Caption>Document Actual Date.Year</Caption>
                   <HierarchyUniqueName>[Document Actual Date].[Year]</HierarchyUniqueName>
                   <ParameterValuesQuery>
-                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Document Actual Date].[Year].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Document Actual Date].[Year].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Document Actual Date].[Year].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Document Actual Date].[Year].ALLMEMBERS ON ROWS FROM ( SELECT ( { [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt] } ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegementDesc, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])))</Statement>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Document Actual Date].[Year].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Document Actual Date].[Year].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Document Actual Date].[Year].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Document Actual Date].[Year].ALLMEMBERS ON ROWS FROM ( SELECT ( { [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt] } ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegmentName, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])))</Statement>
                     <ParameterizedStatement>
-                      <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Document Actual Date].[Year].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Document Actual Date].[Year].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Document Actual Date].[Year].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Document Actual Date].[Year].ALLMEMBERS ON ROWS FROM ( SELECT ( { [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt] } ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegementDesc, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])))</Statement>
+                      <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Document Actual Date].[Year].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Document Actual Date].[Year].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Document Actual Date].[Year].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Document Actual Date].[Year].ALLMEMBERS ON ROWS FROM ( SELECT ( { [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt] } ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegmentName, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])))</Statement>
                       <ReferencedParameters>
                         <ReferencedParameter>
-                          <Name>DimCompanySegmentCompanySegementDesc</Name>
+                          <Name>DimCompanySegmentCompanySegmentName</Name>
                         </ReferencedParameter>
                         <ReferencedParameter>
                           <Name>DimBusinessUnitSegmentBusinessUnit</Name>
@@ -1190,12 +1303,12 @@
                   <Caption>Document Actual Date.Month</Caption>
                   <HierarchyUniqueName>[Document Actual Date].[Month]</HierarchyUniqueName>
                   <ParameterValuesQuery>
-                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Document Actual Date].[Month].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Document Actual Date].[Month].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Document Actual Date].[Month].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Document Actual Date].[Month].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt] } ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegementDesc, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable]))))</Statement>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Document Actual Date].[Month].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Document Actual Date].[Month].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Document Actual Date].[Month].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Document Actual Date].[Month].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt] } ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegmentName, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable]))))</Statement>
                     <ParameterizedStatement>
-                      <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Document Actual Date].[Month].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Document Actual Date].[Month].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Document Actual Date].[Month].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Document Actual Date].[Month].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt] } ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegementDesc, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable]))))</Statement>
+                      <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Document Actual Date].[Month].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Document Actual Date].[Month].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Document Actual Date].[Month].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Document Actual Date].[Month].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt] } ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegmentName, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable]))))</Statement>
                       <ReferencedParameters>
                         <ReferencedParameter>
-                          <Name>DimCompanySegmentCompanySegementDesc</Name>
+                          <Name>DimCompanySegmentCompanySegmentName</Name>
                         </ReferencedParameter>
                         <ReferencedParameter>
                           <Name>DimBusinessUnitSegmentBusinessUnit</Name>
@@ -1214,16 +1327,12 @@
         </rd:DesignerState>
       </Query>
       <Fields>
+        <Field Name="Month">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Dim Time].[Month].[Month]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="Customer_Name">
           <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Dim Customer].[Customer Name].[Customer Name]" /&gt;</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Month">
-          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Dim Time].[Hierarchy].[Month]" /&gt;</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Month_Number">
-          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Dim Time].[Month Number].[Month Number]" /&gt;</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Amount">
@@ -1236,14 +1345,14 @@
       <Query>
         <DataSourceName>DS</DataSourceName>
         <QueryParameters>
-          <QueryParameter Name="DimCompanySegmentCompanySegementDesc">
-            <Value>=Parameters!DimCompanySegmentCompanySegementDesc.Value</Value>
+          <QueryParameter Name="DimCompanySegmentCompanySegmentName">
+            <Value>=Parameters!DimCompanySegmentCompanySegmentName.Value</Value>
           </QueryParameter>
           <QueryParameter Name="DimBusinessUnitSegmentBusinessUnit">
             <Value>=Parameters!DimBusinessUnitSegmentBusinessUnit.Value</Value>
           </QueryParameter>
         </QueryParameters>
-        <CommandText>WITH MEMBER [Measures].[ParameterCaption] AS [Document Actual Date].[Year].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Document Actual Date].[Year].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Document Actual Date].[Year].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Document Actual Date].[Year].ALLMEMBERS ON ROWS FROM ( SELECT ( { [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt] } ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegementDesc, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])))</CommandText>
+        <CommandText>WITH MEMBER [Measures].[ParameterCaption] AS [Document Actual Date].[Year].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Document Actual Date].[Year].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Document Actual Date].[Year].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Document Actual Date].[Year].ALLMEMBERS ON ROWS FROM ( SELECT ( { [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt] } ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegmentName, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])))</CommandText>
         <rd:DesignerState>
           <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
             <CommandType>MDX</CommandType>
@@ -1286,17 +1395,17 @@
               <QueryProperties />
             </QuerySpecification>
             <Query>
-              <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Document Actual Date].[Year].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Document Actual Date].[Year].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Document Actual Date].[Year].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Document Actual Date].[Year].ALLMEMBERS ON ROWS FROM ( SELECT ( { [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt] } ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegementDesc, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])))</Statement>
+              <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Document Actual Date].[Year].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Document Actual Date].[Year].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Document Actual Date].[Year].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Document Actual Date].[Year].ALLMEMBERS ON ROWS FROM ( SELECT ( { [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt] } ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegmentName, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])))</Statement>
               <ParameterDefinitions>
                 <ParameterDefinition>
-                  <Name>DimCompanySegmentCompanySegementDesc</Name>
+                  <Name>DimCompanySegmentCompanySegmentName</Name>
                   <DefaultValues>
-                    <DefaultValue>[Dim Company Segment].[Company Segement Desc].[All]</DefaultValue>
+                    <DefaultValue>[Dim Company Segment].[Company Segment Name].[All]</DefaultValue>
                   </DefaultValues>
-                  <Caption>Company Segement Desc</Caption>
-                  <HierarchyUniqueName>[Dim Company Segment].[Company Segement Desc]</HierarchyUniqueName>
+                  <Caption>Company Segment Name</Caption>
+                  <HierarchyUniqueName>[Dim Company Segment].[Company Segment Name]</HierarchyUniqueName>
                   <ParameterValuesQuery>
-                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Company Segment].[Company Segement Desc].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Company Segment].[Company Segement Desc].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Company Segment].[Company Segement Desc].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Company Segment].[Company Segement Desc].ALLMEMBERS ON ROWS FROM [RLG-AccountReceivable]</Statement>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Company Segment].[Company Segment Name].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Company Segment].[Company Segment Name].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Company Segment].[Company Segment Name].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Company Segment].[Company Segment Name].ALLMEMBERS ON ROWS FROM [RLG-AccountReceivable]</Statement>
                     <ParameterizedStatement>
                       <ReferencedParameters />
                     </ParameterizedStatement>
@@ -1311,12 +1420,12 @@
                   <Caption>Business Unit</Caption>
                   <HierarchyUniqueName>[Dim Business Unit Segment].[Business Unit]</HierarchyUniqueName>
                   <ParameterValuesQuery>
-                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Unit Segment].[Business Unit].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegementDesc, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])</Statement>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Unit Segment].[Business Unit].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegmentName, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])</Statement>
                     <ParameterizedStatement>
-                      <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Unit Segment].[Business Unit].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegementDesc, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])</Statement>
+                      <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Unit Segment].[Business Unit].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegmentName, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])</Statement>
                       <ReferencedParameters>
                         <ReferencedParameter>
-                          <Name>DimCompanySegmentCompanySegementDesc</Name>
+                          <Name>DimCompanySegmentCompanySegmentName</Name>
                         </ReferencedParameter>
                       </ReferencedParameters>
                     </ParameterizedStatement>
@@ -1353,8 +1462,8 @@
       <Query>
         <DataSourceName>DS</DataSourceName>
         <QueryParameters>
-          <QueryParameter Name="DimCompanySegmentCompanySegementDesc">
-            <Value>=Parameters!DimCompanySegmentCompanySegementDesc.Value</Value>
+          <QueryParameter Name="DimCompanySegmentCompanySegmentName">
+            <Value>=Parameters!DimCompanySegmentCompanySegmentName.Value</Value>
           </QueryParameter>
           <QueryParameter Name="DimBusinessUnitSegmentBusinessUnit">
             <Value>=Parameters!DimBusinessUnitSegmentBusinessUnit.Value</Value>
@@ -1363,7 +1472,7 @@
             <Value>=Parameters!DocumentActualDateYear.Value</Value>
           </QueryParameter>
         </QueryParameters>
-        <CommandText>WITH MEMBER [Measures].[ParameterCaption] AS [Document Actual Date].[Month].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Document Actual Date].[Month].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Document Actual Date].[Month].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Document Actual Date].[Month].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt] } ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegementDesc, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable]))))</CommandText>
+        <CommandText>WITH MEMBER [Measures].[ParameterCaption] AS [Document Actual Date].[Month].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Document Actual Date].[Month].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Document Actual Date].[Month].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Document Actual Date].[Month].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt] } ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegmentName, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable]))))</CommandText>
         <rd:DesignerState>
           <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
             <CommandType>MDX</CommandType>
@@ -1406,17 +1515,17 @@
               <QueryProperties />
             </QuerySpecification>
             <Query>
-              <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Document Actual Date].[Month].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Document Actual Date].[Month].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Document Actual Date].[Month].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Document Actual Date].[Month].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt] } ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegementDesc, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable]))))</Statement>
+              <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Document Actual Date].[Month].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Document Actual Date].[Month].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Document Actual Date].[Month].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Document Actual Date].[Month].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt] } ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegmentName, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable]))))</Statement>
               <ParameterDefinitions>
                 <ParameterDefinition>
-                  <Name>DimCompanySegmentCompanySegementDesc</Name>
+                  <Name>DimCompanySegmentCompanySegmentName</Name>
                   <DefaultValues>
-                    <DefaultValue>[Dim Company Segment].[Company Segement Desc].[All]</DefaultValue>
+                    <DefaultValue>[Dim Company Segment].[Company Segment Name].[All]</DefaultValue>
                   </DefaultValues>
-                  <Caption>Company Segement Desc</Caption>
-                  <HierarchyUniqueName>[Dim Company Segment].[Company Segement Desc]</HierarchyUniqueName>
+                  <Caption>Company Segment Name</Caption>
+                  <HierarchyUniqueName>[Dim Company Segment].[Company Segment Name]</HierarchyUniqueName>
                   <ParameterValuesQuery>
-                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Company Segment].[Company Segement Desc].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Company Segment].[Company Segement Desc].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Company Segment].[Company Segement Desc].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Company Segment].[Company Segement Desc].ALLMEMBERS ON ROWS FROM [RLG-AccountReceivable]</Statement>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Company Segment].[Company Segment Name].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Company Segment].[Company Segment Name].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Company Segment].[Company Segment Name].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Company Segment].[Company Segment Name].ALLMEMBERS ON ROWS FROM [RLG-AccountReceivable]</Statement>
                     <ParameterizedStatement>
                       <ReferencedParameters />
                     </ParameterizedStatement>
@@ -1431,12 +1540,12 @@
                   <Caption>Business Unit</Caption>
                   <HierarchyUniqueName>[Dim Business Unit Segment].[Business Unit]</HierarchyUniqueName>
                   <ParameterValuesQuery>
-                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Unit Segment].[Business Unit].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegementDesc, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])</Statement>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Unit Segment].[Business Unit].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegmentName, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])</Statement>
                     <ParameterizedStatement>
-                      <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Unit Segment].[Business Unit].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegementDesc, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])</Statement>
+                      <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Unit Segment].[Business Unit].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Unit Segment].[Business Unit].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegmentName, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])</Statement>
                       <ReferencedParameters>
                         <ReferencedParameter>
-                          <Name>DimCompanySegmentCompanySegementDesc</Name>
+                          <Name>DimCompanySegmentCompanySegmentName</Name>
                         </ReferencedParameter>
                       </ReferencedParameters>
                     </ParameterizedStatement>
@@ -1451,12 +1560,12 @@
                   <Caption>Document Actual Date.Year</Caption>
                   <HierarchyUniqueName>[Document Actual Date].[Year]</HierarchyUniqueName>
                   <ParameterValuesQuery>
-                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Document Actual Date].[Year].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Document Actual Date].[Year].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Document Actual Date].[Year].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Document Actual Date].[Year].ALLMEMBERS ON ROWS FROM ( SELECT ( { [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt] } ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegementDesc, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])))</Statement>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Document Actual Date].[Year].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Document Actual Date].[Year].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Document Actual Date].[Year].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Document Actual Date].[Year].ALLMEMBERS ON ROWS FROM ( SELECT ( { [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt] } ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegmentName, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])))</Statement>
                     <ParameterizedStatement>
-                      <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Document Actual Date].[Year].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Document Actual Date].[Year].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Document Actual Date].[Year].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Document Actual Date].[Year].ALLMEMBERS ON ROWS FROM ( SELECT ( { [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt] } ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegementDesc, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])))</Statement>
+                      <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Document Actual Date].[Year].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Document Actual Date].[Year].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Document Actual Date].[Year].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Document Actual Date].[Year].ALLMEMBERS ON ROWS FROM ( SELECT ( { [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt] } ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessUnitSegmentBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegmentName, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])))</Statement>
                       <ReferencedParameters>
                         <ReferencedParameter>
-                          <Name>DimCompanySegmentCompanySegementDesc</Name>
+                          <Name>DimCompanySegmentCompanySegmentName</Name>
                         </ReferencedParameter>
                         <ReferencedParameter>
                           <Name>DimBusinessUnitSegmentBusinessUnit</Name>
@@ -1492,19 +1601,187 @@
         </Field>
       </Fields>
     </DataSet>
+    <DataSet Name="DimCompanySegmentCompanySegmentName">
+      <Query>
+        <DataSourceName>DS</DataSourceName>
+        <CommandText>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Company Segment].[Company Segment Name].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Company Segment].[Company Segment Name].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Company Segment].[Company Segment Name].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Company Segment].[Company Segment Name].ALLMEMBERS ON ROWS FROM [RLG-AccountReceivable]</CommandText>
+        <rd:DesignerState>
+          <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+            <CommandType>MDX</CommandType>
+            <Type>Query</Type>
+            <QuerySpecification xsi:type="MDXQuerySpecification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <Select>
+                <Items>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterCaption</MeasureName>
+                      <UniqueName>[Measures].[ParameterCaption]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterCaption</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterValue</MeasureName>
+                      <UniqueName>[Measures].[ParameterValue]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterValue</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterLevel</MeasureName>
+                      <UniqueName>[Measures].[ParameterLevel]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterLevel</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                </Items>
+              </Select>
+              <From>RLG-AccountReceivable</From>
+              <Filter>
+                <FilterItems />
+              </Filter>
+              <Calculations />
+              <Aggregates />
+              <QueryProperties />
+            </QuerySpecification>
+            <Query>
+              <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Company Segment].[Company Segment Name].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Company Segment].[Company Segment Name].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Company Segment].[Company Segment Name].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Company Segment].[Company Segment Name].ALLMEMBERS ON ROWS FROM [RLG-AccountReceivable]</Statement>
+              <ParameterDefinitions />
+            </Query>
+          </QueryDefinition>
+        </rd:DesignerState>
+        <rd:AutoGenerated>true</rd:AutoGenerated>
+        <rd:Hidden>true</rd:Hidden>
+      </Query>
+      <Fields>
+        <Field Name="ParameterCaption">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterCaption]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterValue">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterValue]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterLevel">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterLevel]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterCaptionIndented">
+          <Value>=Space(3*Fields!ParameterLevel.Value) + Fields!ParameterCaption.Value</Value>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="DefaultActualDateYearParameter">
+      <Query>
+        <DataSourceName>DS</DataSourceName>
+        <CommandText>WITH 
+MEMBER [Measures].[ParameterCaption] AS [Document Actual Date].[Year].CURRENTMEMBER.MEMBER_CAPTION 
+MEMBER [Measures].[ParameterValue] AS "[Document Actual Date].[Year].&amp;[" + IIF(Year(now()) &gt; 2500, CStr(Year(now())), CStr(Year(now()))) + "]" 
+MEMBER [Measures].[ParameterLevel] AS [Document Actual Date].[Year].CURRENTMEMBER.LEVEL.ORDINAL 
+
+SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Year].ALLMEMBERS ON ROWS 
+
+FROM [RLG-AccountReceivable]</CommandText>
+        <rd:DesignerState>
+          <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+            <CommandType>MDX</CommandType>
+            <Type>Query</Type>
+            <QuerySpecification xsi:type="MDXQuerySpecification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <Select>
+                <Items>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Dim Time</DimensionName>
+                      <HierarchyName>Year</HierarchyName>
+                      <HierarchyUniqueName>[Dim Time].[Year]</HierarchyUniqueName>
+                      <LevelName>Year</LevelName>
+                      <UniqueName>[Dim Time].[Year].[Year]</UniqueName>
+                    </ID>
+                    <ItemCaption>Year</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterCaption</MeasureName>
+                      <UniqueName>[Measures].[ParameterCaption]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterCaption</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterValue</MeasureName>
+                      <UniqueName>[Measures].[ParameterValue]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterValue</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterLevel</MeasureName>
+                      <UniqueName>[Measures].[ParameterLevel]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterLevel</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                </Items>
+              </Select>
+              <From>RLG-AccountReceivable</From>
+              <Filter>
+                <FilterItems />
+              </Filter>
+              <Calculations />
+              <Aggregates />
+              <QueryProperties />
+            </QuerySpecification>
+            <Query>
+              <Statement>WITH 
+MEMBER [Measures].[ParameterCaption] AS [Document Actual Date].[Year].CURRENTMEMBER.MEMBER_CAPTION 
+MEMBER [Measures].[ParameterValue] AS "[Document Actual Date].[Year].&amp;[" + IIF(Year(now()) &gt; 2500, CStr(Year(now())), CStr(Year(now()))) + "]" 
+MEMBER [Measures].[ParameterLevel] AS [Document Actual Date].[Year].CURRENTMEMBER.LEVEL.ORDINAL 
+
+SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Year].ALLMEMBERS ON ROWS 
+
+FROM [RLG-AccountReceivable]</Statement>
+              <ParameterDefinitions />
+            </Query>
+          </QueryDefinition>
+        </rd:DesignerState>
+      </Query>
+      <Fields>
+        <Field Name="Year">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Dim Time].[Year].[Year]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ParameterCaption">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterCaption]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterValue">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterValue]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterLevel">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterLevel]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
   </DataSets>
   <ReportParameters>
-    <ReportParameter Name="DimCompanySegmentCompanySegementDesc">
+    <ReportParameter Name="DimCompanySegmentCompanySegmentName">
       <DataType>String</DataType>
       <DefaultValue>
         <Values>
-          <Value>[Dim Company Segment].[Company Segement Desc].[All]</Value>
+          <Value>[Dim Company Segment].[Company Segment Name].[All]</Value>
         </Values>
       </DefaultValue>
-      <Prompt>Company Segement Desc</Prompt>
+      <Prompt>Company Segment Name</Prompt>
       <ValidValues>
         <DataSetReference>
-          <DataSetName>DimCompanySegmentCompanySegementDesc</DataSetName>
+          <DataSetName>DimCompanySegmentCompanySegmentName</DataSetName>
           <ValueField>ParameterValue</ValueField>
           <LabelField>ParameterCaptionIndented</LabelField>
         </DataSetReference>
@@ -1530,9 +1807,10 @@
     <ReportParameter Name="DocumentActualDateYear">
       <DataType>String</DataType>
       <DefaultValue>
-        <Values>
-          <Value>[Document Actual Date].[Year].[All]</Value>
-        </Values>
+        <DataSetReference>
+          <DataSetName>DefaultActualDateYearParameter</DataSetName>
+          <ValueField>ParameterValue</ValueField>
+        </DataSetReference>
       </DefaultValue>
       <Prompt>Document Actual Date.Year</Prompt>
       <ValidValues>
@@ -1560,6 +1838,34 @@
       </ValidValues>
     </ReportParameter>
   </ReportParameters>
+  <Code>Function SumLookup(ByVal items As Object()) As Decimal
+If items Is Nothing Then
+Return Nothing
+End If
+Dim suma As Decimal = New Decimal()
+Dim ct as Integer = New Integer()
+suma = 0
+ct = 0
+For Each item As Object In items
+suma += Convert.ToDecimal(item)
+ct += 1
+Next
+If (ct = 0) Then return Nothing else return suma 
+End Function
+
+
+Public Function CalcDivision(ByVal Numerator As Object, ByVal Denominator As object, ByVal DivideByZeroDefault As Object, ByVal Sign As object) As Object
+If Denominator &lt;&gt; 0 Then
+	If (Sign = 1) Then 
+		Return Numerator/Denominator
+	Else 
+		Return (Numerator/Denominator) * -1
+	End If
+Else
+Return DivideByZeroDefault
+End If
+End Function
+</Code>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
   <rd:ReportID>90171553-5bcd-4881-9e4b-010eda3cb02f</rd:ReportID>
 </Report>

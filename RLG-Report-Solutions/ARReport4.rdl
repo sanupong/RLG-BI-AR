@@ -6,17 +6,7 @@
         <ChartCategoryHierarchy>
           <ChartMembers>
             <ChartMember>
-              <Group Name="Chart1_CategoryGroup">
-                <GroupExpressions>
-                  <GroupExpression>=Fields!Month.Value</GroupExpression>
-                </GroupExpressions>
-              </Group>
-              <SortExpressions>
-                <SortExpression>
-                  <Value>=Fields!Month.Key</Value>
-                </SortExpression>
-              </SortExpressions>
-              <Label>=Fields!Month.Value</Label>
+              <Label />
             </ChartMember>
           </ChartMembers>
         </ChartCategoryHierarchy>
@@ -25,15 +15,15 @@
             <ChartMember>
               <Group Name="Chart1_SeriesGroup">
                 <GroupExpressions>
-                  <GroupExpression>=Fields!Over_Due_Period.Value</GroupExpression>
+                  <GroupExpression>=Fields!Over_Due_Period_Key.Value</GroupExpression>
                 </GroupExpressions>
               </Group>
               <SortExpressions>
                 <SortExpression>
-                  <Value>=Fields!Over_Due_Period.Value</Value>
+                  <Value>=Fields!Over_Due_Period_Key.Key</Value>
                 </SortExpression>
               </SortExpressions>
-              <Label>=Fields!Over_Due_Period.Value</Label>
+              <Label>=Fields!Over_Due_Period_Key.Value</Label>
             </ChartMember>
           </ChartMembers>
         </ChartSeriesHierarchy>
@@ -46,7 +36,11 @@
                     <Y>=Sum(Fields!Amount.Value)</Y>
                   </ChartDataPointValues>
                   <ChartDataLabel>
-                    <Style />
+                    <Style>
+                      <Format>#,0,,.00;(#,0,,.00)</Format>
+                    </Style>
+                    <UseValueAsLabel>true</UseValueAsLabel>
+                    <Visible>true</Visible>
                   </ChartDataLabel>
                   <Style />
                   <ChartMarker>
@@ -257,7 +251,7 @@
         </ChartLegends>
         <ChartTitles>
           <ChartTitle Name="Default">
-            <Caption>รายงานแสดงมูลค่าการรับชำระหนี้เกินกำหนด</Caption>
+            <Caption>รายงานแสดงมูลค่าการรับชำระหนี้เกินกำหนด (ล้านบาท)</Caption>
             <Style>
               <BackgroundGradientType>None</BackgroundGradientType>
               <FontFamily>Tahoma</FontFamily>
@@ -342,6 +336,9 @@
             <TablixColumn>
               <Width>1.3125in</Width>
             </TablixColumn>
+            <TablixColumn>
+              <Width>1in</Width>
+            </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
@@ -380,6 +377,110 @@
                     </Textbox>
                   </CellContents>
                 </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox8">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!Amount.Value)</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <Format>n2</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox8</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.25in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox6">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!Amount.Value)</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <Format>n2</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox6</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox9">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!Amount.Value)</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <Format>n2</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox9</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
               </TablixCells>
             </TablixRow>
           </TablixRows>
@@ -389,25 +490,25 @@
             <TablixMember>
               <Group Name="Over_Due_Period">
                 <GroupExpressions>
-                  <GroupExpression>=Fields!Over_Due_Period.Value</GroupExpression>
+                  <GroupExpression>=Fields!Over_Due_Period_Key.Value</GroupExpression>
                 </GroupExpressions>
               </Group>
               <SortExpressions>
                 <SortExpression>
-                  <Value>=Fields!Over_Due_Period.Key</Value>
+                  <Value>=Fields!Over_Due_Period_Key.Key</Value>
                 </SortExpression>
               </SortExpressions>
               <TablixHeader>
                 <Size>0.25in</Size>
                 <CellContents>
-                  <Textbox Name="Over_Due_Period">
+                  <Textbox Name="Over_Due_Period_Key">
                     <CanGrow>true</CanGrow>
                     <KeepTogether>true</KeepTogether>
                     <Paragraphs>
                       <Paragraph>
                         <TextRuns>
                           <TextRun>
-                            <Value>=Fields!Over_Due_Period.Value</Value>
+                            <Value>=Fields!Over_Due_Period_Key.Value</Value>
                             <Style>
                               <FontFamily>Tahoma</FontFamily>
                               <FontWeight>Bold</FontWeight>
@@ -418,7 +519,45 @@
                         <Style />
                       </Paragraph>
                     </Paragraphs>
-                    <rd:DefaultName>Over_Due_Period</rd:DefaultName>
+                    <rd:DefaultName>Over_Due_Period_Key</rd:DefaultName>
+                    <Style>
+                      <Border>
+                        <Color>LightGrey</Color>
+                        <Style>Solid</Style>
+                      </Border>
+                      <BackgroundColor>#f79646</BackgroundColor>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixHeader>
+            </TablixMember>
+            <TablixMember>
+              <TablixHeader>
+                <Size>0.25in</Size>
+                <CellContents>
+                  <Textbox Name="Textbox7">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>Total</Value>
+                            <Style>
+                              <FontFamily>Tahoma</FontFamily>
+                              <FontWeight>Bold</FontWeight>
+                              <Color>White</Color>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>Textbox7</rd:DefaultName>
                     <Style>
                       <Border>
                         <Color>LightGrey</Color>
@@ -483,12 +622,50 @@
                 </CellContents>
               </TablixHeader>
             </TablixMember>
+            <TablixMember>
+              <TablixHeader>
+                <Size>2.69792in</Size>
+                <CellContents>
+                  <Textbox Name="Textbox5">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>Total</Value>
+                            <Style>
+                              <FontFamily>Tahoma</FontFamily>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>Textbox5</rd:DefaultName>
+                    <Style>
+                      <Border>
+                        <Color>LightGrey</Color>
+                        <Style>Solid</Style>
+                      </Border>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixHeader>
+              <KeepWithGroup>Before</KeepWithGroup>
+            </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
+        <RepeatColumnHeaders>true</RepeatColumnHeaders>
+        <FixedColumnHeaders>true</FixedColumnHeaders>
         <DataSetName>ARDataSet</DataSetName>
         <Top>2.9375in</Top>
-        <Height>0.5in</Height>
-        <Width>4.01042in</Width>
+        <Height>0.75in</Height>
+        <Width>5.01042in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -502,6 +679,134 @@
   </Body>
   <Width>10.91667in</Width>
   <Page>
+    <PageHeader>
+      <Height>1.60556in</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Line Name="Line5">
+          <Top>1.43889in</Top>
+          <Left>0.08364in</Left>
+          <Height>0in</Height>
+          <Width>10.49938in</Width>
+          <Style>
+            <Border>
+              <Color>Maroon</Color>
+              <Style>Solid</Style>
+              <Width>2pt</Width>
+            </Border>
+          </Style>
+        </Line>
+        <Textbox Name="Textbox12">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>= "ปี : " &amp; trim(CStr(Parameters!DocumentActualDateYear.Label)) &amp; " เดือน : " &amp; trim(Parameters!DocumentActualDateMonth.Label)</Value>
+                  <Style>
+                    <FontFamily>Calibri</FontFamily>
+                    <FontSize>12pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>0.56944in</Top>
+          <Left>0.08364in</Left>
+          <Height>0.25in</Height>
+          <Width>4.11458in</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox11">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>รายงานแสดงมูลค่าการรับชำระหนี้เกินกำหนด</Value>
+                  <Style>
+                    <FontFamily>Calibri</FontFamily>
+                    <FontSize>12pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>0.27778in</Top>
+          <Left>0.08364in</Left>
+          <Height>0.25in</Height>
+          <Width>6.85416in</Width>
+          <ZIndex>2</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox1">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=trim(Parameters!DimCompanySegmentCompanySegmentName.Label)</Value>
+                  <Style>
+                    <FontFamily>Calibri</FontFamily>
+                    <FontSize>12pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Left</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Left>0.08364in</Left>
+          <Height>0.25in</Height>
+          <Width>4.11458in</Width>
+          <ZIndex>3</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageHeader>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>
     <TopMargin>1in</TopMargin>
@@ -684,642 +989,6 @@
         </Field>
       </Fields>
     </DataSet>
-    <DataSet Name="DimBusinessClusterBusinessCluster">
-      <Query>
-        <DataSourceName>DS</DataSourceName>
-        <QueryParameters>
-          <QueryParameter Name="DocumentActualDateYear">
-            <Value>=Parameters!DocumentActualDateYear.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="DocumentActualDateMonth">
-            <Value>=Parameters!DocumentActualDateMonth.Value</Value>
-          </QueryParameter>
-        </QueryParameters>
-        <CommandText>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Cluster].[Business Cluster].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Cluster].[Business Cluster].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Cluster].[Business Cluster].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Cluster].[Business Cluster].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable]))</CommandText>
-        <rd:DesignerState>
-          <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
-            <CommandType>MDX</CommandType>
-            <Type>Query</Type>
-            <QuerySpecification xsi:type="MDXQuerySpecification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-              <Select>
-                <Items>
-                  <Item>
-                    <ID xsi:type="Measure">
-                      <MeasureName>ParameterCaption</MeasureName>
-                      <UniqueName>[Measures].[ParameterCaption]</UniqueName>
-                    </ID>
-                    <ItemCaption>ParameterCaption</ItemCaption>
-                    <FormattedValue>true</FormattedValue>
-                  </Item>
-                  <Item>
-                    <ID xsi:type="Measure">
-                      <MeasureName>ParameterValue</MeasureName>
-                      <UniqueName>[Measures].[ParameterValue]</UniqueName>
-                    </ID>
-                    <ItemCaption>ParameterValue</ItemCaption>
-                    <FormattedValue>true</FormattedValue>
-                  </Item>
-                  <Item>
-                    <ID xsi:type="Measure">
-                      <MeasureName>ParameterLevel</MeasureName>
-                      <UniqueName>[Measures].[ParameterLevel]</UniqueName>
-                    </ID>
-                    <ItemCaption>ParameterLevel</ItemCaption>
-                    <FormattedValue>true</FormattedValue>
-                  </Item>
-                </Items>
-              </Select>
-              <From>RLG-AccountReceivable</From>
-              <Filter>
-                <FilterItems />
-              </Filter>
-              <Calculations />
-              <Aggregates />
-              <QueryProperties />
-            </QuerySpecification>
-            <Query>
-              <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Cluster].[Business Cluster].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Cluster].[Business Cluster].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Cluster].[Business Cluster].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Cluster].[Business Cluster].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable]))</Statement>
-              <ParameterDefinitions>
-                <ParameterDefinition>
-                  <Name>DocumentActualDateYear</Name>
-                  <DefaultValues>
-                    <DefaultValue>[Document Actual Date].[Year].[All]</DefaultValue>
-                  </DefaultValues>
-                  <Caption>Document Actual Date.Year</Caption>
-                  <HierarchyUniqueName>[Document Actual Date].[Year]</HierarchyUniqueName>
-                  <ParameterValuesQuery>
-                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Document Actual Date].[Year].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Document Actual Date].[Year].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Document Actual Date].[Year].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Document Actual Date].[Year].ALLMEMBERS ON ROWS FROM [RLG-AccountReceivable]</Statement>
-                    <ParameterizedStatement>
-                      <ReferencedParameters />
-                    </ParameterizedStatement>
-                  </ParameterValuesQuery>
-                  <MultipleValues>true</MultipleValues>
-                </ParameterDefinition>
-                <ParameterDefinition>
-                  <Name>DocumentActualDateMonth</Name>
-                  <DefaultValues>
-                    <DefaultValue>[Document Actual Date].[Month].[All]</DefaultValue>
-                  </DefaultValues>
-                  <Caption>Document Actual Date.Month</Caption>
-                  <HierarchyUniqueName>[Document Actual Date].[Month]</HierarchyUniqueName>
-                  <ParameterValuesQuery>
-                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Document Actual Date].[Month].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Document Actual Date].[Month].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Document Actual Date].[Month].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Document Actual Date].[Month].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])</Statement>
-                    <ParameterizedStatement>
-                      <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Document Actual Date].[Month].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Document Actual Date].[Month].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Document Actual Date].[Month].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Document Actual Date].[Month].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])</Statement>
-                      <ReferencedParameters>
-                        <ReferencedParameter>
-                          <Name>DocumentActualDateYear</Name>
-                        </ReferencedParameter>
-                      </ReferencedParameters>
-                    </ParameterizedStatement>
-                  </ParameterValuesQuery>
-                  <MultipleValues>true</MultipleValues>
-                </ParameterDefinition>
-              </ParameterDefinitions>
-            </Query>
-          </QueryDefinition>
-        </rd:DesignerState>
-        <rd:AutoGenerated>true</rd:AutoGenerated>
-        <rd:Hidden>true</rd:Hidden>
-      </Query>
-      <Fields>
-        <Field Name="ParameterCaption">
-          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterCaption]" /&gt;</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="ParameterValue">
-          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterValue]" /&gt;</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="ParameterLevel">
-          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterLevel]" /&gt;</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="ParameterCaptionIndented">
-          <Value>=Space(3*Fields!ParameterLevel.Value) + Fields!ParameterCaption.Value</Value>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-      </Fields>
-    </DataSet>
-    <DataSet Name="DimBusinessClusterBusinessGroup">
-      <Query>
-        <DataSourceName>DS</DataSourceName>
-        <QueryParameters>
-          <QueryParameter Name="DocumentActualDateYear">
-            <Value>=Parameters!DocumentActualDateYear.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="DocumentActualDateMonth">
-            <Value>=Parameters!DocumentActualDateMonth.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="DimBusinessClusterBusinessCluster">
-            <Value>=Parameters!DimBusinessClusterBusinessCluster.Value</Value>
-          </QueryParameter>
-        </QueryParameters>
-        <CommandText>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Cluster].[Business Group].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Cluster].[Business Group].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Cluster].[Business Group].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Cluster].[Business Group].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessCluster, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])))</CommandText>
-        <rd:DesignerState>
-          <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
-            <CommandType>MDX</CommandType>
-            <Type>Query</Type>
-            <QuerySpecification xsi:type="MDXQuerySpecification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-              <Select>
-                <Items>
-                  <Item>
-                    <ID xsi:type="Measure">
-                      <MeasureName>ParameterCaption</MeasureName>
-                      <UniqueName>[Measures].[ParameterCaption]</UniqueName>
-                    </ID>
-                    <ItemCaption>ParameterCaption</ItemCaption>
-                    <FormattedValue>true</FormattedValue>
-                  </Item>
-                  <Item>
-                    <ID xsi:type="Measure">
-                      <MeasureName>ParameterValue</MeasureName>
-                      <UniqueName>[Measures].[ParameterValue]</UniqueName>
-                    </ID>
-                    <ItemCaption>ParameterValue</ItemCaption>
-                    <FormattedValue>true</FormattedValue>
-                  </Item>
-                  <Item>
-                    <ID xsi:type="Measure">
-                      <MeasureName>ParameterLevel</MeasureName>
-                      <UniqueName>[Measures].[ParameterLevel]</UniqueName>
-                    </ID>
-                    <ItemCaption>ParameterLevel</ItemCaption>
-                    <FormattedValue>true</FormattedValue>
-                  </Item>
-                </Items>
-              </Select>
-              <From>RLG-AccountReceivable</From>
-              <Filter>
-                <FilterItems />
-              </Filter>
-              <Calculations />
-              <Aggregates />
-              <QueryProperties />
-            </QuerySpecification>
-            <Query>
-              <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Cluster].[Business Group].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Cluster].[Business Group].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Cluster].[Business Group].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Cluster].[Business Group].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessCluster, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])))</Statement>
-              <ParameterDefinitions>
-                <ParameterDefinition>
-                  <Name>DocumentActualDateYear</Name>
-                  <DefaultValues>
-                    <DefaultValue>[Document Actual Date].[Year].[All]</DefaultValue>
-                  </DefaultValues>
-                  <Caption>Document Actual Date.Year</Caption>
-                  <HierarchyUniqueName>[Document Actual Date].[Year]</HierarchyUniqueName>
-                  <ParameterValuesQuery>
-                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Document Actual Date].[Year].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Document Actual Date].[Year].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Document Actual Date].[Year].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Document Actual Date].[Year].ALLMEMBERS ON ROWS FROM [RLG-AccountReceivable]</Statement>
-                    <ParameterizedStatement>
-                      <ReferencedParameters />
-                    </ParameterizedStatement>
-                  </ParameterValuesQuery>
-                  <MultipleValues>true</MultipleValues>
-                </ParameterDefinition>
-                <ParameterDefinition>
-                  <Name>DocumentActualDateMonth</Name>
-                  <DefaultValues>
-                    <DefaultValue>[Document Actual Date].[Month].[All]</DefaultValue>
-                  </DefaultValues>
-                  <Caption>Document Actual Date.Month</Caption>
-                  <HierarchyUniqueName>[Document Actual Date].[Month]</HierarchyUniqueName>
-                  <ParameterValuesQuery>
-                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Document Actual Date].[Month].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Document Actual Date].[Month].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Document Actual Date].[Month].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Document Actual Date].[Month].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])</Statement>
-                    <ParameterizedStatement>
-                      <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Document Actual Date].[Month].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Document Actual Date].[Month].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Document Actual Date].[Month].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Document Actual Date].[Month].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])</Statement>
-                      <ReferencedParameters>
-                        <ReferencedParameter>
-                          <Name>DocumentActualDateYear</Name>
-                        </ReferencedParameter>
-                      </ReferencedParameters>
-                    </ParameterizedStatement>
-                  </ParameterValuesQuery>
-                  <MultipleValues>true</MultipleValues>
-                </ParameterDefinition>
-                <ParameterDefinition>
-                  <Name>DimBusinessClusterBusinessCluster</Name>
-                  <DefaultValues>
-                    <DefaultValue>[Dim Business Cluster].[Business Cluster].[All]</DefaultValue>
-                  </DefaultValues>
-                  <Caption>Business Cluster</Caption>
-                  <HierarchyUniqueName>[Dim Business Cluster].[Business Cluster]</HierarchyUniqueName>
-                  <ParameterValuesQuery>
-                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Cluster].[Business Cluster].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Cluster].[Business Cluster].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Cluster].[Business Cluster].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Cluster].[Business Cluster].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable]))</Statement>
-                    <ParameterizedStatement>
-                      <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Cluster].[Business Cluster].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Cluster].[Business Cluster].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Cluster].[Business Cluster].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Cluster].[Business Cluster].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable]))</Statement>
-                      <ReferencedParameters>
-                        <ReferencedParameter>
-                          <Name>DocumentActualDateYear</Name>
-                        </ReferencedParameter>
-                        <ReferencedParameter>
-                          <Name>DocumentActualDateMonth</Name>
-                        </ReferencedParameter>
-                      </ReferencedParameters>
-                    </ParameterizedStatement>
-                  </ParameterValuesQuery>
-                  <MultipleValues>true</MultipleValues>
-                </ParameterDefinition>
-              </ParameterDefinitions>
-            </Query>
-          </QueryDefinition>
-        </rd:DesignerState>
-        <rd:AutoGenerated>true</rd:AutoGenerated>
-        <rd:Hidden>true</rd:Hidden>
-      </Query>
-      <Fields>
-        <Field Name="ParameterCaption">
-          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterCaption]" /&gt;</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="ParameterValue">
-          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterValue]" /&gt;</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="ParameterLevel">
-          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterLevel]" /&gt;</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="ParameterCaptionIndented">
-          <Value>=Space(3*Fields!ParameterLevel.Value) + Fields!ParameterCaption.Value</Value>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-      </Fields>
-    </DataSet>
-    <DataSet Name="DimBusinessClusterBusinessLine">
-      <Query>
-        <DataSourceName>DS</DataSourceName>
-        <QueryParameters>
-          <QueryParameter Name="DocumentActualDateYear">
-            <Value>=Parameters!DocumentActualDateYear.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="DocumentActualDateMonth">
-            <Value>=Parameters!DocumentActualDateMonth.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="DimBusinessClusterBusinessCluster">
-            <Value>=Parameters!DimBusinessClusterBusinessCluster.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="DimBusinessClusterBusinessGroup">
-            <Value>=Parameters!DimBusinessClusterBusinessGroup.Value</Value>
-          </QueryParameter>
-        </QueryParameters>
-        <CommandText>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Cluster].[Business Line].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Cluster].[Business Line].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Cluster].[Business Line].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Cluster].[Business Line].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessGroup, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessCluster, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable]))))</CommandText>
-        <rd:DesignerState>
-          <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
-            <CommandType>MDX</CommandType>
-            <Type>Query</Type>
-            <QuerySpecification xsi:type="MDXQuerySpecification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-              <Select>
-                <Items>
-                  <Item>
-                    <ID xsi:type="Measure">
-                      <MeasureName>ParameterCaption</MeasureName>
-                      <UniqueName>[Measures].[ParameterCaption]</UniqueName>
-                    </ID>
-                    <ItemCaption>ParameterCaption</ItemCaption>
-                    <FormattedValue>true</FormattedValue>
-                  </Item>
-                  <Item>
-                    <ID xsi:type="Measure">
-                      <MeasureName>ParameterValue</MeasureName>
-                      <UniqueName>[Measures].[ParameterValue]</UniqueName>
-                    </ID>
-                    <ItemCaption>ParameterValue</ItemCaption>
-                    <FormattedValue>true</FormattedValue>
-                  </Item>
-                  <Item>
-                    <ID xsi:type="Measure">
-                      <MeasureName>ParameterLevel</MeasureName>
-                      <UniqueName>[Measures].[ParameterLevel]</UniqueName>
-                    </ID>
-                    <ItemCaption>ParameterLevel</ItemCaption>
-                    <FormattedValue>true</FormattedValue>
-                  </Item>
-                </Items>
-              </Select>
-              <From>RLG-AccountReceivable</From>
-              <Filter>
-                <FilterItems />
-              </Filter>
-              <Calculations />
-              <Aggregates />
-              <QueryProperties />
-            </QuerySpecification>
-            <Query>
-              <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Cluster].[Business Line].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Cluster].[Business Line].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Cluster].[Business Line].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Cluster].[Business Line].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessGroup, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessCluster, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable]))))</Statement>
-              <ParameterDefinitions>
-                <ParameterDefinition>
-                  <Name>DocumentActualDateYear</Name>
-                  <DefaultValues>
-                    <DefaultValue>[Document Actual Date].[Year].[All]</DefaultValue>
-                  </DefaultValues>
-                  <Caption>Document Actual Date.Year</Caption>
-                  <HierarchyUniqueName>[Document Actual Date].[Year]</HierarchyUniqueName>
-                  <ParameterValuesQuery>
-                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Document Actual Date].[Year].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Document Actual Date].[Year].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Document Actual Date].[Year].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Document Actual Date].[Year].ALLMEMBERS ON ROWS FROM [RLG-AccountReceivable]</Statement>
-                    <ParameterizedStatement>
-                      <ReferencedParameters />
-                    </ParameterizedStatement>
-                  </ParameterValuesQuery>
-                  <MultipleValues>true</MultipleValues>
-                </ParameterDefinition>
-                <ParameterDefinition>
-                  <Name>DocumentActualDateMonth</Name>
-                  <DefaultValues>
-                    <DefaultValue>[Document Actual Date].[Month].[All]</DefaultValue>
-                  </DefaultValues>
-                  <Caption>Document Actual Date.Month</Caption>
-                  <HierarchyUniqueName>[Document Actual Date].[Month]</HierarchyUniqueName>
-                  <ParameterValuesQuery>
-                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Document Actual Date].[Month].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Document Actual Date].[Month].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Document Actual Date].[Month].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Document Actual Date].[Month].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])</Statement>
-                    <ParameterizedStatement>
-                      <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Document Actual Date].[Month].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Document Actual Date].[Month].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Document Actual Date].[Month].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Document Actual Date].[Month].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])</Statement>
-                      <ReferencedParameters>
-                        <ReferencedParameter>
-                          <Name>DocumentActualDateYear</Name>
-                        </ReferencedParameter>
-                      </ReferencedParameters>
-                    </ParameterizedStatement>
-                  </ParameterValuesQuery>
-                  <MultipleValues>true</MultipleValues>
-                </ParameterDefinition>
-                <ParameterDefinition>
-                  <Name>DimBusinessClusterBusinessCluster</Name>
-                  <DefaultValues>
-                    <DefaultValue>[Dim Business Cluster].[Business Cluster].[All]</DefaultValue>
-                  </DefaultValues>
-                  <Caption>Business Cluster</Caption>
-                  <HierarchyUniqueName>[Dim Business Cluster].[Business Cluster]</HierarchyUniqueName>
-                  <ParameterValuesQuery>
-                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Cluster].[Business Cluster].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Cluster].[Business Cluster].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Cluster].[Business Cluster].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Cluster].[Business Cluster].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable]))</Statement>
-                    <ParameterizedStatement>
-                      <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Cluster].[Business Cluster].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Cluster].[Business Cluster].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Cluster].[Business Cluster].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Cluster].[Business Cluster].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable]))</Statement>
-                      <ReferencedParameters>
-                        <ReferencedParameter>
-                          <Name>DocumentActualDateYear</Name>
-                        </ReferencedParameter>
-                        <ReferencedParameter>
-                          <Name>DocumentActualDateMonth</Name>
-                        </ReferencedParameter>
-                      </ReferencedParameters>
-                    </ParameterizedStatement>
-                  </ParameterValuesQuery>
-                  <MultipleValues>true</MultipleValues>
-                </ParameterDefinition>
-                <ParameterDefinition>
-                  <Name>DimBusinessClusterBusinessGroup</Name>
-                  <DefaultValues>
-                    <DefaultValue>[Dim Business Cluster].[Business Group].[All]</DefaultValue>
-                  </DefaultValues>
-                  <Caption>Business Group</Caption>
-                  <HierarchyUniqueName>[Dim Business Cluster].[Business Group]</HierarchyUniqueName>
-                  <ParameterValuesQuery>
-                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Cluster].[Business Group].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Cluster].[Business Group].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Cluster].[Business Group].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Cluster].[Business Group].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessCluster, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])))</Statement>
-                    <ParameterizedStatement>
-                      <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Cluster].[Business Group].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Cluster].[Business Group].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Cluster].[Business Group].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Cluster].[Business Group].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessCluster, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])))</Statement>
-                      <ReferencedParameters>
-                        <ReferencedParameter>
-                          <Name>DocumentActualDateYear</Name>
-                        </ReferencedParameter>
-                        <ReferencedParameter>
-                          <Name>DocumentActualDateMonth</Name>
-                        </ReferencedParameter>
-                        <ReferencedParameter>
-                          <Name>DimBusinessClusterBusinessCluster</Name>
-                        </ReferencedParameter>
-                      </ReferencedParameters>
-                    </ParameterizedStatement>
-                  </ParameterValuesQuery>
-                  <MultipleValues>true</MultipleValues>
-                </ParameterDefinition>
-              </ParameterDefinitions>
-            </Query>
-          </QueryDefinition>
-        </rd:DesignerState>
-        <rd:AutoGenerated>true</rd:AutoGenerated>
-        <rd:Hidden>true</rd:Hidden>
-      </Query>
-      <Fields>
-        <Field Name="ParameterCaption">
-          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterCaption]" /&gt;</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="ParameterValue">
-          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterValue]" /&gt;</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="ParameterLevel">
-          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterLevel]" /&gt;</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="ParameterCaptionIndented">
-          <Value>=Space(3*Fields!ParameterLevel.Value) + Fields!ParameterCaption.Value</Value>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-      </Fields>
-    </DataSet>
-    <DataSet Name="DimBusinessClusterBusinessUnit">
-      <Query>
-        <DataSourceName>DS</DataSourceName>
-        <QueryParameters>
-          <QueryParameter Name="DocumentActualDateYear">
-            <Value>=Parameters!DocumentActualDateYear.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="DocumentActualDateMonth">
-            <Value>=Parameters!DocumentActualDateMonth.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="DimBusinessClusterBusinessCluster">
-            <Value>=Parameters!DimBusinessClusterBusinessCluster.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="DimBusinessClusterBusinessGroup">
-            <Value>=Parameters!DimBusinessClusterBusinessGroup.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="DimBusinessClusterBusinessLine">
-            <Value>=Parameters!DimBusinessClusterBusinessLine.Value</Value>
-          </QueryParameter>
-        </QueryParameters>
-        <CommandText>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Cluster].[Business Unit].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Cluster].[Business Unit].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Cluster].[Business Unit].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Cluster].[Business Unit].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessLine, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessGroup, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessCluster, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])))))</CommandText>
-        <rd:DesignerState>
-          <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
-            <CommandType>MDX</CommandType>
-            <Type>Query</Type>
-            <QuerySpecification xsi:type="MDXQuerySpecification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-              <Select>
-                <Items>
-                  <Item>
-                    <ID xsi:type="Measure">
-                      <MeasureName>ParameterCaption</MeasureName>
-                      <UniqueName>[Measures].[ParameterCaption]</UniqueName>
-                    </ID>
-                    <ItemCaption>ParameterCaption</ItemCaption>
-                    <FormattedValue>true</FormattedValue>
-                  </Item>
-                  <Item>
-                    <ID xsi:type="Measure">
-                      <MeasureName>ParameterValue</MeasureName>
-                      <UniqueName>[Measures].[ParameterValue]</UniqueName>
-                    </ID>
-                    <ItemCaption>ParameterValue</ItemCaption>
-                    <FormattedValue>true</FormattedValue>
-                  </Item>
-                  <Item>
-                    <ID xsi:type="Measure">
-                      <MeasureName>ParameterLevel</MeasureName>
-                      <UniqueName>[Measures].[ParameterLevel]</UniqueName>
-                    </ID>
-                    <ItemCaption>ParameterLevel</ItemCaption>
-                    <FormattedValue>true</FormattedValue>
-                  </Item>
-                </Items>
-              </Select>
-              <From>RLG-AccountReceivable</From>
-              <Filter>
-                <FilterItems />
-              </Filter>
-              <Calculations />
-              <Aggregates />
-              <QueryProperties />
-            </QuerySpecification>
-            <Query>
-              <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Cluster].[Business Unit].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Cluster].[Business Unit].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Cluster].[Business Unit].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Cluster].[Business Unit].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessLine, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessGroup, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessCluster, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])))))</Statement>
-              <ParameterDefinitions>
-                <ParameterDefinition>
-                  <Name>DocumentActualDateYear</Name>
-                  <DefaultValues>
-                    <DefaultValue>[Document Actual Date].[Year].[All]</DefaultValue>
-                  </DefaultValues>
-                  <Caption>Document Actual Date.Year</Caption>
-                  <HierarchyUniqueName>[Document Actual Date].[Year]</HierarchyUniqueName>
-                  <ParameterValuesQuery>
-                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Document Actual Date].[Year].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Document Actual Date].[Year].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Document Actual Date].[Year].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Document Actual Date].[Year].ALLMEMBERS ON ROWS FROM [RLG-AccountReceivable]</Statement>
-                    <ParameterizedStatement>
-                      <ReferencedParameters />
-                    </ParameterizedStatement>
-                  </ParameterValuesQuery>
-                  <MultipleValues>true</MultipleValues>
-                </ParameterDefinition>
-                <ParameterDefinition>
-                  <Name>DocumentActualDateMonth</Name>
-                  <DefaultValues>
-                    <DefaultValue>[Document Actual Date].[Month].[All]</DefaultValue>
-                  </DefaultValues>
-                  <Caption>Document Actual Date.Month</Caption>
-                  <HierarchyUniqueName>[Document Actual Date].[Month]</HierarchyUniqueName>
-                  <ParameterValuesQuery>
-                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Document Actual Date].[Month].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Document Actual Date].[Month].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Document Actual Date].[Month].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Document Actual Date].[Month].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])</Statement>
-                    <ParameterizedStatement>
-                      <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Document Actual Date].[Month].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Document Actual Date].[Month].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Document Actual Date].[Month].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Document Actual Date].[Month].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])</Statement>
-                      <ReferencedParameters>
-                        <ReferencedParameter>
-                          <Name>DocumentActualDateYear</Name>
-                        </ReferencedParameter>
-                      </ReferencedParameters>
-                    </ParameterizedStatement>
-                  </ParameterValuesQuery>
-                  <MultipleValues>true</MultipleValues>
-                </ParameterDefinition>
-                <ParameterDefinition>
-                  <Name>DimBusinessClusterBusinessCluster</Name>
-                  <DefaultValues>
-                    <DefaultValue>[Dim Business Cluster].[Business Cluster].[All]</DefaultValue>
-                  </DefaultValues>
-                  <Caption>Business Cluster</Caption>
-                  <HierarchyUniqueName>[Dim Business Cluster].[Business Cluster]</HierarchyUniqueName>
-                  <ParameterValuesQuery>
-                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Cluster].[Business Cluster].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Cluster].[Business Cluster].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Cluster].[Business Cluster].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Cluster].[Business Cluster].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable]))</Statement>
-                    <ParameterizedStatement>
-                      <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Cluster].[Business Cluster].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Cluster].[Business Cluster].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Cluster].[Business Cluster].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Cluster].[Business Cluster].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable]))</Statement>
-                      <ReferencedParameters>
-                        <ReferencedParameter>
-                          <Name>DocumentActualDateYear</Name>
-                        </ReferencedParameter>
-                        <ReferencedParameter>
-                          <Name>DocumentActualDateMonth</Name>
-                        </ReferencedParameter>
-                      </ReferencedParameters>
-                    </ParameterizedStatement>
-                  </ParameterValuesQuery>
-                  <MultipleValues>true</MultipleValues>
-                </ParameterDefinition>
-                <ParameterDefinition>
-                  <Name>DimBusinessClusterBusinessGroup</Name>
-                  <DefaultValues>
-                    <DefaultValue>[Dim Business Cluster].[Business Group].[All]</DefaultValue>
-                  </DefaultValues>
-                  <Caption>Business Group</Caption>
-                  <HierarchyUniqueName>[Dim Business Cluster].[Business Group]</HierarchyUniqueName>
-                  <ParameterValuesQuery>
-                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Cluster].[Business Group].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Cluster].[Business Group].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Cluster].[Business Group].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Cluster].[Business Group].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessCluster, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])))</Statement>
-                    <ParameterizedStatement>
-                      <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Cluster].[Business Group].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Cluster].[Business Group].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Cluster].[Business Group].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Cluster].[Business Group].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessCluster, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])))</Statement>
-                      <ReferencedParameters>
-                        <ReferencedParameter>
-                          <Name>DocumentActualDateYear</Name>
-                        </ReferencedParameter>
-                        <ReferencedParameter>
-                          <Name>DocumentActualDateMonth</Name>
-                        </ReferencedParameter>
-                        <ReferencedParameter>
-                          <Name>DimBusinessClusterBusinessCluster</Name>
-                        </ReferencedParameter>
-                      </ReferencedParameters>
-                    </ParameterizedStatement>
-                  </ParameterValuesQuery>
-                  <MultipleValues>true</MultipleValues>
-                </ParameterDefinition>
-                <ParameterDefinition>
-                  <Name>DimBusinessClusterBusinessLine</Name>
-                  <DefaultValues>
-                    <DefaultValue>[Dim Business Cluster].[Business Line].[All]</DefaultValue>
-                  </DefaultValues>
-                  <Caption>Business Line</Caption>
-                  <HierarchyUniqueName>[Dim Business Cluster].[Business Line]</HierarchyUniqueName>
-                  <ParameterValuesQuery>
-                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Cluster].[Business Line].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Cluster].[Business Line].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Cluster].[Business Line].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Cluster].[Business Line].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessGroup, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessCluster, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable]))))</Statement>
-                    <ParameterizedStatement>
-                      <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Cluster].[Business Line].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Cluster].[Business Line].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Cluster].[Business Line].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Cluster].[Business Line].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessGroup, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessCluster, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable]))))</Statement>
-                      <ReferencedParameters>
-                        <ReferencedParameter>
-                          <Name>DocumentActualDateYear</Name>
-                        </ReferencedParameter>
-                        <ReferencedParameter>
-                          <Name>DocumentActualDateMonth</Name>
-                        </ReferencedParameter>
-                        <ReferencedParameter>
-                          <Name>DimBusinessClusterBusinessCluster</Name>
-                        </ReferencedParameter>
-                        <ReferencedParameter>
-                          <Name>DimBusinessClusterBusinessGroup</Name>
-                        </ReferencedParameter>
-                      </ReferencedParameters>
-                    </ParameterizedStatement>
-                  </ParameterValuesQuery>
-                  <MultipleValues>true</MultipleValues>
-                </ParameterDefinition>
-              </ParameterDefinitions>
-            </Query>
-          </QueryDefinition>
-        </rd:DesignerState>
-        <rd:AutoGenerated>true</rd:AutoGenerated>
-        <rd:Hidden>true</rd:Hidden>
-      </Query>
-      <Fields>
-        <Field Name="ParameterCaption">
-          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterCaption]" /&gt;</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="ParameterValue">
-          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterValue]" /&gt;</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="ParameterLevel">
-          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterLevel]" /&gt;</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="ParameterCaptionIndented">
-          <Value>=Space(3*Fields!ParameterLevel.Value) + Fields!ParameterCaption.Value</Value>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-      </Fields>
-    </DataSet>
     <DataSet Name="ARDataSet">
       <Query>
         <DataSourceName>DS</DataSourceName>
@@ -1330,29 +999,28 @@
           <QueryParameter Name="DocumentActualDateMonth">
             <Value>=Parameters!DocumentActualDateMonth.Value</Value>
           </QueryParameter>
-          <QueryParameter Name="DimBusinessClusterBusinessCluster">
-            <Value>=Parameters!DimBusinessClusterBusinessCluster.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="DimBusinessClusterBusinessGroup">
-            <Value>=Parameters!DimBusinessClusterBusinessGroup.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="DimBusinessClusterBusinessLine">
-            <Value>=Parameters!DimBusinessClusterBusinessLine.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="DimBusinessClusterBusinessUnit">
-            <Value>=Parameters!DimBusinessClusterBusinessUnit.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="DimCompanySegmentCompanySegementDesc">
-            <Value>=Parameters!DimCompanySegmentCompanySegementDesc.Value</Value>
+          <QueryParameter Name="DimCompanySegmentCompanySegmentName">
+            <Value>=Parameters!DimCompanySegmentCompanySegmentName.Value</Value>
           </QueryParameter>
         </QueryParameters>
-        <CommandText> SELECT NON EMPTY { [Measures].[Amount] } ON COLUMNS, NON EMPTY { ([Dim Customer].[Customer Name].[Customer Name].ALLMEMBERS * [Dim Over Due Period].[Over Due Period].[Over Due Period].ALLMEMBERS * [Document Actual Date].[Month].[Month].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegementDesc, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt] } ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessLine, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessGroup, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessCluster, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])))))))) WHERE ( IIF( STRTOSET(@DocumentActualDateYear, CONSTRAINED).Count = 1, STRTOSET(@DocumentActualDateYear, CONSTRAINED), [Document Actual Date].[Year].currentmember ), IIF( STRTOSET(@DimBusinessClusterBusinessCluster, CONSTRAINED).Count = 1, STRTOSET(@DimBusinessClusterBusinessCluster, CONSTRAINED), [Dim Business Cluster].[Business Cluster].currentmember ), IIF( STRTOSET(@DimBusinessClusterBusinessGroup, CONSTRAINED).Count = 1, STRTOSET(@DimBusinessClusterBusinessGroup, CONSTRAINED), [Dim Business Cluster].[Business Group].currentmember ), IIF( STRTOSET(@DimBusinessClusterBusinessLine, CONSTRAINED).Count = 1, STRTOSET(@DimBusinessClusterBusinessLine, CONSTRAINED), [Dim Business Cluster].[Business Line].currentmember ), IIF( STRTOSET(@DimBusinessClusterBusinessUnit, CONSTRAINED).Count = 1, STRTOSET(@DimBusinessClusterBusinessUnit, CONSTRAINED), [Dim Business Cluster].[Business Unit].currentmember ), [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt], IIF( STRTOSET(@DimCompanySegmentCompanySegementDesc, CONSTRAINED).Count = 1, STRTOSET(@DimCompanySegmentCompanySegementDesc, CONSTRAINED), [Dim Company Segment].[Company Segement Desc].currentmember ) ) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</CommandText>
+        <CommandText> SELECT NON EMPTY { [Measures].[Amount] } ON COLUMNS, NON EMPTY { ([Dim Over Due Period].[Over Due Period Key].[Over Due Period Key].ALLMEMBERS * [Dim Customer].[Customer Name].[Customer Name].ALLMEMBERS * [Document Actual Date].[Month].[Month].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegmentName, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt] } ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])))) WHERE ( IIF( STRTOSET(@DocumentActualDateYear, CONSTRAINED).Count = 1, STRTOSET(@DocumentActualDateYear, CONSTRAINED), [Document Actual Date].[Year].currentmember ), [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt], IIF( STRTOSET(@DimCompanySegmentCompanySegmentName, CONSTRAINED).Count = 1, STRTOSET(@DimCompanySegmentCompanySegmentName, CONSTRAINED), [Dim Company Segment].[Company Segment Name].currentmember ) ) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</CommandText>
         <rd:DesignerState>
           <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
             <CommandType>MDX</CommandType>
             <QuerySpecification xsi:type="MDXQuerySpecification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
               <Select>
                 <Items>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Dim Over Due Period</DimensionName>
+                      <HierarchyName>Over Due Period Key</HierarchyName>
+                      <HierarchyUniqueName>[Dim Over Due Period].[Over Due Period Key]</HierarchyUniqueName>
+                      <LevelName>Over Due Period Key</LevelName>
+                      <UniqueName>[Dim Over Due Period].[Over Due Period Key].[Over Due Period Key]</UniqueName>
+                    </ID>
+                    <ItemCaption>Over Due Period Key</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
                   <Item>
                     <ID xsi:type="Level">
                       <DimensionName>Dim Customer</DimensionName>
@@ -1362,17 +1030,6 @@
                       <UniqueName>[Dim Customer].[Customer Name].[Customer Name]</UniqueName>
                     </ID>
                     <ItemCaption>Customer Name</ItemCaption>
-                    <UniqueName>true</UniqueName>
-                  </Item>
-                  <Item>
-                    <ID xsi:type="Level">
-                      <DimensionName>Dim Over Due Period</DimensionName>
-                      <HierarchyName>Over Due Period</HierarchyName>
-                      <HierarchyUniqueName>[Dim Over Due Period].[Over Due Period]</HierarchyUniqueName>
-                      <LevelName>Over Due Period</LevelName>
-                      <UniqueName>[Dim Over Due Period].[Over Due Period].[Over Due Period]</UniqueName>
-                    </ID>
-                    <ItemCaption>Over Due Period</ItemCaption>
                     <UniqueName>true</UniqueName>
                   </Item>
                   <Item>
@@ -1430,50 +1087,6 @@
                     </Condition>
                   </FilterItem>
                   <FilterItem>
-                    <HierarchyUniqueName>[Dim Business Cluster].[Business Cluster]</HierarchyUniqueName>
-                    <Condition xsi:type="EqualTo">
-                      <Members>
-                        <Member>
-                          <MemberUniqueName>[Dim Business Cluster].[Business Cluster].[All]</MemberUniqueName>
-                        </Member>
-                      </Members>
-                      <Parametrized>true</Parametrized>
-                    </Condition>
-                  </FilterItem>
-                  <FilterItem>
-                    <HierarchyUniqueName>[Dim Business Cluster].[Business Group]</HierarchyUniqueName>
-                    <Condition xsi:type="EqualTo">
-                      <Members>
-                        <Member>
-                          <MemberUniqueName>[Dim Business Cluster].[Business Group].[All]</MemberUniqueName>
-                        </Member>
-                      </Members>
-                      <Parametrized>true</Parametrized>
-                    </Condition>
-                  </FilterItem>
-                  <FilterItem>
-                    <HierarchyUniqueName>[Dim Business Cluster].[Business Line]</HierarchyUniqueName>
-                    <Condition xsi:type="EqualTo">
-                      <Members>
-                        <Member>
-                          <MemberUniqueName>[Dim Business Cluster].[Business Line].[All]</MemberUniqueName>
-                        </Member>
-                      </Members>
-                      <Parametrized>true</Parametrized>
-                    </Condition>
-                  </FilterItem>
-                  <FilterItem>
-                    <HierarchyUniqueName>[Dim Business Cluster].[Business Unit]</HierarchyUniqueName>
-                    <Condition xsi:type="EqualTo">
-                      <Members>
-                        <Member>
-                          <MemberUniqueName>[Dim Business Cluster].[Business Unit].[All]</MemberUniqueName>
-                        </Member>
-                      </Members>
-                      <Parametrized>true</Parametrized>
-                    </Condition>
-                  </FilterItem>
-                  <FilterItem>
                     <HierarchyUniqueName>[Dim AR Transaction Type].[AR Transection Type]</HierarchyUniqueName>
                     <Condition xsi:type="EqualTo">
                       <Members>
@@ -1484,11 +1097,11 @@
                     </Condition>
                   </FilterItem>
                   <FilterItem>
-                    <HierarchyUniqueName>[Dim Company Segment].[Company Segement Desc]</HierarchyUniqueName>
+                    <HierarchyUniqueName>[Dim Company Segment].[Company Segment Name]</HierarchyUniqueName>
                     <Condition xsi:type="EqualTo">
                       <Members>
                         <Member>
-                          <MemberUniqueName>[Dim Company Segment].[Company Segement Desc].[All]</MemberUniqueName>
+                          <MemberUniqueName>[Dim Company Segment].[Company Segment Name].[All]</MemberUniqueName>
                         </Member>
                       </Members>
                       <Parametrized>true</Parametrized>
@@ -1501,7 +1114,7 @@
               <QueryProperties />
             </QuerySpecification>
             <Query>
-              <Statement> SELECT NON EMPTY { [Measures].[Amount] } ON COLUMNS, NON EMPTY { ([Dim Customer].[Customer Name].[Customer Name].ALLMEMBERS * [Dim Over Due Period].[Over Due Period].[Over Due Period].ALLMEMBERS * [Document Actual Date].[Month].[Month].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegementDesc, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt] } ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessLine, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessGroup, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessCluster, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])))))))) WHERE ( IIF( STRTOSET(@DocumentActualDateYear, CONSTRAINED).Count = 1, STRTOSET(@DocumentActualDateYear, CONSTRAINED), [Document Actual Date].[Year].currentmember ), IIF( STRTOSET(@DimBusinessClusterBusinessCluster, CONSTRAINED).Count = 1, STRTOSET(@DimBusinessClusterBusinessCluster, CONSTRAINED), [Dim Business Cluster].[Business Cluster].currentmember ), IIF( STRTOSET(@DimBusinessClusterBusinessGroup, CONSTRAINED).Count = 1, STRTOSET(@DimBusinessClusterBusinessGroup, CONSTRAINED), [Dim Business Cluster].[Business Group].currentmember ), IIF( STRTOSET(@DimBusinessClusterBusinessLine, CONSTRAINED).Count = 1, STRTOSET(@DimBusinessClusterBusinessLine, CONSTRAINED), [Dim Business Cluster].[Business Line].currentmember ), IIF( STRTOSET(@DimBusinessClusterBusinessUnit, CONSTRAINED).Count = 1, STRTOSET(@DimBusinessClusterBusinessUnit, CONSTRAINED), [Dim Business Cluster].[Business Unit].currentmember ), [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt], IIF( STRTOSET(@DimCompanySegmentCompanySegementDesc, CONSTRAINED).Count = 1, STRTOSET(@DimCompanySegmentCompanySegementDesc, CONSTRAINED), [Dim Company Segment].[Company Segement Desc].currentmember ) ) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</Statement>
+              <Statement> SELECT NON EMPTY { [Measures].[Amount] } ON COLUMNS, NON EMPTY { ([Dim Over Due Period].[Over Due Period Key].[Over Due Period Key].ALLMEMBERS * [Dim Customer].[Customer Name].[Customer Name].ALLMEMBERS * [Document Actual Date].[Month].[Month].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegmentName, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt] } ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])))) WHERE ( IIF( STRTOSET(@DocumentActualDateYear, CONSTRAINED).Count = 1, STRTOSET(@DocumentActualDateYear, CONSTRAINED), [Document Actual Date].[Year].currentmember ), [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt], IIF( STRTOSET(@DimCompanySegmentCompanySegmentName, CONSTRAINED).Count = 1, STRTOSET(@DimCompanySegmentCompanySegmentName, CONSTRAINED), [Dim Company Segment].[Company Segment Name].currentmember ) ) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</Statement>
               <ParameterDefinitions>
                 <ParameterDefinition>
                   <Name>DocumentActualDateYear</Name>
@@ -1539,144 +1152,22 @@
                   <MultipleValues>true</MultipleValues>
                 </ParameterDefinition>
                 <ParameterDefinition>
-                  <Name>DimBusinessClusterBusinessCluster</Name>
+                  <Name>DimCompanySegmentCompanySegmentName</Name>
                   <DefaultValues>
-                    <DefaultValue>[Dim Business Cluster].[Business Cluster].[All]</DefaultValue>
+                    <DefaultValue>[Dim Company Segment].[Company Segment Name].[All]</DefaultValue>
                   </DefaultValues>
-                  <Caption>Business Cluster</Caption>
-                  <HierarchyUniqueName>[Dim Business Cluster].[Business Cluster]</HierarchyUniqueName>
+                  <Caption>Company Segment Name</Caption>
+                  <HierarchyUniqueName>[Dim Company Segment].[Company Segment Name]</HierarchyUniqueName>
                   <ParameterValuesQuery>
-                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Cluster].[Business Cluster].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Cluster].[Business Cluster].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Cluster].[Business Cluster].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Cluster].[Business Cluster].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable]))</Statement>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Company Segment].[Company Segment Name].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Company Segment].[Company Segment Name].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Company Segment].[Company Segment Name].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Company Segment].[Company Segment Name].ALLMEMBERS ON ROWS FROM ( SELECT ( { [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt] } ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])))</Statement>
                     <ParameterizedStatement>
-                      <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Cluster].[Business Cluster].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Cluster].[Business Cluster].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Cluster].[Business Cluster].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Cluster].[Business Cluster].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable]))</Statement>
+                      <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Company Segment].[Company Segment Name].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Company Segment].[Company Segment Name].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Company Segment].[Company Segment Name].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Company Segment].[Company Segment Name].ALLMEMBERS ON ROWS FROM ( SELECT ( { [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt] } ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])))</Statement>
                       <ReferencedParameters>
                         <ReferencedParameter>
                           <Name>DocumentActualDateYear</Name>
                         </ReferencedParameter>
                         <ReferencedParameter>
                           <Name>DocumentActualDateMonth</Name>
-                        </ReferencedParameter>
-                      </ReferencedParameters>
-                    </ParameterizedStatement>
-                  </ParameterValuesQuery>
-                  <MultipleValues>true</MultipleValues>
-                </ParameterDefinition>
-                <ParameterDefinition>
-                  <Name>DimBusinessClusterBusinessGroup</Name>
-                  <DefaultValues>
-                    <DefaultValue>[Dim Business Cluster].[Business Group].[All]</DefaultValue>
-                  </DefaultValues>
-                  <Caption>Business Group</Caption>
-                  <HierarchyUniqueName>[Dim Business Cluster].[Business Group]</HierarchyUniqueName>
-                  <ParameterValuesQuery>
-                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Cluster].[Business Group].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Cluster].[Business Group].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Cluster].[Business Group].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Cluster].[Business Group].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessCluster, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])))</Statement>
-                    <ParameterizedStatement>
-                      <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Cluster].[Business Group].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Cluster].[Business Group].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Cluster].[Business Group].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Cluster].[Business Group].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessCluster, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])))</Statement>
-                      <ReferencedParameters>
-                        <ReferencedParameter>
-                          <Name>DocumentActualDateYear</Name>
-                        </ReferencedParameter>
-                        <ReferencedParameter>
-                          <Name>DocumentActualDateMonth</Name>
-                        </ReferencedParameter>
-                        <ReferencedParameter>
-                          <Name>DimBusinessClusterBusinessCluster</Name>
-                        </ReferencedParameter>
-                      </ReferencedParameters>
-                    </ParameterizedStatement>
-                  </ParameterValuesQuery>
-                  <MultipleValues>true</MultipleValues>
-                </ParameterDefinition>
-                <ParameterDefinition>
-                  <Name>DimBusinessClusterBusinessLine</Name>
-                  <DefaultValues>
-                    <DefaultValue>[Dim Business Cluster].[Business Line].[All]</DefaultValue>
-                  </DefaultValues>
-                  <Caption>Business Line</Caption>
-                  <HierarchyUniqueName>[Dim Business Cluster].[Business Line]</HierarchyUniqueName>
-                  <ParameterValuesQuery>
-                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Cluster].[Business Line].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Cluster].[Business Line].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Cluster].[Business Line].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Cluster].[Business Line].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessGroup, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessCluster, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable]))))</Statement>
-                    <ParameterizedStatement>
-                      <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Cluster].[Business Line].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Cluster].[Business Line].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Cluster].[Business Line].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Cluster].[Business Line].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessGroup, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessCluster, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable]))))</Statement>
-                      <ReferencedParameters>
-                        <ReferencedParameter>
-                          <Name>DocumentActualDateYear</Name>
-                        </ReferencedParameter>
-                        <ReferencedParameter>
-                          <Name>DocumentActualDateMonth</Name>
-                        </ReferencedParameter>
-                        <ReferencedParameter>
-                          <Name>DimBusinessClusterBusinessCluster</Name>
-                        </ReferencedParameter>
-                        <ReferencedParameter>
-                          <Name>DimBusinessClusterBusinessGroup</Name>
-                        </ReferencedParameter>
-                      </ReferencedParameters>
-                    </ParameterizedStatement>
-                  </ParameterValuesQuery>
-                  <MultipleValues>true</MultipleValues>
-                </ParameterDefinition>
-                <ParameterDefinition>
-                  <Name>DimBusinessClusterBusinessUnit</Name>
-                  <DefaultValues>
-                    <DefaultValue>[Dim Business Cluster].[Business Unit].[All]</DefaultValue>
-                  </DefaultValues>
-                  <Caption>Business Unit</Caption>
-                  <HierarchyUniqueName>[Dim Business Cluster].[Business Unit]</HierarchyUniqueName>
-                  <ParameterValuesQuery>
-                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Cluster].[Business Unit].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Cluster].[Business Unit].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Cluster].[Business Unit].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Cluster].[Business Unit].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessLine, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessGroup, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessCluster, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])))))</Statement>
-                    <ParameterizedStatement>
-                      <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Cluster].[Business Unit].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Cluster].[Business Unit].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Cluster].[Business Unit].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Cluster].[Business Unit].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessLine, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessGroup, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessCluster, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])))))</Statement>
-                      <ReferencedParameters>
-                        <ReferencedParameter>
-                          <Name>DocumentActualDateYear</Name>
-                        </ReferencedParameter>
-                        <ReferencedParameter>
-                          <Name>DocumentActualDateMonth</Name>
-                        </ReferencedParameter>
-                        <ReferencedParameter>
-                          <Name>DimBusinessClusterBusinessCluster</Name>
-                        </ReferencedParameter>
-                        <ReferencedParameter>
-                          <Name>DimBusinessClusterBusinessGroup</Name>
-                        </ReferencedParameter>
-                        <ReferencedParameter>
-                          <Name>DimBusinessClusterBusinessLine</Name>
-                        </ReferencedParameter>
-                      </ReferencedParameters>
-                    </ParameterizedStatement>
-                  </ParameterValuesQuery>
-                  <MultipleValues>true</MultipleValues>
-                </ParameterDefinition>
-                <ParameterDefinition>
-                  <Name>DimCompanySegmentCompanySegementDesc</Name>
-                  <DefaultValues>
-                    <DefaultValue>[Dim Company Segment].[Company Segement Desc].[All]</DefaultValue>
-                  </DefaultValues>
-                  <Caption>Company Segement Desc</Caption>
-                  <HierarchyUniqueName>[Dim Company Segment].[Company Segement Desc]</HierarchyUniqueName>
-                  <ParameterValuesQuery>
-                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Company Segment].[Company Segement Desc].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Company Segment].[Company Segement Desc].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Company Segment].[Company Segement Desc].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Company Segment].[Company Segement Desc].ALLMEMBERS ON ROWS FROM ( SELECT ( { [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt] } ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessLine, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessGroup, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessCluster, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])))))))</Statement>
-                    <ParameterizedStatement>
-                      <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Company Segment].[Company Segement Desc].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Company Segment].[Company Segement Desc].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Company Segment].[Company Segement Desc].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Company Segment].[Company Segement Desc].ALLMEMBERS ON ROWS FROM ( SELECT ( { [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt] } ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessLine, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessGroup, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessCluster, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])))))))</Statement>
-                      <ReferencedParameters>
-                        <ReferencedParameter>
-                          <Name>DocumentActualDateYear</Name>
-                        </ReferencedParameter>
-                        <ReferencedParameter>
-                          <Name>DocumentActualDateMonth</Name>
-                        </ReferencedParameter>
-                        <ReferencedParameter>
-                          <Name>DimBusinessClusterBusinessCluster</Name>
-                        </ReferencedParameter>
-                        <ReferencedParameter>
-                          <Name>DimBusinessClusterBusinessGroup</Name>
-                        </ReferencedParameter>
-                        <ReferencedParameter>
-                          <Name>DimBusinessClusterBusinessLine</Name>
-                        </ReferencedParameter>
-                        <ReferencedParameter>
-                          <Name>DimBusinessClusterBusinessUnit</Name>
                         </ReferencedParameter>
                       </ReferencedParameters>
                     </ParameterizedStatement>
@@ -1689,12 +1180,12 @@
         </rd:DesignerState>
       </Query>
       <Fields>
-        <Field Name="Customer_Name">
-          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Dim Customer].[Customer Name].[Customer Name]" /&gt;</DataField>
+        <Field Name="Over_Due_Period_Key">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Dim Over Due Period].[Over Due Period Key].[Over Due Period Key]" /&gt;</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Over_Due_Period">
-          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Dim Over Due Period].[Over Due Period].[Over Due Period]" /&gt;</DataField>
+        <Field Name="Customer_Name">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Dim Customer].[Customer Name].[Customer Name]" /&gt;</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Amount">
@@ -1707,7 +1198,7 @@
         </Field>
       </Fields>
     </DataSet>
-    <DataSet Name="DimCompanySegmentCompanySegementDesc">
+    <DataSet Name="DimCompanySegmentCompanySegmentName">
       <Query>
         <DataSourceName>DS</DataSourceName>
         <QueryParameters>
@@ -1717,20 +1208,8 @@
           <QueryParameter Name="DocumentActualDateMonth">
             <Value>=Parameters!DocumentActualDateMonth.Value</Value>
           </QueryParameter>
-          <QueryParameter Name="DimBusinessClusterBusinessCluster">
-            <Value>=Parameters!DimBusinessClusterBusinessCluster.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="DimBusinessClusterBusinessGroup">
-            <Value>=Parameters!DimBusinessClusterBusinessGroup.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="DimBusinessClusterBusinessLine">
-            <Value>=Parameters!DimBusinessClusterBusinessLine.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="DimBusinessClusterBusinessUnit">
-            <Value>=Parameters!DimBusinessClusterBusinessUnit.Value</Value>
-          </QueryParameter>
         </QueryParameters>
-        <CommandText>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Company Segment].[Company Segement Desc].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Company Segment].[Company Segement Desc].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Company Segment].[Company Segement Desc].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Company Segment].[Company Segement Desc].ALLMEMBERS ON ROWS FROM ( SELECT ( { [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt] } ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessLine, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessGroup, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessCluster, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])))))))</CommandText>
+        <CommandText>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Company Segment].[Company Segment Name].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Company Segment].[Company Segment Name].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Company Segment].[Company Segment Name].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Company Segment].[Company Segment Name].ALLMEMBERS ON ROWS FROM ( SELECT ( { [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt] } ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])))</CommandText>
         <rd:DesignerState>
           <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
             <CommandType>MDX</CommandType>
@@ -1773,7 +1252,7 @@
               <QueryProperties />
             </QuerySpecification>
             <Query>
-              <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Company Segment].[Company Segement Desc].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Company Segment].[Company Segement Desc].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Company Segment].[Company Segement Desc].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Company Segment].[Company Segement Desc].ALLMEMBERS ON ROWS FROM ( SELECT ( { [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt] } ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessUnit, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessLine, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessGroup, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessCluster, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])))))))</Statement>
+              <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Company Segment].[Company Segment Name].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Company Segment].[Company Segment Name].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Company Segment].[Company Segment Name].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Company Segment].[Company Segment Name].ALLMEMBERS ON ROWS FROM ( SELECT ( { [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt] } ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])))</Statement>
               <ParameterDefinitions>
                 <ParameterDefinition>
                   <Name>DocumentActualDateYear</Name>
@@ -1810,116 +1289,6 @@
                   </ParameterValuesQuery>
                   <MultipleValues>true</MultipleValues>
                 </ParameterDefinition>
-                <ParameterDefinition>
-                  <Name>DimBusinessClusterBusinessCluster</Name>
-                  <DefaultValues>
-                    <DefaultValue>[Dim Business Cluster].[Business Cluster].[All]</DefaultValue>
-                  </DefaultValues>
-                  <Caption>Business Cluster</Caption>
-                  <HierarchyUniqueName>[Dim Business Cluster].[Business Cluster]</HierarchyUniqueName>
-                  <ParameterValuesQuery>
-                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Cluster].[Business Cluster].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Cluster].[Business Cluster].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Cluster].[Business Cluster].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Cluster].[Business Cluster].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable]))</Statement>
-                    <ParameterizedStatement>
-                      <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Cluster].[Business Cluster].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Cluster].[Business Cluster].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Cluster].[Business Cluster].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Cluster].[Business Cluster].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable]))</Statement>
-                      <ReferencedParameters>
-                        <ReferencedParameter>
-                          <Name>DocumentActualDateYear</Name>
-                        </ReferencedParameter>
-                        <ReferencedParameter>
-                          <Name>DocumentActualDateMonth</Name>
-                        </ReferencedParameter>
-                      </ReferencedParameters>
-                    </ParameterizedStatement>
-                  </ParameterValuesQuery>
-                  <MultipleValues>true</MultipleValues>
-                </ParameterDefinition>
-                <ParameterDefinition>
-                  <Name>DimBusinessClusterBusinessGroup</Name>
-                  <DefaultValues>
-                    <DefaultValue>[Dim Business Cluster].[Business Group].[All]</DefaultValue>
-                  </DefaultValues>
-                  <Caption>Business Group</Caption>
-                  <HierarchyUniqueName>[Dim Business Cluster].[Business Group]</HierarchyUniqueName>
-                  <ParameterValuesQuery>
-                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Cluster].[Business Group].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Cluster].[Business Group].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Cluster].[Business Group].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Cluster].[Business Group].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessCluster, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])))</Statement>
-                    <ParameterizedStatement>
-                      <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Cluster].[Business Group].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Cluster].[Business Group].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Cluster].[Business Group].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Cluster].[Business Group].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessCluster, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])))</Statement>
-                      <ReferencedParameters>
-                        <ReferencedParameter>
-                          <Name>DocumentActualDateYear</Name>
-                        </ReferencedParameter>
-                        <ReferencedParameter>
-                          <Name>DocumentActualDateMonth</Name>
-                        </ReferencedParameter>
-                        <ReferencedParameter>
-                          <Name>DimBusinessClusterBusinessCluster</Name>
-                        </ReferencedParameter>
-                      </ReferencedParameters>
-                    </ParameterizedStatement>
-                  </ParameterValuesQuery>
-                  <MultipleValues>true</MultipleValues>
-                </ParameterDefinition>
-                <ParameterDefinition>
-                  <Name>DimBusinessClusterBusinessLine</Name>
-                  <DefaultValues>
-                    <DefaultValue>[Dim Business Cluster].[Business Line].[All]</DefaultValue>
-                  </DefaultValues>
-                  <Caption>Business Line</Caption>
-                  <HierarchyUniqueName>[Dim Business Cluster].[Business Line]</HierarchyUniqueName>
-                  <ParameterValuesQuery>
-                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Cluster].[Business Line].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Cluster].[Business Line].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Cluster].[Business Line].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Cluster].[Business Line].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessGroup, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessCluster, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable]))))</Statement>
-                    <ParameterizedStatement>
-                      <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Cluster].[Business Line].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Cluster].[Business Line].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Cluster].[Business Line].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Cluster].[Business Line].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessGroup, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessCluster, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable]))))</Statement>
-                      <ReferencedParameters>
-                        <ReferencedParameter>
-                          <Name>DocumentActualDateYear</Name>
-                        </ReferencedParameter>
-                        <ReferencedParameter>
-                          <Name>DocumentActualDateMonth</Name>
-                        </ReferencedParameter>
-                        <ReferencedParameter>
-                          <Name>DimBusinessClusterBusinessCluster</Name>
-                        </ReferencedParameter>
-                        <ReferencedParameter>
-                          <Name>DimBusinessClusterBusinessGroup</Name>
-                        </ReferencedParameter>
-                      </ReferencedParameters>
-                    </ParameterizedStatement>
-                  </ParameterValuesQuery>
-                  <MultipleValues>true</MultipleValues>
-                </ParameterDefinition>
-                <ParameterDefinition>
-                  <Name>DimBusinessClusterBusinessUnit</Name>
-                  <DefaultValues>
-                    <DefaultValue>[Dim Business Cluster].[Business Unit].[All]</DefaultValue>
-                  </DefaultValues>
-                  <Caption>Business Unit</Caption>
-                  <HierarchyUniqueName>[Dim Business Cluster].[Business Unit]</HierarchyUniqueName>
-                  <ParameterValuesQuery>
-                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Cluster].[Business Unit].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Cluster].[Business Unit].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Cluster].[Business Unit].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Cluster].[Business Unit].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessLine, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessGroup, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessCluster, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])))))</Statement>
-                    <ParameterizedStatement>
-                      <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Business Cluster].[Business Unit].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Business Cluster].[Business Unit].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Business Cluster].[Business Unit].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Business Cluster].[Business Unit].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessLine, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessGroup, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimBusinessClusterBusinessCluster, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])))))</Statement>
-                      <ReferencedParameters>
-                        <ReferencedParameter>
-                          <Name>DocumentActualDateYear</Name>
-                        </ReferencedParameter>
-                        <ReferencedParameter>
-                          <Name>DocumentActualDateMonth</Name>
-                        </ReferencedParameter>
-                        <ReferencedParameter>
-                          <Name>DimBusinessClusterBusinessCluster</Name>
-                        </ReferencedParameter>
-                        <ReferencedParameter>
-                          <Name>DimBusinessClusterBusinessGroup</Name>
-                        </ReferencedParameter>
-                        <ReferencedParameter>
-                          <Name>DimBusinessClusterBusinessLine</Name>
-                        </ReferencedParameter>
-                      </ReferencedParameters>
-                    </ParameterizedStatement>
-                  </ParameterValuesQuery>
-                  <MultipleValues>true</MultipleValues>
-                </ParameterDefinition>
               </ParameterDefinitions>
             </Query>
           </QueryDefinition>
@@ -1946,14 +1315,110 @@
         </Field>
       </Fields>
     </DataSet>
+    <DataSet Name="DefaultDocumentActualYearParameter">
+      <Query>
+        <DataSourceName>DS</DataSourceName>
+        <CommandText>WITH 
+MEMBER [Measures].[ParameterCaption] AS [Document Actual Date].[Year].CURRENTMEMBER.MEMBER_CAPTION 
+MEMBER [Measures].[ParameterValue] AS "[Document Actual Date].[Year].&amp;[" + IIF(Year(now()) &gt; 2500, CStr(Year(now())), CStr(Year(now()))) + "]" 
+MEMBER [Measures].[ParameterLevel] AS [Document Actual Date].[Year].CURRENTMEMBER.LEVEL.ORDINAL 
+
+SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Year].ALLMEMBERS ON ROWS 
+
+FROM [RLG-AccountReceivable]</CommandText>
+        <rd:DesignerState>
+          <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+            <CommandType>MDX</CommandType>
+            <Type>Query</Type>
+            <QuerySpecification xsi:type="MDXQuerySpecification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <Select>
+                <Items>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Dim Time</DimensionName>
+                      <HierarchyName>Year</HierarchyName>
+                      <HierarchyUniqueName>[Dim Time].[Year]</HierarchyUniqueName>
+                      <LevelName>Year</LevelName>
+                      <UniqueName>[Dim Time].[Year].[Year]</UniqueName>
+                    </ID>
+                    <ItemCaption>Year</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterCaption</MeasureName>
+                      <UniqueName>[Measures].[ParameterCaption]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterCaption</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterValue</MeasureName>
+                      <UniqueName>[Measures].[ParameterValue]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterValue</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterLevel</MeasureName>
+                      <UniqueName>[Measures].[ParameterLevel]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterLevel</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                </Items>
+              </Select>
+              <From>RLG-AccountReceivable</From>
+              <Filter>
+                <FilterItems />
+              </Filter>
+              <Calculations />
+              <Aggregates />
+              <QueryProperties />
+            </QuerySpecification>
+            <Query>
+              <Statement>WITH 
+MEMBER [Measures].[ParameterCaption] AS [Document Actual Date].[Year].CURRENTMEMBER.MEMBER_CAPTION 
+MEMBER [Measures].[ParameterValue] AS "[Document Actual Date].[Year].&amp;[" + IIF(Year(now()) &gt; 2500, CStr(Year(now())), CStr(Year(now()))) + "]" 
+MEMBER [Measures].[ParameterLevel] AS [Document Actual Date].[Year].CURRENTMEMBER.LEVEL.ORDINAL 
+
+SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Year].ALLMEMBERS ON ROWS 
+
+FROM [RLG-AccountReceivable]</Statement>
+              <ParameterDefinitions />
+            </Query>
+          </QueryDefinition>
+        </rd:DesignerState>
+      </Query>
+      <Fields>
+        <Field Name="Year">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Dim Time].[Year].[Year]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ParameterCaption">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterCaption]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterValue">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterValue]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterLevel">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterLevel]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
   </DataSets>
   <ReportParameters>
     <ReportParameter Name="DocumentActualDateYear">
       <DataType>String</DataType>
       <DefaultValue>
-        <Values>
-          <Value>[Document Actual Date].[Year].[All]</Value>
-        </Values>
+        <DataSetReference>
+          <DataSetName>DefaultDocumentActualYearParameter</DataSetName>
+          <ValueField>ParameterValue</ValueField>
+        </DataSetReference>
       </DefaultValue>
       <Prompt>Document Actual Date.Year</Prompt>
       <ValidValues>
@@ -1963,7 +1428,6 @@
           <LabelField>ParameterCaptionIndented</LabelField>
         </DataSetReference>
       </ValidValues>
-      <MultiValue>true</MultiValue>
     </ReportParameter>
     <ReportParameter Name="DocumentActualDateMonth">
       <DataType>String</DataType>
@@ -1980,92 +1444,22 @@
           <LabelField>ParameterCaptionIndented</LabelField>
         </DataSetReference>
       </ValidValues>
-      <MultiValue>true</MultiValue>
     </ReportParameter>
-    <ReportParameter Name="DimBusinessClusterBusinessCluster">
+    <ReportParameter Name="DimCompanySegmentCompanySegmentName">
       <DataType>String</DataType>
       <DefaultValue>
         <Values>
-          <Value>[Dim Business Cluster].[Business Cluster].[All]</Value>
+          <Value>[Dim Company Segment].[Company Segment Name].[All]</Value>
         </Values>
       </DefaultValue>
-      <Prompt>Business Cluster</Prompt>
+      <Prompt>Company Segment Name</Prompt>
       <ValidValues>
         <DataSetReference>
-          <DataSetName>DimBusinessClusterBusinessCluster</DataSetName>
+          <DataSetName>DimCompanySegmentCompanySegmentName</DataSetName>
           <ValueField>ParameterValue</ValueField>
           <LabelField>ParameterCaptionIndented</LabelField>
         </DataSetReference>
       </ValidValues>
-      <MultiValue>true</MultiValue>
-    </ReportParameter>
-    <ReportParameter Name="DimBusinessClusterBusinessGroup">
-      <DataType>String</DataType>
-      <DefaultValue>
-        <Values>
-          <Value>[Dim Business Cluster].[Business Group].[All]</Value>
-        </Values>
-      </DefaultValue>
-      <Prompt>Business Group</Prompt>
-      <ValidValues>
-        <DataSetReference>
-          <DataSetName>DimBusinessClusterBusinessGroup</DataSetName>
-          <ValueField>ParameterValue</ValueField>
-          <LabelField>ParameterCaptionIndented</LabelField>
-        </DataSetReference>
-      </ValidValues>
-      <MultiValue>true</MultiValue>
-    </ReportParameter>
-    <ReportParameter Name="DimBusinessClusterBusinessLine">
-      <DataType>String</DataType>
-      <DefaultValue>
-        <Values>
-          <Value>[Dim Business Cluster].[Business Line].[All]</Value>
-        </Values>
-      </DefaultValue>
-      <Prompt>Business Line</Prompt>
-      <ValidValues>
-        <DataSetReference>
-          <DataSetName>DimBusinessClusterBusinessLine</DataSetName>
-          <ValueField>ParameterValue</ValueField>
-          <LabelField>ParameterCaptionIndented</LabelField>
-        </DataSetReference>
-      </ValidValues>
-      <MultiValue>true</MultiValue>
-    </ReportParameter>
-    <ReportParameter Name="DimBusinessClusterBusinessUnit">
-      <DataType>String</DataType>
-      <DefaultValue>
-        <Values>
-          <Value>[Dim Business Cluster].[Business Unit].[All]</Value>
-        </Values>
-      </DefaultValue>
-      <Prompt>Business Unit</Prompt>
-      <ValidValues>
-        <DataSetReference>
-          <DataSetName>DimBusinessClusterBusinessUnit</DataSetName>
-          <ValueField>ParameterValue</ValueField>
-          <LabelField>ParameterCaptionIndented</LabelField>
-        </DataSetReference>
-      </ValidValues>
-      <MultiValue>true</MultiValue>
-    </ReportParameter>
-    <ReportParameter Name="DimCompanySegmentCompanySegementDesc">
-      <DataType>String</DataType>
-      <DefaultValue>
-        <Values>
-          <Value>[Dim Company Segment].[Company Segement Desc].[All]</Value>
-        </Values>
-      </DefaultValue>
-      <Prompt>Company Segement Desc</Prompt>
-      <ValidValues>
-        <DataSetReference>
-          <DataSetName>DimCompanySegmentCompanySegementDesc</DataSetName>
-          <ValueField>ParameterValue</ValueField>
-          <LabelField>ParameterCaptionIndented</LabelField>
-        </DataSetReference>
-      </ValidValues>
-      <MultiValue>true</MultiValue>
     </ReportParameter>
   </ReportParameters>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>

@@ -14,12 +14,12 @@
   <DataSets />
   <Reports>
     <ProjectItem>
-      <Name>ARReport1.rdl</Name>
-      <FullPath>ARReport1.rdl</FullPath>
+      <Name>OldARReport1.rdl</Name>
+      <FullPath>OldARReport1.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>ARReport2.rdl</Name>
-      <FullPath>ARReport2.rdl</FullPath>
+      <Name>OldARReport2.rdl</Name>
+      <FullPath>OldARReport2.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
       <Name>ARReport3.rdl</Name>
@@ -28,6 +28,14 @@
     <ProjectItem>
       <Name>ARReport4.rdl</Name>
       <FullPath>ARReport4.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>ARReport1.rdl</Name>
+      <FullPath>ARReport1.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>ARReport2.rdl</Name>
+      <FullPath>ARReport2.rdl</FullPath>
     </ProjectItem>
   </Reports>
   <Configurations>

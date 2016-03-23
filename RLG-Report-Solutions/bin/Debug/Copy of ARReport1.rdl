@@ -340,16 +340,16 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.75in</Width>
+              <Width>1.84375in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.64583in</Width>
+              <Width>1in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.66667in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.65625in</Width>
+              <Width>1in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -849,13 +849,11 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <RepeatColumnHeaders>true</RepeatColumnHeaders>
-        <FixedColumnHeaders>true</FixedColumnHeaders>
         <DataSetName>ARDataSet</DataSetName>
         <Top>3.99181in</Top>
         <Left>0.375in</Left>
         <Height>0.75in</Height>
-        <Width>8.58333in</Width>
+        <Width>9.375in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
