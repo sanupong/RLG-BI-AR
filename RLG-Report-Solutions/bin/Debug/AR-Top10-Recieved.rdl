@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <Height>2in</Height>
+    <Style />
+  </Body>
+  <Width>6.66542in</Width>
+  <Page>
+    <LeftMargin>1in</LeftMargin>
+    <RightMargin>1in</RightMargin>
+    <TopMargin>1in</TopMargin>
+    <BottomMargin>1in</BottomMargin>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="AR">
+      <DataSourceReference>DS</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>be8d0c7b-db77-4e10-8da0-9320caecd782</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="FromDimTimeDate">
+      <Query>
+        <DataSourceName>AR</DataSourceName>
+        <CommandText>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Date].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Date].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Date].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Date].ALLMEMBERS ON ROWS FROM [RLG-AccountReceivable]</CommandText>
+        <rd:DesignerState>
+          <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+            <CommandType>MDX</CommandType>
+            <Type>Query</Type>
+            <QuerySpecification xsi:type="MDXQuerySpecification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <Select>
+                <Items>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Dim Time</DimensionName>
+                      <HierarchyName>Date</HierarchyName>
+                      <HierarchyUniqueName>[Dim Time].[Date]</HierarchyUniqueName>
+                      <LevelName>Date</LevelName>
+                      <UniqueName>[Dim Time].[Date].[Date]</UniqueName>
+                    </ID>
+                    <ItemCaption>Date</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterCaption</MeasureName>
+                      <UniqueName>[Measures].[ParameterCaption]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterCaption</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterValue</MeasureName>
+                      <UniqueName>[Measures].[ParameterValue]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterValue</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterLevel</MeasureName>
+                      <UniqueName>[Measures].[ParameterLevel]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterLevel</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                </Items>
+              </Select>
+              <From>RLG-AccountReceivable</From>
+              <Filter>
+                <FilterItems />
+              </Filter>
+              <Calculations />
+              <Aggregates />
+              <QueryProperties />
+            </QuerySpecification>
+            <Query>
+              <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Date].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Date].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Date].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Date].ALLMEMBERS ON ROWS FROM [RLG-AccountReceivable]</Statement>
+              <ParameterDefinitions />
+            </Query>
+          </QueryDefinition>
+        </rd:DesignerState>
+        <rd:Hidden>true</rd:Hidden>
+      </Query>
+      <Fields>
+        <Field Name="Date">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Dim Time].[Date].[Date]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ParameterCaption">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterCaption]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterValue">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterValue]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterLevel">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterLevel]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterCaptionIndented">
+          <Value>=Space(3*Fields!ParameterLevel.Value) + Fields!ParameterCaption.Value</Value>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="TopN_Received">
+      <Query>
+        <DataSourceName>AR</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="FromDimTimeDate">
+            <Value>=Parameters!FromDimTimeDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="ToDimTimeDate">
+            <Value>=Parameters!ToDimTimeDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="DimCompanySegmentCompanySegmentName">
+            <Value>=Parameters!DimCompanySegmentCompanySegmentName.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="DimInvoiceTypeInvoiceType">
+            <Value>=Parameters!DimInvoiceTypeInvoiceType.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText> SELECT 
+NON EMPTY { [Measures].[Amount] } ON COLUMNS, 
+NON EMPTY { ([Dim Customer].[Customer Name].[Customer Name].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS 
+FROM ( SELECT ( STRTOSET(@DimInvoiceTypeInvoiceType, CONSTRAINED) ) ON COLUMNS 
+FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegmentName, CONSTRAINED) ) ON COLUMNS 
+FROM ( SELECT ( { [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt] } ) ON COLUMNS 
+FROM ( SELECT ( STRTOMEMBER(@FromDimTimeDate,CONSTRAINED) : STRTOMEMBER(@ToDimTimeDate,CONSTRAINED) ) ON COLUMNS
+
+FROM [RLG-AccountReceivable])))) 
+</CommandText>
+        <rd:DesignerState>
+          <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+            <CommandType>MDX</CommandType>
+            <Type>Query</Type>
+            <QuerySpecification xsi:type="MDXQuerySpecification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <Select>
+                <Items>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Dim Customer</DimensionName>
+                      <HierarchyName>Customer Name</HierarchyName>
+                      <HierarchyUniqueName>[Dim Customer].[Customer Name]</HierarchyUniqueName>
+                      <LevelName>Customer Name</LevelName>
+                      <UniqueName>[Dim Customer].[Customer Name].[Customer Name]</UniqueName>
+                    </ID>
+                    <ItemCaption>Customer Name</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>Amount</MeasureName>
+                      <UniqueName>[Measures].[Amount]</UniqueName>
+                    </ID>
+                    <ItemCaption>Amount</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                </Items>
+              </Select>
+              <From>RLG-AccountReceivable</From>
+              <Filter>
+                <FilterItems />
+              </Filter>
+              <Calculations />
+              <Aggregates />
+              <QueryProperties />
+            </QuerySpecification>
+            <Query>
+              <Statement> SELECT 
+NON EMPTY { [Measures].[Amount] } ON COLUMNS, 
+NON EMPTY { ([Dim Customer].[Customer Name].[Customer Name].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS 
+FROM ( SELECT ( STRTOSET(@DimInvoiceTypeInvoiceType, CONSTRAINED) ) ON COLUMNS 
+FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegmentName, CONSTRAINED) ) ON COLUMNS 
+FROM ( SELECT ( { [Dim AR Transaction Type].[AR Transection Type].&amp;[Receipt] } ) ON COLUMNS 
+FROM ( SELECT ( STRTOMEMBER(@FromDimTimeDate,CONSTRAINED) : STRTOMEMBER(@ToDimTimeDate,CONSTRAINED) ) ON COLUMNS
+
+FROM [RLG-AccountReceivable])))) 
+</Statement>
+              <ParameterDefinitions>
+                <ParameterDefinition>
+                  <Name>FromDimTimeDate</Name>
+                  <Usage>RangeFrom</Usage>
+                  <DefaultValues>
+                    <DefaultValue>[Dim Time].[Date].[All]</DefaultValue>
+                  </DefaultValues>
+                  <Caption>From Dim Time.Date</Caption>
+                  <HierarchyUniqueName>[Dim Time].[Date]</HierarchyUniqueName>
+                  <ParameterValuesQuery>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Date].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Date].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Date].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Date].ALLMEMBERS ON ROWS FROM [RLG-AccountReceivable]</Statement>
+                    <ParameterizedStatement>
+                      <ReferencedParameters />
+                    </ParameterizedStatement>
+                  </ParameterValuesQuery>
+                </ParameterDefinition>
+                <ParameterDefinition>
+                  <Name>ToDimTimeDate</Name>
+                  <Usage>RangeTo</Usage>
+                  <DefaultValues>
+                    <DefaultValue>[Dim Time].[Date].[All]</DefaultValue>
+                  </DefaultValues>
+                  <Caption>To Dim Time.Date</Caption>
+                  <HierarchyUniqueName>[Dim Time].[Date]</HierarchyUniqueName>
+                  <ParameterValuesQuery>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Date].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Date].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Date].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Date].ALLMEMBERS ON ROWS FROM [RLG-AccountReceivable]</Statement>
+                    <ParameterizedStatement>
+                      <ReferencedParameters />
+                    </ParameterizedStatement>
+                  </ParameterValuesQuery>
+                </ParameterDefinition>
+                <ParameterDefinition>
+                  <Name>DimCompanySegmentCompanySegmentName</Name>
+                  <DefaultValues>
+                    <DefaultValue>[Dim Company Segment].[Company Segment Name].[All]</DefaultValue>
+                  </DefaultValues>
+                  <Caption>Company Segment Name</Caption>
+                  <HierarchyUniqueName>[Dim Company Segment].[Company Segment Name]</HierarchyUniqueName>
+                  <ParameterValuesQuery>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Company Segment].[Company Segment Name].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Company Segment].[Company Segment Name].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Company Segment].[Company Segment Name].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Company Segment].[Company Segment Name].ALLMEMBERS ON ROWS FROM [RLG-AccountReceivable]</Statement>
+                    <ParameterizedStatement>
+                      <ReferencedParameters />
+                    </ParameterizedStatement>
+                  </ParameterValuesQuery>
+                  <MultipleValues>true</MultipleValues>
+                </ParameterDefinition>
+                <ParameterDefinition>
+                  <Name>DimInvoiceTypeInvoiceType</Name>
+                  <DefaultValues>
+                    <DefaultValue>[Dim Invoice Type].[Invoice Type].[All]</DefaultValue>
+                  </DefaultValues>
+                  <Caption>Invoice Type</Caption>
+                  <HierarchyUniqueName>[Dim Invoice Type].[Invoice Type]</HierarchyUniqueName>
+                  <ParameterValuesQuery>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Invoice Type].[Invoice Type].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Invoice Type].[Invoice Type].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Invoice Type].[Invoice Type].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Invoice Type].[Invoice Type].ALLMEMBERS ON ROWS FROM [RLG-AccountReceivable]</Statement>
+                    <ParameterizedStatement>
+                      <ReferencedParameters />
+                    </ParameterizedStatement>
+                  </ParameterValuesQuery>
+                  <MultipleValues>true</MultipleValues>
+                </ParameterDefinition>
+              </ParameterDefinitions>
+            </Query>
+          </QueryDefinition>
+        </rd:DesignerState>
+      </Query>
+      <Fields>
+        <Field Name="Customer_Name">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Dim Customer].[Customer Name].[Customer Name]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Amount">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Amount]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+      <Filters>
+        <Filter>
+          <FilterExpression>=Fields!Amount.Value</FilterExpression>
+          <Operator>TopN</Operator>
+          <FilterValues>
+            <FilterValue>=Parameters!NumberOfTop.Value</FilterValue>
+          </FilterValues>
+        </Filter>
+      </Filters>
+    </DataSet>
+    <DataSet Name="DimCompanySegmentCompanySegmentName">
+      <Query>
+        <DataSourceName>AR</DataSourceName>
+        <CommandText>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Company Segment].[Company Segment Name].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Company Segment].[Company Segment Name].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Company Segment].[Company Segment Name].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Company Segment].[Company Segment Name].ALLMEMBERS ON ROWS FROM [RLG-AccountReceivable]</CommandText>
+        <rd:DesignerState>
+          <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+            <CommandType>MDX</CommandType>
+            <Type>Query</Type>
+            <QuerySpecification xsi:type="MDXQuerySpecification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <Select>
+                <Items>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterCaption</MeasureName>
+                      <UniqueName>[Measures].[ParameterCaption]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterCaption</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterValue</MeasureName>
+                      <UniqueName>[Measures].[ParameterValue]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterValue</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterLevel</MeasureName>
+                      <UniqueName>[Measures].[ParameterLevel]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterLevel</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                </Items>
+              </Select>
+              <From>RLG-AccountReceivable</From>
+              <Filter>
+                <FilterItems />
+              </Filter>
+              <Calculations />
+              <Aggregates />
+              <QueryProperties />
+            </QuerySpecification>
+            <Query>
+              <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Company Segment].[Company Segment Name].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Company Segment].[Company Segment Name].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Company Segment].[Company Segment Name].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Company Segment].[Company Segment Name].ALLMEMBERS ON ROWS FROM [RLG-AccountReceivable]</Statement>
+              <ParameterDefinitions />
+            </Query>
+          </QueryDefinition>
+        </rd:DesignerState>
+        <rd:AutoGenerated>true</rd:AutoGenerated>
+        <rd:Hidden>true</rd:Hidden>
+      </Query>
+      <Fields>
+        <Field Name="ParameterCaption">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterCaption]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterValue">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterValue]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterLevel">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterLevel]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterCaptionIndented">
+          <Value>=Space(3*Fields!ParameterLevel.Value) + Fields!ParameterCaption.Value</Value>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="DimInvoiceTypeInvoiceType">
+      <Query>
+        <DataSourceName>AR</DataSourceName>
+        <CommandText>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Invoice Type].[Invoice Type].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Invoice Type].[Invoice Type].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Invoice Type].[Invoice Type].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Invoice Type].[Invoice Type].ALLMEMBERS ON ROWS FROM [RLG-AccountReceivable]</CommandText>
+        <rd:DesignerState>
+          <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+            <CommandType>MDX</CommandType>
+            <Type>Query</Type>
+            <QuerySpecification xsi:type="MDXQuerySpecification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <Select>
+                <Items>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterCaption</MeasureName>
+                      <UniqueName>[Measures].[ParameterCaption]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterCaption</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterValue</MeasureName>
+                      <UniqueName>[Measures].[ParameterValue]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterValue</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterLevel</MeasureName>
+                      <UniqueName>[Measures].[ParameterLevel]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterLevel</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                </Items>
+              </Select>
+              <From>RLG-AccountReceivable</From>
+              <Filter>
+                <FilterItems />
+              </Filter>
+              <Calculations />
+              <Aggregates />
+              <QueryProperties />
+            </QuerySpecification>
+            <Query>
+              <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Invoice Type].[Invoice Type].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Invoice Type].[Invoice Type].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Invoice Type].[Invoice Type].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Invoice Type].[Invoice Type].ALLMEMBERS ON ROWS FROM [RLG-AccountReceivable]</Statement>
+              <ParameterDefinitions />
+            </Query>
+          </QueryDefinition>
+        </rd:DesignerState>
+        <rd:AutoGenerated>true</rd:AutoGenerated>
+        <rd:Hidden>true</rd:Hidden>
+      </Query>
+      <Fields>
+        <Field Name="ParameterCaption">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterCaption]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterValue">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterValue]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterLevel">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterLevel]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterCaptionIndented">
+          <Value>=Space(3*Fields!ParameterLevel.Value) + Fields!ParameterCaption.Value</Value>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="ToDimTimeDate">
+      <Query>
+        <DataSourceName>AR</DataSourceName>
+        <CommandText>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Date].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Date].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Date].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Date].ALLMEMBERS ON ROWS FROM [RLG-AccountReceivable]</CommandText>
+        <rd:DesignerState>
+          <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+            <CommandType>MDX</CommandType>
+            <Type>Query</Type>
+            <QuerySpecification xsi:type="MDXQuerySpecification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <Select>
+                <Items>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Dim Time</DimensionName>
+                      <HierarchyName>Date</HierarchyName>
+                      <HierarchyUniqueName>[Dim Time].[Date]</HierarchyUniqueName>
+                      <LevelName>Date</LevelName>
+                      <UniqueName>[Dim Time].[Date].[Date]</UniqueName>
+                    </ID>
+                    <ItemCaption>Date</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterCaption</MeasureName>
+                      <UniqueName>[Measures].[ParameterCaption]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterCaption</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterValue</MeasureName>
+                      <UniqueName>[Measures].[ParameterValue]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterValue</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterLevel</MeasureName>
+                      <UniqueName>[Measures].[ParameterLevel]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterLevel</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                </Items>
+              </Select>
+              <From>RLG-AccountReceivable</From>
+              <Filter>
+                <FilterItems />
+              </Filter>
+              <Calculations />
+              <Aggregates />
+              <QueryProperties />
+            </QuerySpecification>
+            <Query>
+              <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Time].[Date].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Time].[Date].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Time].[Date].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Date].ALLMEMBERS ON ROWS FROM [RLG-AccountReceivable]</Statement>
+              <ParameterDefinitions />
+            </Query>
+          </QueryDefinition>
+        </rd:DesignerState>
+        <rd:Hidden>true</rd:Hidden>
+      </Query>
+      <Fields>
+        <Field Name="Date">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Dim Time].[Date].[Date]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ParameterCaption">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterCaption]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterValue">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterValue]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterLevel">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterLevel]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterCaptionIndented">
+          <Value>=Space(3*Fields!ParameterLevel.Value) + Fields!ParameterCaption.Value</Value>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="NumberOfTop">
+      <DataType>Integer</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>=10</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Number_of_Top</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="DimCompanySegmentCompanySegmentName">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>[Dim Company Segment].[Company Segment Name].[All]</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Company Segment Name</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>DimCompanySegmentCompanySegmentName</DataSetName>
+          <ValueField>ParameterValue</ValueField>
+          <LabelField>ParameterCaptionIndented</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="DimInvoiceTypeInvoiceType">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>[Dim Invoice Type].[Invoice Type].[All]</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Invoice Type</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>DimInvoiceTypeInvoiceType</DataSetName>
+          <ValueField>ParameterValue</ValueField>
+          <LabelField>ParameterCaptionIndented</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="FromDimTimeDate">
+      <DataType>DateTime</DataType>
+      <Prompt>From Date</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ToDimTimeDate">
+      <DataType>DateTime</DataType>
+      <Prompt>To Date</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>8f38d0a0-ecb6-462c-b2cb-4142a1bff08c</rd:ReportID>
+</Report>
