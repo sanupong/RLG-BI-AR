@@ -18,16 +18,16 @@
       <FullPath>ARReport1.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>ARReport2.rdl</Name>
-      <FullPath>ARReport2.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
       <Name>ARReport3.rdl</Name>
       <FullPath>ARReport3.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
       <Name>ARReport4.rdl</Name>
       <FullPath>ARReport4.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>ARTopN_Received.rdl</Name>
+      <FullPath>ARTopN_Received.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
       <Name>ARTopN_Received_From_To.rdl</Name>
@@ -42,8 +42,8 @@
       <FullPath>OldARReport2.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>ARTopN_Received.rdl</Name>
-      <FullPath>ARTopN_Received.rdl</FullPath>
+      <Name>ARReport2.rdl</Name>
+      <FullPath>ARReport2.rdl</FullPath>
     </ProjectItem>
   </Reports>
   <Configurations>

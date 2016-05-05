@@ -468,7 +468,7 @@
                               <Value>=Sum(Fields!Amount.Value)/Sum(Fields!Amount.Value, "ARDataSet")</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
-                                <Format>#,0.00;(#,0.00)</Format>
+                                <Format>#,0.00%</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1684,7 +1684,7 @@
         <DataSourceName>DS</DataSourceName>
         <CommandText>WITH 
 MEMBER [Measures].[ParameterCaption] AS [Document Actual Date].[Year].CURRENTMEMBER.MEMBER_CAPTION 
-MEMBER [Measures].[ParameterValue] AS "[Document Actual Date].[Year].&amp;[" + IIF(Year(now()) &gt; 2500, CStr(Year(now())), CStr(Year(now()))) + "]" 
+MEMBER [Measures].[ParameterValue] AS "[Document Actual Date].[Year].&amp;[" + IIF(Year(now()) &gt; 2500, CStr(Year(now())-543), CStr(Year(now())-543)) + "]" 
 MEMBER [Measures].[ParameterLevel] AS [Document Actual Date].[Year].CURRENTMEMBER.LEVEL.ORDINAL 
 
 SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Year].ALLMEMBERS ON ROWS 
@@ -1744,7 +1744,7 @@ FROM [RLG-AccountReceivable]</CommandText>
             <Query>
               <Statement>WITH 
 MEMBER [Measures].[ParameterCaption] AS [Document Actual Date].[Year].CURRENTMEMBER.MEMBER_CAPTION 
-MEMBER [Measures].[ParameterValue] AS "[Document Actual Date].[Year].&amp;[" + IIF(Year(now()) &gt; 2500, CStr(Year(now())), CStr(Year(now()))) + "]" 
+MEMBER [Measures].[ParameterValue] AS "[Document Actual Date].[Year].&amp;[" + IIF(Year(now()) &gt; 2500, CStr(Year(now())-543), CStr(Year(now())-543)) + "]" 
 MEMBER [Measures].[ParameterLevel] AS [Document Actual Date].[Year].CURRENTMEMBER.LEVEL.ORDINAL 
 
 SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Year].ALLMEMBERS ON ROWS 

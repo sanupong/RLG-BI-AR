@@ -50,7 +50,7 @@
               <Width>1.15972in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>0.57292in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -347,13 +347,13 @@
             <FilterExpression>=Fields!AR_Transection_Type.Value</FilterExpression>
             <Operator>Equal</Operator>
             <FilterValues>
-              <FilterValue>="Receipt"</FilterValue>
+              <FilterValue>="Transactions"</FilterValue>
             </FilterValues>
           </Filter>
         </Filters>
         <Top>4.79042in</Top>
         <Height>0.75in</Height>
-        <Width>4.19444in</Width>
+        <Width>3.76736in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -408,7 +408,7 @@
               <Width>1.1875in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>0.59375in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -705,14 +705,14 @@
             <FilterExpression>=Fields!AR_Transection_Type.Value</FilterExpression>
             <Operator>Equal</Operator>
             <FilterValues>
-              <FilterValue>="Transactions"</FilterValue>
+              <FilterValue>="Receipt"</FilterValue>
             </FilterValues>
           </Filter>
         </Filters>
         <Top>4.79042in</Top>
         <Left>6.5in</Left>
         <Height>0.75in</Height>
-        <Width>4.25in</Width>
+        <Width>3.84375in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -1016,18 +1016,11 @@
           <BackgroundGradientType>None</BackgroundGradientType>
         </Style>
       </Chart>
-      <Chart Name="Chart4">
+      <Chart Name="Chart2">
         <ChartCategoryHierarchy>
           <ChartMembers>
             <ChartMember>
-              <Label />
-            </ChartMember>
-          </ChartMembers>
-        </ChartCategoryHierarchy>
-        <ChartSeriesHierarchy>
-          <ChartMembers>
-            <ChartMember>
-              <Group Name="Chart1_SeriesGroup2">
+              <Group Name="Chart1_CategoryGroup2">
                 <GroupExpressions>
                   <GroupExpression>=Fields!Month.Value</GroupExpression>
                 </GroupExpressions>
@@ -1037,7 +1030,33 @@
                   <Value>=Fields!Month.Key</Value>
                 </SortExpression>
               </SortExpressions>
-              <Label />
+              <Label>=Fields!Month.Value</Label>
+            </ChartMember>
+          </ChartMembers>
+        </ChartCategoryHierarchy>
+        <ChartSeriesHierarchy>
+          <ChartMembers>
+            <ChartMember>
+              <Group Name="Chart1_SeriesGroup2">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!AR_Transection_Type.Value</GroupExpression>
+                </GroupExpressions>
+                <Filters>
+                  <Filter>
+                    <FilterExpression>=Fields!AR_Transection_Type.Value</FilterExpression>
+                    <Operator>Equal</Operator>
+                    <FilterValues>
+                      <FilterValue>="Transactions"</FilterValue>
+                    </FilterValues>
+                  </Filter>
+                </Filters>
+              </Group>
+              <SortExpressions>
+                <SortExpression>
+                  <Value>=Fields!AR_Transection_Type.Key</Value>
+                </SortExpression>
+              </SortExpressions>
+              <Label>=Fields!AR_Transection_Type.Value</Label>
             </ChartMember>
           </ChartMembers>
         </ChartSeriesHierarchy>
@@ -1051,18 +1070,12 @@
                   </ChartDataPointValues>
                   <ChartDataLabel>
                     <Style>
-                      <FontFamily>Tahoma</FontFamily>
-                      <FontSize>8pt</FontSize>
                       <Format>#,0,,.00;(#,0,,.00)</Format>
                     </Style>
                     <UseValueAsLabel>true</UseValueAsLabel>
                     <Visible>true</Visible>
                   </ChartDataLabel>
-                  <Style>
-                    <Border>
-                      <Color>#00ffffff</Color>
-                    </Border>
-                  </Style>
+                  <Style />
                   <ChartMarker>
                     <Style />
                   </ChartMarker>
@@ -1082,7 +1095,6 @@
               <ValueAxisName>Primary</ValueAxisName>
               <CategoryAxisName>Primary</CategoryAxisName>
               <ChartSmartLabel>
-                <Disabled>true</Disabled>
                 <CalloutLineColor>Black</CalloutLineColor>
                 <MinMovingDistance>0pt</MinMovingDistance>
               </ChartSmartLabel>
@@ -1094,15 +1106,17 @@
             <ChartCategoryAxes>
               <ChartAxis Name="Primary">
                 <Style>
+                  <FontFamily>Tahoma</FontFamily>
                   <FontSize>8pt</FontSize>
                 </Style>
                 <ChartAxisTitle>
-                  <Caption>Total</Caption>
+                  <Caption />
                   <Style>
-                    <FontFamily>Tahoma</FontFamily>
                     <FontSize>8pt</FontSize>
                   </Style>
                 </ChartAxisTitle>
+                <Interval>1</Interval>
+                <IntervalType>Number</IntervalType>
                 <ChartMajorGridLines>
                   <Enabled>False</Enabled>
                   <Style>
@@ -1125,7 +1139,6 @@
                 <CrossAt>NaN</CrossAt>
                 <Minimum>NaN</Minimum>
                 <Maximum>NaN</Maximum>
-                <HideLabels>true</HideLabels>
                 <ChartAxisScaleBreak>
                   <Style />
                 </ChartAxisScaleBreak>
@@ -1173,7 +1186,7 @@
                 <Style>
                   <FontFamily>Tahoma</FontFamily>
                   <FontSize>8pt</FontSize>
-                  <Format>#,0,,;(#,0,,)</Format>
+                  <Format>#,0,,.00;(#,0,,.00)</Format>
                 </Style>
                 <ChartAxisTitle>
                   <Caption />
@@ -1243,10 +1256,6 @@
                 </ChartAxisScaleBreak>
               </ChartAxis>
             </ChartValueAxes>
-            <ChartThreeDProperties>
-              <Enabled>true</Enabled>
-              <Clustered>true</Clustered>
-            </ChartThreeDProperties>
             <Style>
               <BackgroundGradientType>None</BackgroundGradientType>
             </Style>
@@ -1272,7 +1281,7 @@
           </ChartLegend>
         </ChartLegends>
         <ChartTitles>
-          <ChartTitle Name="Title1">
+          <ChartTitle Name="Default">
             <Caption>รายงานการแสดงมูลค่าการแจ้งหนี้ (ล้านบาท)</Caption>
             <Style>
               <BackgroundGradientType>None</BackgroundGradientType>
@@ -1300,18 +1309,10 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>ARDataSet</DataSetName>
-        <Filters>
-          <Filter>
-            <FilterExpression>=Fields!AR_Transection_Type.Value</FilterExpression>
-            <Operator>Equal</Operator>
-            <FilterValues>
-              <FilterValue>="Transactions"</FilterValue>
-            </FilterValues>
-          </Filter>
-        </Filters>
-        <Top>2in</Top>
-        <Height>2.79042in</Height>
-        <Width>6.5in</Width>
+        <Top>2.01389in</Top>
+        <Left>0.00694in</Left>
+        <Height>2.74875in</Height>
+        <Width>6.4375in</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -1322,18 +1323,11 @@
           <BackgroundGradientType>None</BackgroundGradientType>
         </Style>
       </Chart>
-      <Chart Name="Chart5">
+      <Chart Name="Chart3">
         <ChartCategoryHierarchy>
           <ChartMembers>
             <ChartMember>
-              <Label />
-            </ChartMember>
-          </ChartMembers>
-        </ChartCategoryHierarchy>
-        <ChartSeriesHierarchy>
-          <ChartMembers>
-            <ChartMember>
-              <Group Name="Chart1_SeriesGroup3">
+              <Group Name="Chart1_CategoryGroup3">
                 <GroupExpressions>
                   <GroupExpression>=Fields!Month.Value</GroupExpression>
                 </GroupExpressions>
@@ -1343,7 +1337,33 @@
                   <Value>=Fields!Month.Key</Value>
                 </SortExpression>
               </SortExpressions>
-              <Label />
+              <Label>=Fields!Month.Value</Label>
+            </ChartMember>
+          </ChartMembers>
+        </ChartCategoryHierarchy>
+        <ChartSeriesHierarchy>
+          <ChartMembers>
+            <ChartMember>
+              <Group Name="Chart1_SeriesGroup3">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!AR_Transection_Type.Value</GroupExpression>
+                </GroupExpressions>
+                <Filters>
+                  <Filter>
+                    <FilterExpression>=Fields!AR_Transection_Type.Value</FilterExpression>
+                    <Operator>Equal</Operator>
+                    <FilterValues>
+                      <FilterValue>="Receipt"</FilterValue>
+                    </FilterValues>
+                  </Filter>
+                </Filters>
+              </Group>
+              <SortExpressions>
+                <SortExpression>
+                  <Value>=Fields!AR_Transection_Type.Key</Value>
+                </SortExpression>
+              </SortExpressions>
+              <Label>=Fields!AR_Transection_Type.Value</Label>
             </ChartMember>
           </ChartMembers>
         </ChartSeriesHierarchy>
@@ -1357,17 +1377,13 @@
                   </ChartDataPointValues>
                   <ChartDataLabel>
                     <Style>
-                      <FontFamily>Tahoma</FontFamily>
-                      <FontSize>8pt</FontSize>
                       <Format>#,0,,.00;(#,0,,.00)</Format>
                     </Style>
                     <UseValueAsLabel>true</UseValueAsLabel>
                     <Visible>true</Visible>
                   </ChartDataLabel>
                   <Style>
-                    <Border>
-                      <Color>#00ffffff</Color>
-                    </Border>
+                    <Color>Orange</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -1388,7 +1404,6 @@
               <ValueAxisName>Primary</ValueAxisName>
               <CategoryAxisName>Primary</CategoryAxisName>
               <ChartSmartLabel>
-                <Disabled>true</Disabled>
                 <CalloutLineColor>Black</CalloutLineColor>
                 <MinMovingDistance>0pt</MinMovingDistance>
               </ChartSmartLabel>
@@ -1400,15 +1415,17 @@
             <ChartCategoryAxes>
               <ChartAxis Name="Primary">
                 <Style>
+                  <FontFamily>Tahoma</FontFamily>
                   <FontSize>8pt</FontSize>
                 </Style>
                 <ChartAxisTitle>
-                  <Caption>Total</Caption>
+                  <Caption />
                   <Style>
-                    <FontFamily>Tahoma</FontFamily>
                     <FontSize>8pt</FontSize>
                   </Style>
                 </ChartAxisTitle>
+                <Interval>1</Interval>
+                <IntervalType>Number</IntervalType>
                 <ChartMajorGridLines>
                   <Enabled>False</Enabled>
                   <Style>
@@ -1431,7 +1448,6 @@
                 <CrossAt>NaN</CrossAt>
                 <Minimum>NaN</Minimum>
                 <Maximum>NaN</Maximum>
-                <HideLabels>true</HideLabels>
                 <ChartAxisScaleBreak>
                   <Style />
                 </ChartAxisScaleBreak>
@@ -1479,7 +1495,7 @@
                 <Style>
                   <FontFamily>Tahoma</FontFamily>
                   <FontSize>8pt</FontSize>
-                  <Format>#,0,,;(#,0,,)</Format>
+                  <Format>#,0,,.00;(#,0,,.00)</Format>
                 </Style>
                 <ChartAxisTitle>
                   <Caption />
@@ -1549,10 +1565,6 @@
                 </ChartAxisScaleBreak>
               </ChartAxis>
             </ChartValueAxes>
-            <ChartThreeDProperties>
-              <Enabled>true</Enabled>
-              <Clustered>true</Clustered>
-            </ChartThreeDProperties>
             <Style>
               <BackgroundGradientType>None</BackgroundGradientType>
             </Style>
@@ -1578,7 +1590,7 @@
           </ChartLegend>
         </ChartLegends>
         <ChartTitles>
-          <ChartTitle Name="Title1">
+          <ChartTitle Name="Default">
             <Caption>รายงานการแสดงมูลค่าการรับชำระเงิน (ล้านบาท)</Caption>
             <Style>
               <BackgroundGradientType>None</BackgroundGradientType>
@@ -1606,19 +1618,10 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>ARDataSet</DataSetName>
-        <Filters>
-          <Filter>
-            <FilterExpression>=Fields!AR_Transection_Type.Value</FilterExpression>
-            <Operator>Equal</Operator>
-            <FilterValues>
-              <FilterValue>="Receipt"</FilterValue>
-            </FilterValues>
-          </Filter>
-        </Filters>
-        <Top>2in</Top>
-        <Left>6.5in</Left>
-        <Height>2.79042in</Height>
-        <Width>6.5in</Width>
+        <Top>2.01389in</Top>
+        <Left>6.47222in</Left>
+        <Height>2.74875in</Height>
+        <Width>6.54167in</Width>
         <ZIndex>4</ZIndex>
         <Style>
           <Border>
@@ -1630,10 +1633,10 @@
         </Style>
       </Chart>
     </ReportItems>
-    <Height>5.54042in</Height>
+    <Height>5.61334in</Height>
     <Style />
   </Body>
-  <Width>13.01389in</Width>
+  <Width>13.11396in</Width>
   <Page>
     <PageHeader>
       <Height>1.59514in</Height>
@@ -2149,7 +2152,7 @@
         <DataSourceName>DS</DataSourceName>
         <CommandText>WITH 
 MEMBER [Measures].[ParameterCaption] AS [Document Actual Date].[Year].CURRENTMEMBER.MEMBER_CAPTION 
-MEMBER [Measures].[ParameterValue] AS "[Document Actual Date].[Year].&amp;[" + IIF(Year(now()) &gt; 2500, CStr(Year(now())), CStr(Year(now()))) + "]" 
+MEMBER [Measures].[ParameterValue] AS "[Document Actual Date].[Year].&amp;[" + IIF(Year(now()) &gt; 2500, CStr(Year(now())-543), CStr(Year(now())-543)) + "]" 
 MEMBER [Measures].[ParameterLevel] AS [Document Actual Date].[Year].CURRENTMEMBER.LEVEL.ORDINAL 
 
 SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Year].ALLMEMBERS ON ROWS 
@@ -2209,7 +2212,7 @@ FROM [RLG-AccountReceivable]</CommandText>
             <Query>
               <Statement>WITH 
 MEMBER [Measures].[ParameterCaption] AS [Document Actual Date].[Year].CURRENTMEMBER.MEMBER_CAPTION 
-MEMBER [Measures].[ParameterValue] AS "[Document Actual Date].[Year].&amp;[" + IIF(Year(now()) &gt; 2500, CStr(Year(now())), CStr(Year(now()))) + "]" 
+MEMBER [Measures].[ParameterValue] AS "[Document Actual Date].[Year].&amp;[" + IIF(Year(now()) &gt; 2500, CStr(Year(now())-543), CStr(Year(now())-543)) + "]" 
 MEMBER [Measures].[ParameterLevel] AS [Document Actual Date].[Year].CURRENTMEMBER.LEVEL.ORDINAL 
 
 SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Time].[Year].ALLMEMBERS ON ROWS 
