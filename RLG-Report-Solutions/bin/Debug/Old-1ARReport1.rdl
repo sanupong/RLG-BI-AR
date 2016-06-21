@@ -315,7 +315,6 @@
                             <Value>Customer Name</Value>
                             <Style>
                               <FontFamily>Tahoma</FontFamily>
-                              <FontSize>8pt</FontSize>
                               <FontWeight>Bold</FontWeight>
                               <Color>White</Color>
                             </Style>
@@ -345,16 +344,16 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>0.84375in</Width>
+              <Width>1.75in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.44791in</Width>
+              <Width>0.64583in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.88542in</Width>
+              <Width>1.66667in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.4375in</Width>
+              <Width>0.65625in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -373,7 +372,6 @@
                               <Value>=Sum(Fields!Amount.Value)</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
-                                <FontSize>8pt</FontSize>
                                 <Format>n2</Format>
                               </Style>
                             </TextRun>
@@ -407,7 +405,6 @@
                               <Value>=Sum(Fields!Amount.Value)/Code.SumLookup(LOOKUPSET(Fields!Month.Value, Fields!Month.Value, Fields!Amount.Value,"ARDataSet"))</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
-                                <FontSize>8pt</FontSize>
                                 <Format>#,0.00%</Format>
                                 <Color>=IIf(Sum(Fields!Amount.Value)&lt;&gt;0,"Black","White")</Color>
                               </Style>
@@ -442,7 +439,6 @@
                               <Value>=Sum(Fields!Amount.Value)</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
-                                <FontSize>8pt</FontSize>
                                 <Format>n2</Format>
                               </Style>
                             </TextRun>
@@ -476,7 +472,6 @@
                               <Value>=Sum(Fields!Amount.Value)/Sum(Fields!Amount.Value, "ARDataSet")</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
-                                <FontSize>8pt</FontSize>
                                 <Format>#,0.00%</Format>
                               </Style>
                             </TextRun>
@@ -515,7 +510,6 @@
                               <Value>=Sum(Fields!Amount.Value)</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
-                                <FontSize>8pt</FontSize>
                                 <Format>n2</Format>
                               </Style>
                             </TextRun>
@@ -550,7 +544,6 @@
                               <Value>=sum(Fields!Amount.Value)/Sum(Fields!Amount.Value)</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
-                                <FontSize>8pt</FontSize>
                                 <Format>0.00%</Format>
                               </Style>
                             </TextRun>
@@ -585,7 +578,6 @@
                               <Value>=Sum(Fields!Amount.Value, "ARDataSet")</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
-                                <FontSize>8pt</FontSize>
                                 <Format>#,0.00;(#,0.00)</Format>
                               </Style>
                             </TextRun>
@@ -620,7 +612,6 @@
                               <Value>=Sum(Fields!Amount.Value, "ARDataSet")/Sum(Fields!Amount.Value, "ARDataSet")</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
-                                <FontSize>8pt</FontSize>
                                 <Format>0.00%</Format>
                               </Style>
                             </TextRun>
@@ -673,7 +664,6 @@
                             <Value>=Fields!Month.Value</Value>
                             <Style>
                               <FontFamily>Tahoma</FontFamily>
-                              <FontSize>8pt</FontSize>
                               <FontWeight>Bold</FontWeight>
                               <Color>White</Color>
                             </Style>
@@ -716,7 +706,6 @@
                             <Value>Total</Value>
                             <Style>
                               <FontFamily>Tahoma</FontFamily>
-                              <FontSize>8pt</FontSize>
                               <FontWeight>Bold</FontWeight>
                               <Color>White</Color>
                             </Style>
@@ -795,7 +784,7 @@
                 </SortExpression>
               </SortExpressions>
               <TablixHeader>
-                <Size>3.27083in</Size>
+                <Size>3.86458in</Size>
                 <CellContents>
                   <Textbox Name="Customer_Name">
                     <CanGrow>true</CanGrow>
@@ -807,7 +796,6 @@
                             <Value>=Fields!Customer_Name.Value</Value>
                             <Style>
                               <FontFamily>Tahoma</FontFamily>
-                              <FontSize>8pt</FontSize>
                               <FontWeight>Bold</FontWeight>
                             </Style>
                           </TextRun>
@@ -832,7 +820,7 @@
             </TablixMember>
             <TablixMember>
               <TablixHeader>
-                <Size>3.27083in</Size>
+                <Size>3.86458in</Size>
                 <CellContents>
                   <Textbox Name="Textbox5">
                     <CanGrow>true</CanGrow>
@@ -844,7 +832,6 @@
                             <Value>Total</Value>
                             <Style>
                               <FontFamily>Tahoma</FontFamily>
-                              <FontSize>8pt</FontSize>
                               <FontWeight>Bold</FontWeight>
                             </Style>
                           </TextRun>
@@ -877,7 +864,7 @@
         <Top>3.99181in</Top>
         <Left>0.125in</Left>
         <Height>0.75in</Height>
-        <Width>5.88541in</Width>
+        <Width>8.58333in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -886,7 +873,7 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>4.82514in</Height>
+    <Height>5.96056in</Height>
     <Style />
   </Body>
   <Width>11.35417in</Width>

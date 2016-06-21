@@ -11,11 +11,20 @@
       <FullPath>DS.rds</FullPath>
     </ProjectItem>
   </DataSources>
-  <DataSets />
+  <DataSets>
+    <ProjectItem>
+      <Name>ARDataSet.rsd</Name>
+      <FullPath>ARDataSet.rsd</FullPath>
+    </ProjectItem>
+  </DataSets>
   <Reports>
     <ProjectItem>
-      <Name>ARReport1.rdl</Name>
-      <FullPath>ARReport1.rdl</FullPath>
+      <Name>Old-1ARReport1.rdl</Name>
+      <FullPath>Old-1ARReport1.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>ARReport2.rdl</Name>
+      <FullPath>ARReport2.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
       <Name>ARReport3.rdl</Name>
@@ -42,8 +51,12 @@
       <FullPath>OldARReport2.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>ARReport2.rdl</Name>
-      <FullPath>ARReport2.rdl</FullPath>
+      <Name>ARReport1.rdl</Name>
+      <FullPath>ARReport1.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Copy of ARTopN_Received_From_To.rdl</Name>
+      <FullPath>Copy of ARTopN_Received_From_To.rdl</FullPath>
     </ProjectItem>
   </Reports>
   <Configurations>
