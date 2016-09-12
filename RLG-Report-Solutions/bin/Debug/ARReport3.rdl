@@ -708,7 +708,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>= "ปี : " &amp; trim(CStr(Parameters!DocumentActualDateYear.Label)) &amp; " เดือน : " &amp; trim(Parameters!DocumentActualDateMonth.Label)</Value>
+                  <Value>= "ปี : " &amp; trim(CStr(Parameters!DocumentActualDateYear.Label)) &amp; " เดือน : " &amp; trim(join(Parameters!DocumentActualDateMonth.Label, ","))</Value>
                   <Style>
                     <FontFamily>Calibri</FontFamily>
                     <FontSize>12pt</FontSize>
@@ -1524,6 +1524,7 @@ FROM [RLG-AccountReceivable]</Statement>
           <LabelField>ParameterCaptionIndented</LabelField>
         </DataSetReference>
       </ValidValues>
+      <MultiValue>true</MultiValue>
     </ReportParameter>
     <ReportParameter Name="DimCompanySegmentCompanySegmentName">
       <DataType>String</DataType>

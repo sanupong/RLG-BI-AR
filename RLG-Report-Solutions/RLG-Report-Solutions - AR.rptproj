@@ -19,8 +19,8 @@
   </DataSets>
   <Reports>
     <ProjectItem>
-      <Name>Old-1ARReport1.rdl</Name>
-      <FullPath>Old-1ARReport1.rdl</FullPath>
+      <Name>ARReport1.rdl</Name>
+      <FullPath>ARReport1.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
       <Name>ARReport2.rdl</Name>
@@ -43,6 +43,14 @@
       <FullPath>ARTopN_Received_From_To.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
+      <Name>Copy of ARTopN_Received_From_To.rdl</Name>
+      <FullPath>Copy of ARTopN_Received_From_To.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Old-1ARReport1.rdl</Name>
+      <FullPath>Old-1ARReport1.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
       <Name>OldARReport1.rdl</Name>
       <FullPath>OldARReport1.rdl</FullPath>
     </ProjectItem>
@@ -51,12 +59,8 @@
       <FullPath>OldARReport2.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>ARReport1.rdl</Name>
-      <FullPath>ARReport1.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Copy of ARTopN_Received_From_To.rdl</Name>
-      <FullPath>Copy of ARTopN_Received_From_To.rdl</FullPath>
+      <Name>1607ARReport2.rdl</Name>
+      <FullPath>1607ARReport2.rdl</FullPath>
     </ProjectItem>
   </Reports>
   <Configurations>

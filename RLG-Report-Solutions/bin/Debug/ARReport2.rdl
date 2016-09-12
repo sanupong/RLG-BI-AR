@@ -981,7 +981,7 @@
         </ChartLegends>
         <ChartTitles>
           <ChartTitle Name="Default">
-            <Caption>รายงานแสดงมูลค่าการแจ้งหนี้เปรียบเทียบกับมูลค่าการรับชำระหนี้ (ล้านบาท)</Caption>
+            <Caption>รายงานการรับเงิน เปรียบเทียบกับ ประมาณการ (ล้านบาท)</Caption>
             <Style>
               <BackgroundGradientType>None</BackgroundGradientType>
               <FontFamily>Tahoma</FontFamily>
@@ -1290,7 +1290,7 @@
         </ChartLegends>
         <ChartTitles>
           <ChartTitle Name="Default">
-            <Caption>รายงานการแสดงมูลค่าการแจ้งหนี้ (ล้านบาท)</Caption>
+            <Caption>รายงานการประมาณการ (ล้านบาท)</Caption>
             <Style>
               <BackgroundGradientType>None</BackgroundGradientType>
               <FontFamily>Tahoma</FontFamily>
@@ -1603,7 +1603,7 @@
         </ChartLegends>
         <ChartTitles>
           <ChartTitle Name="Default">
-            <Caption>รายงานการแสดงมูลค่าการรับชำระเงิน (ล้านบาท)</Caption>
+            <Caption>รายงานการรับเงิน (ล้านบาท)</Caption>
             <Style>
               <BackgroundGradientType>None</BackgroundGradientType>
               <FontFamily>Tahoma</FontFamily>
@@ -1675,7 +1675,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>= "ปี : " &amp; trim(CStr(Parameters!DocumentActualDateYear.Label)) &amp; " เดือน : " &amp; trim(Parameters!DocumentActualDateMonth.Label)</Value>
+                  <Value>= "ปี : " &amp; trim(CStr(Parameters!DocumentActualDateYear.Label)) &amp; " เดือน : " &amp; trim(join(Parameters!DocumentActualDateMonth.Label, ","))</Value>
                   <Style>
                     <FontFamily>Calibri</FontFamily>
                     <FontSize>12pt</FontSize>
@@ -1709,7 +1709,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value EvaluationMode="Constant">รายงานแสดงมูลค่าการแจ้งหนี้เปรียบเทียบกับมูลค่าการรับชำระหนี้ (ล้านบาท)</Value>
+                  <Value>รายงานการรับเงิน เปรียบเทียบกับ ประมาณการ (ล้านบาท)</Value>
                   <Style>
                     <FontFamily>Calibri</FontFamily>
                     <FontSize>12pt</FontSize>
@@ -2049,7 +2049,7 @@
             <Value>=Parameters!DimCompanySegmentCompanySegmentName.Value</Value>
           </QueryParameter>
         </QueryParameters>
-        <CommandText> SELECT NON EMPTY { [Measures].[Amount] } ON COLUMNS, NON EMPTY { ([Dim AR Transaction Type].[AR Transection Type Key].[AR Transection Type Key].ALLMEMBERS * [Dim AR Transaction Type].[AR Transection Type].[AR Transection Type].ALLMEMBERS * [Document Actual Date].[Month].[Month].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegmentName, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable]))) WHERE ( IIF( STRTOSET(@DocumentActualDateYear, CONSTRAINED).Count = 1, STRTOSET(@DocumentActualDateYear, CONSTRAINED), [Document Actual Date].[Year].currentmember ), IIF( STRTOSET(@DimCompanySegmentCompanySegmentName, CONSTRAINED).Count = 1, STRTOSET(@DimCompanySegmentCompanySegmentName, CONSTRAINED), [Dim Company Segment].[Company Segment Name].currentmember ) ) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</CommandText>
+        <CommandText> SELECT NON EMPTY { [Measures].[Amount] } ON COLUMNS, NON EMPTY { ([Dim AR Transaction Type].[AR Transection Type Key].[AR Transection Type Key].ALLMEMBERS * [Dim AR Transaction Type].[AR Transection Type].[AR Transection Type].ALLMEMBERS * [Dim Customer].[Customer Name].[Customer Name].ALLMEMBERS * [Document Actual Date].[Month].[Month].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( { [Dim AR Transaction Type].[AR Transection Type].[All] } ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegmentName, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])))) WHERE ( IIF( STRTOSET(@DocumentActualDateYear, CONSTRAINED).Count = 1, STRTOSET(@DocumentActualDateYear, CONSTRAINED), [Document Actual Date].[Year].currentmember ), IIF( STRTOSET(@DimCompanySegmentCompanySegmentName, CONSTRAINED).Count = 1, STRTOSET(@DimCompanySegmentCompanySegmentName, CONSTRAINED), [Dim Company Segment].[Company Segment Name].currentmember ) ) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</CommandText>
         <rd:DesignerState>
           <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
             <CommandType>MDX</CommandType>
@@ -2076,6 +2076,17 @@
                       <UniqueName>[Dim AR Transaction Type].[AR Transection Type].[AR Transection Type]</UniqueName>
                     </ID>
                     <ItemCaption>AR Transection Type</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Dim Customer</DimensionName>
+                      <HierarchyName>Customer Name</HierarchyName>
+                      <HierarchyUniqueName>[Dim Customer].[Customer Name]</HierarchyUniqueName>
+                      <LevelName>Customer Name</LevelName>
+                      <UniqueName>[Dim Customer].[Customer Name].[Customer Name]</UniqueName>
+                    </ID>
+                    <ItemCaption>Customer Name</ItemCaption>
                     <UniqueName>true</UniqueName>
                   </Item>
                   <Item>
@@ -2143,6 +2154,16 @@
                       <Parametrized>true</Parametrized>
                     </Condition>
                   </FilterItem>
+                  <FilterItem>
+                    <HierarchyUniqueName>[Dim AR Transaction Type].[AR Transection Type]</HierarchyUniqueName>
+                    <Condition xsi:type="EqualTo">
+                      <Members>
+                        <Member>
+                          <MemberUniqueName>[Dim AR Transaction Type].[AR Transection Type].[All]</MemberUniqueName>
+                        </Member>
+                      </Members>
+                    </Condition>
+                  </FilterItem>
                 </FilterItems>
               </Filter>
               <Calculations />
@@ -2150,7 +2171,7 @@
               <QueryProperties />
             </QuerySpecification>
             <Query>
-              <Statement> SELECT NON EMPTY { [Measures].[Amount] } ON COLUMNS, NON EMPTY { ([Dim AR Transaction Type].[AR Transection Type Key].[AR Transection Type Key].ALLMEMBERS * [Dim AR Transaction Type].[AR Transection Type].[AR Transection Type].ALLMEMBERS * [Document Actual Date].[Month].[Month].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegmentName, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable]))) WHERE ( IIF( STRTOSET(@DocumentActualDateYear, CONSTRAINED).Count = 1, STRTOSET(@DocumentActualDateYear, CONSTRAINED), [Document Actual Date].[Year].currentmember ), IIF( STRTOSET(@DimCompanySegmentCompanySegmentName, CONSTRAINED).Count = 1, STRTOSET(@DimCompanySegmentCompanySegmentName, CONSTRAINED), [Dim Company Segment].[Company Segment Name].currentmember ) ) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</Statement>
+              <Statement> SELECT NON EMPTY { [Measures].[Amount] } ON COLUMNS, NON EMPTY { ([Dim AR Transaction Type].[AR Transection Type Key].[AR Transection Type Key].ALLMEMBERS * [Dim AR Transaction Type].[AR Transection Type].[AR Transection Type].ALLMEMBERS * [Dim Customer].[Customer Name].[Customer Name].ALLMEMBERS * [Document Actual Date].[Month].[Month].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( { [Dim AR Transaction Type].[AR Transection Type].[All] } ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCompanySegmentCompanySegmentName, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateMonth, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DocumentActualDateYear, CONSTRAINED) ) ON COLUMNS FROM [RLG-AccountReceivable])))) WHERE ( IIF( STRTOSET(@DocumentActualDateYear, CONSTRAINED).Count = 1, STRTOSET(@DocumentActualDateYear, CONSTRAINED), [Document Actual Date].[Year].currentmember ), IIF( STRTOSET(@DimCompanySegmentCompanySegmentName, CONSTRAINED).Count = 1, STRTOSET(@DimCompanySegmentCompanySegmentName, CONSTRAINED), [Dim Company Segment].[Company Segment Name].currentmember ) ) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</Statement>
               <ParameterDefinitions>
                 <ParameterDefinition>
                   <Name>DocumentActualDateYear</Name>
@@ -2222,6 +2243,10 @@
         </Field>
         <Field Name="AR_Transection_Type">
           <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Dim AR Transaction Type].[AR Transection Type].[AR Transection Type]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Customer_Name">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Dim Customer].[Customer Name].[Customer Name]" /&gt;</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Month">
@@ -2808,6 +2833,7 @@ FROM [RLG-AccountReceivable]</Statement>
           <LabelField>ParameterCaptionIndented</LabelField>
         </DataSetReference>
       </ValidValues>
+      <MultiValue>true</MultiValue>
     </ReportParameter>
     <ReportParameter Name="DimCompanySegmentCompanySegmentName">
       <DataType>String</DataType>
