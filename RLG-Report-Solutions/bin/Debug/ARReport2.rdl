@@ -981,7 +981,7 @@
         </ChartLegends>
         <ChartTitles>
           <ChartTitle Name="Default">
-            <Caption>รายงานการรับเงิน เปรียบเทียบกับ ประมาณการ (ล้านบาท)</Caption>
+            <Caption>รายงานแสดงมูลค่าการแจ้งหนี้เปรียบเทียบกับมูลค่าการรับชำระหนี้ (ล้านบาท)</Caption>
             <Style>
               <BackgroundGradientType>None</BackgroundGradientType>
               <FontFamily>Tahoma</FontFamily>
@@ -1290,7 +1290,7 @@
         </ChartLegends>
         <ChartTitles>
           <ChartTitle Name="Default">
-            <Caption>รายงานการประมาณการ (ล้านบาท)</Caption>
+            <Caption>รายงานแสดงมูลค่าการแจ้งหนี้ (ล้านบาท)</Caption>
             <Style>
               <BackgroundGradientType>None</BackgroundGradientType>
               <FontFamily>Tahoma</FontFamily>
@@ -1603,7 +1603,7 @@
         </ChartLegends>
         <ChartTitles>
           <ChartTitle Name="Default">
-            <Caption>รายงานการรับเงิน (ล้านบาท)</Caption>
+            <Caption>รายงานมูลค่าการรับชำระหนี้ (ล้านบาท)</Caption>
             <Style>
               <BackgroundGradientType>None</BackgroundGradientType>
               <FontFamily>Tahoma</FontFamily>
@@ -1709,7 +1709,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>รายงานการรับเงิน เปรียบเทียบกับ ประมาณการ (ล้านบาท)</Value>
+                  <Value>รายงานแสดงมูลค่าการแจ้งหนี้เปรียบเทียบมูลค่าการรับชำระหนี้ (ล้านบาท)</Value>
                   <Style>
                     <FontFamily>Calibri</FontFamily>
                     <FontSize>12pt</FontSize>
@@ -1724,7 +1724,7 @@
           <Top>0.27778in</Top>
           <Left>0.13225in</Left>
           <Height>0.25in</Height>
-          <Width>6.76041in</Width>
+          <Width>8.60416in</Width>
           <ZIndex>2</ZIndex>
           <Style>
             <Border>
